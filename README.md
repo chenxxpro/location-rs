@@ -23,7 +23,7 @@
 
 ```toml
 [dependencies]
-location-rs = "0.1.0"
+location-rs = "0.1.1"
 ```
 
 ## 使用示例
@@ -132,7 +132,6 @@ cargo bench
 
 - **语言**：Rust 2021
 - **主要依赖**：
-  - `isocountry`：ISO 国家代码标准实现
   - `serde`/`serde_json`：配置解析
   - `thiserror`：错误处理
   - `criterion`（开发依赖）：性能基准测试
