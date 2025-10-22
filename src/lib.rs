@@ -10,7 +10,6 @@ pub mod parser;
 // 重新导出主要类型
 pub use error::ParseError;
 pub use config::{Configuration, CountryInfo, ParserSettings};
-pub use parser::parse_country_code;
 
 // 重新导出isocountry的CountryCode
 pub use isocountry::CountryCode;

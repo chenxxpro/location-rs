@@ -57,7 +57,7 @@ pub struct Configuration {
 impl Configuration {
     /// 从嵌入的JSON字符串加载配置
     pub fn load() -> Result<Self, ParseError> {
-        let config_str = include_str!("../../resources/countries.json");
+        let config_str = include_str!("../resources/countries.json");
         
         serde_json::from_str(config_str)
             .map_err(|e| ParseError::config_error(&format!("配置解析失败: {}", e)))

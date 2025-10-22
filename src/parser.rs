@@ -2,7 +2,8 @@ use std::collections::HashMap;
 use std::time::{Duration, Instant};
 use isocountry::CountryCode;
 use crate::error::ParseError;
-use crate::config::{Configuration, ParserConfig};
+use crate::config::Configuration;
+use crate::ParserConfig;
 
 /// 主要的解析函数
 pub fn parse_country_code(text: &str) -> Result<CountryCode, ParseError> {
@@ -61,14 +62,14 @@ pub fn parse_country_code_with_config(
 fn parse_iso_codes(
     text: &str,
     mapping: &HashMap<String, &crate::config::CountryInfo>,
-    config: &ParserConfig,
+    _config: &ParserConfig,
 ) -> Result<CountryCode, ParseError> {
     // 查找2字母代码
     for i in 0..text.len().saturating_sub(1) {
         let slice = &text[i..i+2];
         if let Some(country_info) = mapping.get(slice) {
             if is_valid_iso_code_position(text, i, 2) {
-                return CountryCode::from_str(&country_info.alpha2)
+                return CountryCode::for_alpha2(&country_info.alpha2)
                     .map_err(|_| ParseError::not_found(text));
             }
         }
@@ -79,7 +80,7 @@ fn parse_iso_codes(
         let slice = &text[i..i+3];
         if let Some(country_info) = mapping.get(slice) {
             if is_valid_iso_code_position(text, i, 3) {
-                return CountryCode::from_str(&country_info.alpha2)
+                return CountryCode::for_alpha2(&country_info.alpha2)
                     .map_err(|_| ParseError::not_found(text));
             }
         }
@@ -92,14 +93,14 @@ fn parse_iso_codes(
 fn parse_chinese_names(
     text: &str,
     mapping: &HashMap<String, &crate::config::CountryInfo>,
-    config: &ParserConfig,
+    _config: &ParserConfig,
 ) -> Result<CountryCode, ParseError> {
     // 简体中文名称匹配
     for (name, country_info) in mapping {
         if name.len() >= 2 && text.contains(name) {
             // 检查是否是有效的中文名称位置
             if is_valid_chinese_name_position(text, name) {
-                return CountryCode::from_str(&country_info.alpha2)
+                return CountryCode::for_alpha2(&country_info.alpha2)
                     .map_err(|_| ParseError::not_found(text));
             }
         }
@@ -127,7 +128,7 @@ fn parse_pattern_matching(
         
         match candidates.len() {
             0 => Err(ParseError::not_found(text)),
-            1 => CountryCode::from_str(&candidates[0])
+            1 => CountryCode::for_alpha2(&candidates[0])
                 .map_err(|_| ParseError::not_found(text)),
             _ => Err(ParseError::ambiguous(text, candidates)),
         }
