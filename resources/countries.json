@@ -1,5 +1,5 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "countries": [
     {
       "alpha2": "CN",
@@ -8,7 +8,8 @@
       "name_en": "China",
       "name_zh_cn": "中国",
       "name_zh_tw": "中國",
-      "region": "Asia"
+      "region": "Asia",
+      "abbreviations": ["中国", "中国大陆", "内地", "大陆"]
     },
     {
       "alpha2": "US",
@@ -17,7 +18,8 @@
       "name_en": "United States",
       "name_zh_cn": "美国",
       "name_zh_tw": "美國",
-      "region": "North America"
+      "region": "North America",
+      "abbreviations": ["美国", "米国", "USA", "U.S."]
     },
     {
       "alpha2": "HK",
@@ -26,34 +28,8 @@
       "name_en": "Hong Kong",
       "name_zh_cn": "香港",
       "name_zh_tw": "香港",
-      "region": "Asia"
-    },
-    {
-      "alpha2": "JP",
-      "alpha3": "JPN",
-      "numeric": "392",
-      "name_en": "Japan",
-      "name_zh_cn": "日本",
-      "name_zh_tw": "日本",
-      "region": "Asia"
-    },
-    {
-      "alpha2": "KR",
-      "alpha3": "KOR",
-      "numeric": "410",
-      "name_en": "South Korea",
-      "name_zh_cn": "韩国",
-      "name_zh_tw": "韓國",
-      "region": "Asia"
-    },
-    {
-      "alpha2": "SG",
-      "alpha3": "SGP",
-      "numeric": "702",
-      "name_en": "Singapore",
-      "name_zh_cn": "新加坡",
-      "name_zh_tw": "新加坡",
-      "region": "Asia"
+      "region": "Asia",
+      "abbreviations": ["香港", "HK"]
     },
     {
       "alpha2": "TW",
@@ -62,7 +38,108 @@
       "name_en": "Taiwan",
       "name_zh_cn": "台湾",
       "name_zh_tw": "台灣",
-      "region": "Asia"
+      "region": "Asia",
+      "abbreviations": ["台湾", "TW", "台"]
+    },
+    {
+      "alpha2": "JP",
+      "alpha3": "JPN",
+      "numeric": "392",
+      "name_en": "Japan",
+      "name_zh_cn": "日本",
+      "name_zh_tw": "日本",
+      "region": "Asia",
+      "abbreviations": ["日本", "JP"]
+    },
+    {
+      "alpha2": "KR",
+      "alpha3": "KOR",
+      "numeric": "410",
+      "name_en": "South Korea",
+      "name_zh_cn": "韩国",
+      "name_zh_tw": "韓國",
+      "region": "Asia",
+      "abbreviations": ["韩国", "南韩", "大韩民国"]
+    },
+    {
+      "alpha2": "SG",
+      "alpha3": "SGP",
+      "numeric": "702",
+      "name_en": "Singapore",
+      "name_zh_cn": "新加坡",
+      "name_zh_tw": "新加坡",
+      "region": "Asia",
+      "abbreviations": ["新加坡", "SG"]
+    },
+    {
+      "alpha2": "ID",
+      "alpha3": "IDN",
+      "numeric": "360",
+      "name_en": "Indonesia",
+      "name_zh_cn": "印度尼西亚",
+      "name_zh_tw": "印尼",
+      "region": "Asia",
+      "abbreviations": ["印度尼西亚", "印尼"]
+    },
+    {
+      "alpha2": "TH",
+      "alpha3": "THA",
+      "numeric": "764",
+      "name_en": "Thailand",
+      "name_zh_cn": "泰国",
+      "name_zh_tw": "泰國",
+      "region": "Asia",
+      "abbreviations": ["泰国", "暹罗"]
+    },
+    {
+      "alpha2": "MY",
+      "alpha3": "MYS",
+      "numeric": "458",
+      "name_en": "Malaysia",
+      "name_zh_cn": "马来西亚",
+      "name_zh_tw": "馬來西亞",
+      "region": "Asia",
+      "abbreviations": ["马来西亚", "大马"]
+    },
+    {
+      "alpha2": "PH",
+      "alpha3": "PHL",
+      "numeric": "608",
+      "name_en": "Philippines",
+      "name_zh_cn": "菲律宾",
+      "name_zh_tw": "菲律賓",
+      "region": "Asia",
+      "abbreviations": ["菲律宾", "菲"]
+    },
+    {
+      "alpha2": "VN",
+      "alpha3": "VNM",
+      "numeric": "704",
+      "name_en": "Vietnam",
+      "name_zh_cn": "越南",
+      "name_zh_tw": "越南",
+      "region": "Asia",
+      "abbreviations": ["越南", "越"]
+    },
+    {
+      "alpha2": "IN",
+      "alpha3": "IND",
+      "numeric": "356",
+      "name_en": "India",
+      "name_zh_cn": "印度",
+      "name_zh_tw": "印度",
+      "region": "Asia",
+      "abbreviations": ["印度"]
+    },
+    {
+      "alpha2": "RU",
+      "alpha3": "RUS",
+      "numeric": "643",
+      "name_en": "Russia",
+      "name_zh_cn": "俄罗斯",
+      "name_zh_tw": "俄羅斯",
+      "region": "Europe/Asia",
+      "abbreviations": ["俄罗斯", "俄"]
     },
     {
       "alpha2": "GB",
@@ -71,16 +148,8 @@
       "name_en": "United Kingdom",
       "name_zh_cn": "英国",
       "name_zh_tw": "英國",
-      "region": "Europe"
-    },
-    {
-      "alpha2": "DE",
-      "alpha3": "DEU",
-      "numeric": "276",
-      "name_en": "Germany",
-      "name_zh_cn": "德国",
-      "name_zh_tw": "德國",
-      "region": "Europe"
+      "region": "Europe",
+      "abbreviations": ["英国", "联合王国", "大不列颠", "UK"]
     },
     {
       "alpha2": "FR",
@@ -89,7 +158,148 @@
       "name_en": "France",
       "name_zh_cn": "法国",
       "name_zh_tw": "法國",
-      "region": "Europe"
+      "region": "Europe",
+      "abbreviations": ["法国", "法兰西", "高卢"]
+    },
+    {
+      "alpha2": "DE",
+      "alpha3": "DEU",
+      "numeric": "276",
+      "name_en": "Germany",
+      "name_zh_cn": "德国",
+      "name_zh_tw": "德國",
+      "region": "Europe",
+      "abbreviations": ["德国", "德意志", "日耳曼"]
+    },
+    {
+      "alpha2": "IT",
+      "alpha3": "ITA",
+      "numeric": "380",
+      "name_en": "Italy",
+      "name_zh_cn": "意大利",
+      "name_zh_tw": "義大利",
+      "region": "Europe",
+      "abbreviations": ["意大利", "意", "亚平宁"]
+    },
+    {
+      "alpha2": "ES",
+      "alpha3": "ESP",
+      "numeric": "724",
+      "name_en": "Spain",
+      "name_zh_cn": "西班牙",
+      "name_zh_tw": "西班牙",
+      "region": "Europe",
+      "abbreviations": ["西班牙", "西"]
+    },
+    {
+      "alpha2": "AU",
+      "alpha3": "AUS",
+      "numeric": "036",
+      "name_en": "Australia",
+      "name_zh_cn": "澳大利亚",
+      "name_zh_tw": "澳大利亞",
+      "region": "Oceania",
+      "abbreviations": ["澳大利亚", "澳洲", "澳"]
+    },
+    {
+      "alpha2": "CA",
+      "alpha3": "CAN",
+      "numeric": "124",
+      "name_en": "Canada",
+      "name_zh_cn": "加拿大",
+      "name_zh_tw": "加拿大",
+      "region": "North America",
+      "abbreviations": ["加拿大", "加"]
+    },
+    {
+      "alpha2": "BR",
+      "alpha3": "BRA",
+      "numeric": "076",
+      "name_en": "Brazil",
+      "name_zh_cn": "巴西",
+      "name_zh_tw": "巴西",
+      "region": "South America",
+      "abbreviations": ["巴西"]
+    },
+    {
+      "alpha2": "AR",
+      "alpha3": "ARG",
+      "numeric": "032",
+      "name_en": "Argentina",
+      "name_zh_cn": "阿根廷",
+      "name_zh_tw": "阿根廷",
+      "region": "South America",
+      "abbreviations": ["阿根廷", "阿"]
+    },
+    {
+      "alpha2": "NZ",
+      "alpha3": "NZL",
+      "numeric": "554",
+      "name_en": "New Zealand",
+      "name_zh_cn": "新西兰",
+      "name_zh_tw": "紐西蘭",
+      "region": "Oceania",
+      "abbreviations": ["新西兰", "纽西兰"]
+    },
+    {
+      "alpha2": "ZA",
+      "alpha3": "ZAF",
+      "numeric": "710",
+      "name_en": "South Africa",
+      "name_zh_cn": "南非",
+      "name_zh_tw": "南非",
+      "region": "Africa",
+      "abbreviations": ["南非"]
+    },
+    {
+      "alpha2": "EG",
+      "alpha3": "EGY",
+      "numeric": "818",
+      "name_en": "Egypt",
+      "name_zh_cn": "埃及",
+      "name_zh_tw": "埃及",
+      "region": "Africa",
+      "abbreviations": ["埃及"]
+    },
+    {
+      "alpha2": "AE",
+      "alpha3": "ARE",
+      "numeric": "784",
+      "name_en": "United Arab Emirates",
+      "name_zh_cn": "阿拉伯联合酋长国",
+      "name_zh_tw": "阿拉伯聯合大公國",
+      "region": "Asia",
+      "abbreviations": ["阿联酋", "UAE"]
+    },
+    {
+      "alpha2": "SA",
+      "alpha3": "SAU",
+      "numeric": "682",
+      "name_en": "Saudi Arabia",
+      "name_zh_cn": "沙特阿拉伯",
+      "name_zh_tw": "沙烏地阿拉伯",
+      "region": "Asia",
+      "abbreviations": ["沙特", "沙特阿拉伯"]
+    },
+    {
+      "alpha2": "TR",
+      "alpha3": "TUR",
+      "numeric": "792",
+      "name_en": "Turkey",
+      "name_zh_cn": "土耳其",
+      "name_zh_tw": "土耳其",
+      "region": "Europe/Asia",
+      "abbreviations": ["土耳其"]
+    },
+    {
+      "alpha2": "IR",
+      "alpha3": "IRN",
+      "numeric": "364",
+      "name_en": "Iran",
+      "name_zh_cn": "伊朗",
+      "name_zh_tw": "伊朗",
+      "region": "Asia",
+      "abbreviations": ["伊朗", "波斯"]
     }
   ],
   "patterns": {
