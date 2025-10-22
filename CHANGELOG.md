@@ -5,18 +5,19 @@
 ## [Unreleased]
 
 ### Added
-- 初始项目结构和基础功能
-- 国家代码解析器核心实现
-- ISO 3166-1 alpha-2/alpha-3 代码支持
-- 简体中文和繁体中文国家名称支持
-- 自定义配置选项
-- 全面的单元测试和集成测试
 
 ### Changed
 
 ### Fixed
 
 ### Removed
+
+## [0.1.1] - 2024-01-01
+
+### Changed
+- 更新作者信息和联系邮箱
+- 更新GitHub仓库链接
+- 准备正式发布到crates.io
 
 ## [0.1.0] - 2023-12-01
 
@@ -28,5 +29,6 @@
 - 完整的错误处理
 
 <!-- 版本号链接 -->
-[Unreleased]: https://github.com/example/location-rs/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/example/location-rs/releases/tag/v0.1.0
+[Unreleased]: https://github.com/chenxxpro/location-rs/compare/v0.1.1...HEAD
+[0.1.1]: https://github.com/chenxxpro/location-rs/releases/tag/v0.1.1
+[0.1.0]: https://github.com/chenxxpro/location-rs/releases/tag/v0.1.0
