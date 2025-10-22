@@ -4,6 +4,10 @@
 
 > **注意：** 本项目的实现代码和测试用例均由 AI 生成，采用最新的 Rust 2021 语言标准开发。
 
+---
+
+**[English Version](README.md.en)**
+
 ## 功能特性
 
 - 支持解析 ISO 3166-1 alpha-2 和 alpha-3 国家代码
@@ -132,3 +136,7 @@ cargo bench
   - `serde`/`serde_json`：配置解析
   - `thiserror`：错误处理
   - `criterion`（开发依赖）：性能基准测试
+
+---
+
+**[English Version](README.md.en)**
