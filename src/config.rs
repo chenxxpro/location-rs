@@ -9,16 +9,12 @@ pub struct CountryInfo {
     pub alpha2: String,
     /// ISO 3166-1 alpha-3代码
     pub alpha3: String,
-    /// ISO 3166-1 数字代码
-    pub numeric: String,
     /// 英文名称
     pub name_en: String,
     /// 简体中文名称
     pub name_zh_cn: String,
     /// 繁体中文名称
     pub name_zh_tw: String,
-    /// 所属地区
-    pub region: String,
 }
 
 /// 解析器设置
