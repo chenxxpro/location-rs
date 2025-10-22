@@ -11,8 +11,7 @@ pub mod parser;
 pub use error::ParseError;
 pub use config::{Configuration, CountryInfo, ParserSettings};
 
-// 重新导出isocountry的CountryCode
-pub use isocountry::CountryCode;
+
 
 /// 主要的解析函数
 /// 

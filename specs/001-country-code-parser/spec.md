@@ -9,19 +9,19 @@
 
 ### User Story 1 - 解析包含国家代码的标题文本 (Priority: P1)
 
-开发者需要从各种格式的标题文本中提取国家或地区代码，用于国际化应用、内容分类或数据分析。
+开发者需要从各种格式的标题文本中提取国家或地区信息，用于国际化应用、内容分类或数据分析。
 
 **Why this priority**: 这是核心功能，没有这个功能库就没有价值。
 
-**Independent Test**: 可以通过调用解析函数并验证返回的国家代码是否正确来独立测试。
+**Independent Test**: 可以通过调用解析函数并验证返回的CountryInfo对象是否正确来独立测试。
 
 **Acceptance Scenarios**:
 
-1. **Given** 标题文本 "@HK Vip1"，**When** 调用解析函数，**Then** 返回香港的国家代码 "HK"
-2. **Given** 标题文本 "【测试】USA1"，**When** 调用解析函数，**Then** 返回美国的国家代码 "US"
-3. **Given** 标题文本 "V1 美国"，**When** 调用解析函数，**Then** 返回美国的国家代码 "US"
-4. **Given** 标题文本 "CN Server"，**When** 调用解析函数，**Then** 返回中国的国家代码 "CN"
-5. **Given** 标题文本 "【韩国-456】Server"，**When** 调用解析函数，**Then** 返回韩国的国家代码 "KR"
+1. **Given** 标题文本 "@HK Vip1"，**When** 调用解析函数，**Then** 返回香港的CountryInfo对象，其中alpha2为"HK"
+2. **Given** 标题文本 "【测试】USA1"，**When** 调用解析函数，**Then** 返回美国的CountryInfo对象，其中alpha2为"US"
+3. **Given** 标题文本 "V1 美国"，**When** 调用解析函数，**Then** 返回美国的CountryInfo对象，其中alpha2为"US"
+4. **Given** 标题文本 "CN Server"，**When** 调用解析函数，**Then** 返回中国的CountryInfo对象，其中alpha2为"CN"
+5. **Given** 标题文本 "【韩国-456】Server"，**When** 调用解析函数，**Then** 返回韩国的CountryInfo对象，其中alpha2为"KR"
 
 ---
 
@@ -73,7 +73,7 @@
 
 ### Functional Requirements
 
-- **FR-001**: 库必须提供一个函数，能够解析标题文本中的国家或地区代码
+- **FR-001**: 库必须提供一个函数，能够解析标题文本中的国家或地区信息
 - **FR-002**: 库必须支持ISO 3166-1 alpha-2国家代码格式（如US、CN、HK）
 - **FR-003**: 库必须支持ISO 3166-1 alpha-3国家代码格式（如USA、CHN、HKG）
 - **FR-004**: 库必须支持简体中文国家名称的识别（如美国、中国、香港）
@@ -82,14 +82,13 @@
 - **FR-007**: 库必须支持国家简称和别称的识别
 - **FR-008**: 库必须正确处理无法识别国家代码的情况，返回明确的错误指示
 - **FR-009**: 库必须能够处理各种文本格式（包含特殊字符、数字、中文等）
-- **FR-010**: 库必须使用isocountry crate作为国家代码数据源
+- **FR-010**: 库必须使用内部CountryInfo数据结构作为国家信息数据源
 - **FR-011**: 库必须遵循Rust的最佳实践，提供清晰的API文档和错误处理
 - **FR-012**: 库必须实现多阶段解析策略（ISO代码、中文名称、模式匹配）
 - **FR-013**: 库必须实现配置化的解析选项（区分大小写、模糊匹配、超时设置）
 
 ### Key Entities
 
-- **CountryCode**: 表示国家或地区的ISO 3166-1 alpha-2代码（来自isocountry crate）
 - **CountryInfo**: 包含国家完整信息的数据结构，包括alpha2、alpha3、英文名称、中文名称等
 - **ParserConfig**: 解析器配置，包含区分大小写、模糊匹配、超时设置等选项
 - **TitleText**: 需要解析的输入文本，可能包含各种格式的国家信息
