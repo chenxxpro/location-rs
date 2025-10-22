@@ -2,180 +2,36 @@
   "version": "1.1",
   "countries": [
     {
-      "alpha2": "CN",
-      "alpha3": "CHN",
-      "name_en": "China",
-      "name_zh_cn": "中国",
-      "name_zh_tw": "中國",
-      "abbreviations": ["中国", "中国大陆", "内地", "大陆"]
+      "alpha2": "AL",
+      "alpha3": "ALB",
+      "name_en": "Albania",
+      "name_zh_cn": "阿尔巴尼亚",
+      "name_zh_tw": "阿爾巴尼亞",
+      "abbreviations": [
+        "阿尔巴尼亚",
+        "阿爾巴尼亞"
+      ]
     },
     {
-      "alpha2": "US",
-      "alpha3": "USA",
-      "name_en": "United States",
-      "name_zh_cn": "美国",
-      "name_zh_tw": "美國",
-      "abbreviations": ["美国", "米国", "USA", "U.S."]
+      "alpha2": "DZ",
+      "alpha3": "DZA",
+      "name_en": "Algeria",
+      "name_zh_cn": "阿尔及利亚",
+      "name_zh_tw": "阿爾及利亞",
+      "abbreviations": [
+        "阿尔及利亚",
+        "阿爾及利亞"
+      ]
     },
     {
-      "alpha2": "HK",
-      "alpha3": "HKG",
-      "name_en": "Hong Kong",
-      "name_zh_cn": "香港",
-      "name_zh_tw": "香港",
-      "abbreviations": ["香港", "HK"]
-    },
-    {
-      "alpha2": "TW",
-      "alpha3": "TWN",
-      "name_en": "Taiwan",
-      "name_zh_cn": "台湾",
-      "name_zh_tw": "台灣",
-      "abbreviations": ["台湾", "TW", "台"]
-    },
-    {
-      "alpha2": "JP",
-      "alpha3": "JPN",
-      "name_en": "Japan",
-      "name_zh_cn": "日本",
-      "name_zh_tw": "日本",
-      "abbreviations": ["日本", "JP"]
-    },
-    {
-      "alpha2": "KR",
-      "alpha3": "KOR",
-      "name_en": "South Korea",
-      "name_zh_cn": "韩国",
-      "name_zh_tw": "韓國",
-      "abbreviations": ["韩国", "南韩", "大韩民国"]
-    },
-    {
-      "alpha2": "SG",
-      "alpha3": "SGP",
-      "name_en": "Singapore",
-      "name_zh_cn": "新加坡",
-      "name_zh_tw": "新加坡",
-      "abbreviations": ["新加坡", "SG"]
-    },
-    {
-      "alpha2": "ID",
-      "alpha3": "IDN",
-      "name_en": "Indonesia",
-      "name_zh_cn": "印度尼西亚",
-      "name_zh_tw": "印尼",
-      "abbreviations": ["印度尼西亚", "印尼"]
-    },
-    {
-      "alpha2": "TH",
-      "alpha3": "THA",
-      "name_en": "Thailand",
-      "name_zh_cn": "泰国",
-      "name_zh_tw": "泰國",
-      "abbreviations": ["泰国", "暹罗"]
-    },
-    {
-      "alpha2": "MY",
-      "alpha3": "MYS",
-      "name_en": "Malaysia",
-      "name_zh_cn": "马来西亚",
-      "name_zh_tw": "馬來西亞",
-      "abbreviations": ["马来西亚", "大马"]
-    },
-    {
-      "alpha2": "PH",
-      "alpha3": "PHL",
-      "name_en": "Philippines",
-      "name_zh_cn": "菲律宾",
-      "name_zh_tw": "菲律賓",
-      "abbreviations": ["菲律宾", "菲"]
-    },
-    {
-      "alpha2": "VN",
-      "alpha3": "VNM",
-      "name_en": "Vietnam",
-      "name_zh_cn": "越南",
-      "name_zh_tw": "越南",
-      "abbreviations": ["越南"]
-    },
-    {
-      "alpha2": "IN",
-      "alpha3": "IND",
-      "name_en": "India",
-      "name_zh_cn": "印度",
-      "name_zh_tw": "印度",
-      "abbreviations": ["印度"]
-    },
-    {
-      "alpha2": "RU",
-      "alpha3": "RUS",
-      "name_en": "Russia",
-      "name_zh_cn": "俄罗斯",
-      "name_zh_tw": "俄羅斯",
-      "abbreviations": ["俄罗斯", "俄"]
-    },
-    {
-      "alpha2": "GB",
-      "alpha3": "GBR",
-      "name_en": "United Kingdom",
-      "name_zh_cn": "英国",
-      "name_zh_tw": "英國",
-      "abbreviations": ["英国", "联合王国", "大不列颠", "UK"]
-    },
-    {
-      "alpha2": "FR",
-      "alpha3": "FRA",
-      "name_en": "France",
-      "name_zh_cn": "法国",
-      "name_zh_tw": "法國",
-      "abbreviations": ["法国", "法兰西", "高卢"]
-    },
-    {
-      "alpha2": "DE",
-      "alpha3": "DEU",
-      "name_en": "Germany",
-      "name_zh_cn": "德国",
-      "name_zh_tw": "德國",
-      "abbreviations": ["德国", "德意志", "日耳曼"]
-    },
-    {
-      "alpha2": "IT",
-      "alpha3": "ITA",
-      "name_en": "Italy",
-      "name_zh_cn": "意大利",
-      "name_zh_tw": "義大利",
-      "abbreviations": ["意大利", "意", "亚平宁"]
-    },
-    {
-      "alpha2": "ES",
-      "alpha3": "ESP",
-      "name_en": "Spain",
-      "name_zh_cn": "西班牙",
-      "name_zh_tw": "西班牙",
-      "abbreviations": ["西班牙", "西"]
-    },
-    {
-      "alpha2": "AU",
-      "alpha3": "AUS",
-      "name_en": "Australia",
-      "name_zh_cn": "澳大利亚",
-      "name_zh_tw": "澳大利亞",
-      "abbreviations": ["澳大利亚", "澳洲", "澳"]
-    },
-    {
-      "alpha2": "CA",
-      "alpha3": "CAN",
-      "name_en": "Canada",
-      "name_zh_cn": "加拿大",
-      "name_zh_tw": "加拿大",
-      "abbreviations": ["加拿大", "加"]
-    },
-    {
-      "alpha2": "BR",
-      "alpha3": "BRA",
-      "name_en": "Brazil",
-      "name_zh_cn": "巴西",
-      "name_zh_tw": "巴西",
-      "abbreviations": ["巴西"]
+      "alpha2": "AF",
+      "alpha3": "AFG",
+      "name_en": "Afghanistan",
+      "name_zh_cn": "阿富汗",
+      "name_zh_tw": "阿富汗",
+      "abbreviations": [
+        "阿富汗"
+      ]
     },
     {
       "alpha2": "AR",
@@ -183,31 +39,9 @@
       "name_en": "Argentina",
       "name_zh_cn": "阿根廷",
       "name_zh_tw": "阿根廷",
-      "abbreviations": ["阿根廷", "阿"]
-    },
-    {
-      "alpha2": "NZ",
-      "alpha3": "NZL",
-      "name_en": "New Zealand",
-      "name_zh_cn": "新西兰",
-      "name_zh_tw": "紐西蘭",
-      "abbreviations": ["新西兰", "纽西兰"]
-    },
-    {
-      "alpha2": "ZA",
-      "alpha3": "ZAF",
-      "name_en": "South Africa",
-      "name_zh_cn": "南非",
-      "name_zh_tw": "南非",
-      "abbreviations": ["南非"]
-    },
-    {
-      "alpha2": "EG",
-      "alpha3": "EGY",
-      "name_en": "Egypt",
-      "name_zh_cn": "埃及",
-      "name_zh_tw": "埃及",
-      "abbreviations": ["埃及"]
+      "abbreviations": [
+        "阿根廷"
+      ]
     },
     {
       "alpha2": "AE",
@@ -215,7 +49,1879 @@
       "name_en": "United Arab Emirates",
       "name_zh_cn": "阿拉伯联合酋长国",
       "name_zh_tw": "阿拉伯聯合大公國",
-      "abbreviations": ["阿联酋", "UAE"]
+      "abbreviations": [
+        "阿联酋",
+        "阿聯酋",
+        "阿拉伯联合酋长国",
+        "阿拉伯聯合大公國"
+      ]
+    },
+    {
+      "alpha2": "SY",
+      "alpha3": "SYR",
+      "name_en": "Syrian Arab Republic",
+      "name_zh_cn": "阿拉伯叙利亚共和国",
+      "name_zh_tw": "阿拉伯敘利亞共和國",
+      "abbreviations": [
+        "叙利亚",
+        "敘利亞",
+        "阿拉伯叙利亚共和国",
+        "阿拉伯敘利亞共和國"
+      ]
+    },
+    {
+      "alpha2": "AW",
+      "alpha3": "ABW",
+      "name_en": "Aruba",
+      "name_zh_cn": "阿鲁巴",
+      "name_zh_tw": "阿魯巴",
+      "abbreviations": [
+        "阿鲁巴",
+        "阿魯巴"
+      ]
+    },
+    {
+      "alpha2": "OM",
+      "alpha3": "OMN",
+      "name_en": "Oman",
+      "name_zh_cn": "阿曼",
+      "name_zh_tw": "阿曼",
+      "abbreviations": [
+        "阿曼"
+      ]
+    },
+    {
+      "alpha2": "AZ",
+      "alpha3": "AZE",
+      "name_en": "Azerbaijan",
+      "name_zh_cn": "阿塞拜疆",
+      "name_zh_tw": "亞塞拜然",
+      "abbreviations": [
+        "阿塞拜疆",
+        "亞塞拜然"
+      ]
+    },
+    {
+      "alpha2": "EG",
+      "alpha3": "EGY",
+      "name_en": "Egypt",
+      "name_zh_cn": "埃及",
+      "name_zh_tw": "埃及",
+      "abbreviations": [
+        "埃及"
+      ]
+    },
+    {
+      "alpha2": "ET",
+      "alpha3": "ETH",
+      "name_en": "Ethiopia",
+      "name_zh_cn": "埃塞俄比亚",
+      "name_zh_tw": "衣索比亞",
+      "abbreviations": [
+        "埃塞俄比亚",
+        "衣索比亞"
+      ]
+    },
+    {
+      "alpha2": "IE",
+      "alpha3": "IRL",
+      "name_en": "Ireland",
+      "name_zh_cn": "爱尔兰",
+      "name_zh_tw": "愛爾蘭",
+      "abbreviations": [
+        "爱尔兰",
+        "愛爾蘭"
+      ]
+    },
+    {
+      "alpha2": "EE",
+      "alpha3": "EST",
+      "name_en": "Estonia",
+      "name_zh_cn": "爱沙尼亚",
+      "name_zh_tw": "愛沙尼亞",
+      "abbreviations": [
+        "爱沙尼亚",
+        "愛沙尼亞"
+      ]
+    },
+    {
+      "alpha2": "AD",
+      "alpha3": "AND",
+      "name_en": "Andorra",
+      "name_zh_cn": "安道尔",
+      "name_zh_tw": "安道爾",
+      "abbreviations": [
+        "安道尔",
+        "安道爾"
+      ]
+    },
+    {
+      "alpha2": "AO",
+      "alpha3": "AGO",
+      "name_en": "Angola",
+      "name_zh_cn": "安哥拉",
+      "name_zh_tw": "安哥拉",
+      "abbreviations": [
+        "安哥拉"
+      ]
+    },
+    {
+      "alpha2": "AG",
+      "alpha3": "ATG",
+      "name_en": "Antigua and Barbuda",
+      "name_zh_cn": "安提瓜和巴布达",
+      "name_zh_tw": "安地卡及巴布達",
+      "abbreviations": [
+        "安提瓜和巴布达",
+        "安地卡及巴布達"
+      ]
+    },
+    {
+      "alpha2": "AT",
+      "alpha3": "AUT",
+      "name_en": "Austria",
+      "name_zh_cn": "奥地利",
+      "name_zh_tw": "奧地利",
+      "abbreviations": [
+        "奥地利",
+        "奧地利"
+      ]
+    },
+    {
+      "alpha2": "AX",
+      "alpha3": "ALA",
+      "name_en": "Åland Islands",
+      "name_zh_cn": "奥兰群岛",
+      "name_zh_tw": "奧蘭群島",
+      "abbreviations": [
+        "奥兰群岛",
+        "奧蘭群島"
+      ]
+    },
+    {
+      "alpha2": "AU",
+      "alpha3": "AUS",
+      "name_en": "Australia",
+      "name_zh_cn": "澳大利亚",
+      "name_zh_tw": "澳大利亞",
+      "abbreviations": [
+        "澳大利亚",
+        "澳洲",
+        "澳大利亞",
+        "澳洲"
+      ]
+    },
+    {
+      "alpha2": "BB",
+      "alpha3": "BRB",
+      "name_en": "Barbados",
+      "name_zh_cn": "巴巴多斯",
+      "name_zh_tw": "巴貝多",
+      "abbreviations": [
+        "巴巴多斯",
+        "巴貝多"
+      ]
+    },
+    {
+      "alpha2": "PG",
+      "alpha3": "PNG",
+      "name_en": "Papua New Guinea",
+      "name_zh_cn": "巴布亚新几内亚",
+      "name_zh_tw": "巴布亞紐幾內亞",
+      "abbreviations": [
+        "巴布亚新几内亚",
+        "巴布亞紐幾內亞"
+      ]
+    },
+    {
+      "alpha2": "BS",
+      "alpha3": "BHS",
+      "name_en": "Bahamas",
+      "name_zh_cn": "巴哈马",
+      "name_zh_tw": "巴哈馬",
+      "abbreviations": [
+        "巴哈马",
+        "巴哈馬"
+      ]
+    },
+    {
+      "alpha2": "PK",
+      "alpha3": "PAK",
+      "name_en": "Pakistan",
+      "name_zh_cn": "巴基斯坦",
+      "name_zh_tw": "巴基斯坦",
+      "abbreviations": [
+        "巴基斯坦"
+      ]
+    },
+    {
+      "alpha2": "PY",
+      "alpha3": "PRY",
+      "name_en": "Paraguay",
+      "name_zh_cn": "巴拉圭",
+      "name_zh_tw": "巴拉圭",
+      "abbreviations": [
+        "巴拉圭"
+      ]
+    },
+    {
+      "alpha2": "PS",
+      "alpha3": "PSE",
+      "name_en": "State of Palestine",
+      "name_zh_cn": "巴勒斯坦国",
+      "name_zh_tw": "巴勒斯坦國",
+      "abbreviations": [
+        "巴勒斯坦",
+        "巴勒斯坦國",
+        "巴勒斯坦国"
+      ]
+    },
+    {
+      "alpha2": "BH",
+      "alpha3": "BHR",
+      "name_en": "Bahrain",
+      "name_zh_cn": "巴林",
+      "name_zh_tw": "巴林",
+      "abbreviations": [
+        "巴林"
+      ]
+    },
+    {
+      "alpha2": "PA",
+      "alpha3": "PAN",
+      "name_en": "Panama",
+      "name_zh_cn": "巴拿马",
+      "name_zh_tw": "巴拿馬",
+      "abbreviations": [
+        "巴拿马",
+        "巴拿馬"
+      ]
+    },
+    {
+      "alpha2": "BR",
+      "alpha3": "BRA",
+      "name_en": "Brazil",
+      "name_zh_cn": "巴西",
+      "name_zh_tw": "巴西",
+      "abbreviations": [
+        "巴西"
+      ]
+    },
+    {
+      "alpha2": "BY",
+      "alpha3": "BLR",
+      "name_en": "Belarus",
+      "name_zh_cn": "白俄罗斯",
+      "name_zh_tw": "白俄羅斯",
+      "abbreviations": [
+        "白俄罗斯",
+        "白俄羅斯"
+      ]
+    },
+    {
+      "alpha2": "BM",
+      "alpha3": "BMU",
+      "name_en": "Bermuda",
+      "name_zh_cn": "百慕大",
+      "name_zh_tw": "百慕達",
+      "abbreviations": [
+        "百慕大",
+        "百慕達"
+      ]
+    },
+    {
+      "alpha2": "BG",
+      "alpha3": "BGR",
+      "name_en": "Bulgaria",
+      "name_zh_cn": "保加利亚",
+      "name_zh_tw": "保加利亞",
+      "abbreviations": [
+        "保加利亚",
+        "保加利亞"
+      ]
+    },
+    {
+      "alpha2": "MP",
+      "alpha3": "MNP",
+      "name_en": "Northern Mariana Islands",
+      "name_zh_cn": "北马里亚纳群岛",
+      "name_zh_tw": "北馬里亞納群島",
+      "abbreviations": [
+        "北马里亚纳群岛",
+        "北馬里亞納群島"
+      ]
+    },
+    {
+      "alpha2": "MK",
+      "alpha3": "MKD",
+      "name_en": "Republic of North Macedonia",
+      "name_zh_cn": "北马其顿共和国",
+      "name_zh_tw": "北馬其頓共和國",
+      "abbreviations": [
+        "北马其顿",
+        "北馬其頓",
+        "北马其顿共和国",
+        "北馬其頓共和國"
+      ]
+    },
+    {
+      "alpha2": "BJ",
+      "alpha3": "BEN",
+      "name_en": "Benin",
+      "name_zh_cn": "贝宁",
+      "name_zh_tw": "貝南",
+      "abbreviations": [
+        "贝宁",
+        "貝南"
+      ]
+    },
+    {
+      "alpha2": "BE",
+      "alpha3": "BEL",
+      "name_en": "Belgium",
+      "name_zh_cn": "比利时",
+      "name_zh_tw": "比利時",
+      "abbreviations": [
+        "比利时",
+        "比利時"
+      ]
+    },
+    {
+      "alpha2": "IS",
+      "alpha3": "ISL",
+      "name_en": "Iceland",
+      "name_zh_cn": "冰岛",
+      "name_zh_tw": "冰島",
+      "abbreviations": [
+        "冰岛",
+        "冰島"
+      ]
+    },
+    {
+      "alpha2": "PR",
+      "alpha3": "PRI",
+      "name_en": "Puerto Rico",
+      "name_zh_cn": "波多黎各",
+      "name_zh_tw": "波多黎各",
+      "abbreviations": [
+        "波多黎各"
+      ]
+    },
+    {
+      "alpha2": "PL",
+      "alpha3": "POL",
+      "name_en": "Poland",
+      "name_zh_cn": "波兰",
+      "name_zh_tw": "波蘭",
+      "abbreviations": [
+        "波兰",
+        "波蘭"
+      ]
+    },
+    {
+      "alpha2": "BA",
+      "alpha3": "BIH",
+      "name_en": "Bosnia and Herzegovina",
+      "name_zh_cn": "波斯尼亚和黑塞哥维那",
+      "name_zh_tw": "波士尼亞與赫塞哥維納",
+      "abbreviations": [
+        "波黑",
+        "波士尼亞與赫塞哥維納",
+        "波斯尼亚和黑塞哥维那"
+      ]
+    },
+    {
+      "alpha2": "BO",
+      "alpha3": "BOL",
+      "name_en": "Bolivia",
+      "name_zh_cn": "玻利维亚",
+      "name_zh_tw": "玻利維亞",
+      "abbreviations": [
+        "玻利维亚",
+        "玻利維亞"
+      ]
+    },
+    {
+      "alpha2": "BZ",
+      "alpha3": "BLZ",
+      "name_en": "Belize",
+      "name_zh_cn": "伯利兹",
+      "name_zh_tw": "貝里斯",
+      "abbreviations": [
+        "伯利兹",
+        "貝里斯"
+      ]
+    },
+    {
+      "alpha2": "BW",
+      "alpha3": "BWA",
+      "name_en": "Botswana",
+      "name_zh_cn": "博茨瓦纳",
+      "name_zh_tw": "波札那",
+      "abbreviations": [
+        "博茨瓦纳",
+        "波札那"
+      ]
+    },
+    {
+      "alpha2": "BQ",
+      "alpha3": "BES",
+      "name_en": "Bonaire, Sint Eustatius and Saba",
+      "name_zh_cn": "博奈尔、圣尤斯特歇斯和萨巴",
+      "name_zh_tw": "波奈爾、聖尤斯特歇斯及薩巴",
+      "abbreviations": [
+        "博奈尔等三岛",
+        "波奈爾等三島",
+        "博奈尔、圣尤斯特歇斯和萨巴",
+        "波奈爾、聖尤斯特歇斯及薩巴"
+      ]
+    },
+    {
+      "alpha2": "BF",
+      "alpha3": "BFA",
+      "name_en": "Burkina Faso",
+      "name_zh_cn": "布基纳法索",
+      "name_zh_tw": "布吉納法索",
+      "abbreviations": [
+        "布基纳法索",
+        "布吉納法索"
+      ]
+    },
+    {
+      "alpha2": "BI",
+      "alpha3": "BDI",
+      "name_en": "Burundi",
+      "name_zh_cn": "布隆迪",
+      "name_zh_tw": "蒲隆地",
+      "abbreviations": [
+        "布隆迪",
+        "蒲隆地"
+      ]
+    },
+    {
+      "alpha2": "BV",
+      "alpha3": "BVT",
+      "name_en": "Bouvet Island",
+      "name_zh_cn": "布维岛",
+      "name_zh_tw": "布維島",
+      "abbreviations": [
+        "布维岛",
+        "布維島"
+      ]
+    },
+    {
+      "alpha2": "KP",
+      "alpha3": "PRK",
+      "name_en": "Democratic People's Republic of Korea",
+      "name_zh_cn": "朝鲜民主主义人民共和国",
+      "name_zh_tw": "朝鮮民主主義人民共和國",
+      "abbreviations": [
+        "朝鲜",
+        "北韓",
+        "朝鮮",
+        "朝鲜民主主义人民共和国",
+        "朝鮮民主主義人民共和國"
+      ]
+    },
+    {
+      "alpha2": "GQ",
+      "alpha3": "GNQ",
+      "name_en": "Equatorial Guinea",
+      "name_zh_cn": "赤道几内亚",
+      "name_zh_tw": "赤道幾內亞",
+      "abbreviations": [
+        "赤道几内亚",
+        "赤道幾內亞"
+      ]
+    },
+    {
+      "alpha2": "KR",
+      "alpha3": "KOR",
+      "name_en": "Republic of Korea",
+      "name_zh_cn": "大韩民国",
+      "name_zh_tw": "大韓民國",
+      "abbreviations": [
+        "韩国",
+        "南韓",
+        "韓國",
+        "大韩民国",
+        "大韓民國"
+      ]
+    },
+    {
+      "alpha2": "DK",
+      "alpha3": "DNK",
+      "name_en": "Denmark",
+      "name_zh_cn": "丹麦",
+      "name_zh_tw": "丹麥",
+      "abbreviations": [
+        "丹麦",
+        "丹麥"
+      ]
+    },
+    {
+      "alpha2": "DE",
+      "alpha3": "DEU",
+      "name_en": "Germany",
+      "name_zh_cn": "德国",
+      "name_zh_tw": "德國",
+      "abbreviations": [
+        "德国",
+        "德國"
+      ]
+    },
+    {
+      "alpha2": "TL",
+      "alpha3": "TLS",
+      "name_en": "Timor-Leste",
+      "name_zh_cn": "东帝汶",
+      "name_zh_tw": "東帝汶",
+      "abbreviations": [
+        "东帝汶",
+        "東帝汶"
+      ]
+    },
+    {
+      "alpha2": "TG",
+      "alpha3": "TGO",
+      "name_en": "Togo",
+      "name_zh_cn": "多哥",
+      "name_zh_tw": "多哥",
+      "abbreviations": [
+        "多哥"
+      ]
+    },
+    {
+      "alpha2": "DO",
+      "alpha3": "DOM",
+      "name_en": "Dominican Republic",
+      "name_zh_cn": "多米尼加共和国",
+      "name_zh_tw": "多明尼加共和國",
+      "abbreviations": [
+        "多米尼加",
+        "多明尼加",
+        "多米尼加共和国",
+        "多明尼加共和國"
+      ]
+    },
+    {
+      "alpha2": "DM",
+      "alpha3": "DMA",
+      "name_en": "Dominica",
+      "name_zh_cn": "多米尼克",
+      "name_zh_tw": "多米尼克",
+      "abbreviations": [
+        "多米尼克"
+      ]
+    },
+    {
+      "alpha2": "RU",
+      "alpha3": "RUS",
+      "name_en": "Russian Federation",
+      "name_zh_cn": "俄罗斯联邦",
+      "name_zh_tw": "俄羅斯聯邦",
+      "abbreviations": [
+        "俄罗斯",
+        "俄羅斯",
+        "俄罗斯联邦",
+        "俄羅斯聯邦"
+      ]
+    },
+    {
+      "alpha2": "EC",
+      "alpha3": "ECU",
+      "name_en": "Ecuador",
+      "name_zh_cn": "厄瓜多尔",
+      "name_zh_tw": "厄瓜多",
+      "abbreviations": [
+        "厄瓜多尔",
+        "厄瓜多"
+      ]
+    },
+    {
+      "alpha2": "ER",
+      "alpha3": "ERI",
+      "name_en": "Eritrea",
+      "name_zh_cn": "厄立特里亚",
+      "name_zh_tw": "厄利垂亞",
+      "abbreviations": [
+        "厄立特里亚",
+        "厄利垂亞"
+      ]
+    },
+    {
+      "alpha2": "FR",
+      "alpha3": "FRA",
+      "name_en": "France",
+      "name_zh_cn": "法国",
+      "name_zh_tw": "法國",
+      "abbreviations": [
+        "法国",
+        "法國"
+      ]
+    },
+    {
+      "alpha2": "FO",
+      "alpha3": "FRO",
+      "name_en": "Faroe Islands",
+      "name_zh_cn": "法罗群岛",
+      "name_zh_tw": "法羅群島",
+      "abbreviations": [
+        "法罗群岛",
+        "法羅群島"
+      ]
+    },
+    {
+      "alpha2": "PF",
+      "alpha3": "PYF",
+      "name_en": "French Polynesia",
+      "name_zh_cn": "法属波利尼西亚",
+      "name_zh_tw": "法屬玻里尼西亞",
+      "abbreviations": [
+        "法属波利尼西亚",
+        "法屬玻里尼西亞"
+      ]
+    },
+    {
+      "alpha2": "GF",
+      "alpha3": "GUF",
+      "name_en": "French Guiana",
+      "name_zh_cn": "法属圭亚那",
+      "name_zh_tw": "法屬蓋亞那",
+      "abbreviations": [
+        "法属圭亚那",
+        "法屬蓋亞那"
+      ]
+    },
+    {
+      "alpha2": "TF",
+      "alpha3": "ATF",
+      "name_en": "French Southern Territories",
+      "name_zh_cn": "法属南部领地",
+      "name_zh_tw": "法屬南部領地",
+      "abbreviations": [
+        "法属南部领地",
+        "法屬南部領地"
+      ]
+    },
+    {
+      "alpha2": "VA",
+      "alpha3": "VAT",
+      "name_en": "Vatican City State",
+      "name_zh_cn": "梵蒂冈城国",
+      "name_zh_tw": "梵蒂岡城國",
+      "abbreviations": [
+        "梵蒂冈",
+        "梵蒂岡",
+        "梵蒂冈城国",
+        "梵蒂岡城國"
+      ]
+    },
+    {
+      "alpha2": "PH",
+      "alpha3": "PHL",
+      "name_en": "Philippines",
+      "name_zh_cn": "菲律宾",
+      "name_zh_tw": "菲律賓",
+      "abbreviations": [
+        "菲律宾",
+        "菲律賓"
+      ]
+    },
+    {
+      "alpha2": "FJ",
+      "alpha3": "FJI",
+      "name_en": "Fiji",
+      "name_zh_cn": "斐济",
+      "name_zh_tw": "斐濟",
+      "abbreviations": [
+        "斐济",
+        "斐濟"
+      ]
+    },
+    {
+      "alpha2": "FI",
+      "alpha3": "FIN",
+      "name_en": "Finland",
+      "name_zh_cn": "芬兰",
+      "name_zh_tw": "芬蘭",
+      "abbreviations": [
+        "芬兰",
+        "芬蘭"
+      ]
+    },
+    {
+      "alpha2": "CV",
+      "alpha3": "CPV",
+      "name_en": "Cape Verde",
+      "name_zh_cn": "佛得角",
+      "name_zh_tw": "維德角",
+      "abbreviations": [
+        "佛得角",
+        "維德角"
+      ]
+    },
+    {
+      "alpha2": "FK",
+      "alpha3": "FLK",
+      "name_en": "Falkland Islands (Malvinas)",
+      "name_zh_cn": "福克兰群岛（马尔维纳斯）",
+      "name_zh_tw": "福克蘭群島（馬爾維納斯）",
+      "abbreviations": [
+        "福克兰群岛",
+        "馬爾維納斯群島",
+        "福克兰群岛（马尔维纳斯）",
+        "福克蘭群島（馬爾維納斯）"
+      ]
+    },
+    {
+      "alpha2": "GM",
+      "alpha3": "GMB",
+      "name_en": "Gambia",
+      "name_zh_cn": "冈比亚",
+      "name_zh_tw": "甘比亞",
+      "abbreviations": [
+        "冈比亚",
+        "甘比亞"
+      ]
+    },
+    {
+      "alpha2": "CG",
+      "alpha3": "COG",
+      "name_en": "Republic of the Congo",
+      "name_zh_cn": "刚果（布拉柴维尔）",
+      "name_zh_tw": "剛果（布拉萨維爾）",
+      "abbreviations": [
+        "刚果（布）",
+        "剛果（布）",
+        "刚果（布拉柴维尔）",
+        "剛果（布拉萨維爾）"
+      ]
+    },
+    {
+      "alpha2": "CD",
+      "alpha3": "COD",
+      "name_en": "Democratic Republic of the Congo",
+      "name_zh_cn": "刚果（金沙萨）",
+      "name_zh_tw": "剛果（金夏沙）",
+      "abbreviations": [
+        "刚果（金）",
+        "剛果（金）",
+        "刚果（金沙萨）",
+        "剛果（金夏沙）"
+      ]
+    },
+    {
+      "alpha2": "CO",
+      "alpha3": "COL",
+      "name_en": "Colombia",
+      "name_zh_cn": "哥伦比亚",
+      "name_zh_tw": "哥倫比亞",
+      "abbreviations": [
+        "哥伦比亚",
+        "哥倫比亞"
+      ]
+    },
+    {
+      "alpha2": "CR",
+      "alpha3": "CRI",
+      "name_en": "Costa Rica",
+      "name_zh_cn": "哥斯达黎加",
+      "name_zh_tw": "哥斯大黎加",
+      "abbreviations": [
+        "哥斯达黎加",
+        "哥斯大黎加"
+      ]
+    },
+    {
+      "alpha2": "GD",
+      "alpha3": "GRD",
+      "name_en": "Grenada",
+      "name_zh_cn": "格林纳达",
+      "name_zh_tw": "格瑞那達",
+      "abbreviations": [
+        "格林纳达",
+        "格瑞那達"
+      ]
+    },
+    {
+      "alpha2": "GL",
+      "alpha3": "GRL",
+      "name_en": "Greenland",
+      "name_zh_cn": "格陵兰",
+      "name_zh_tw": "格陵蘭",
+      "abbreviations": [
+        "格陵兰",
+        "格陵蘭"
+      ]
+    },
+    {
+      "alpha2": "GE",
+      "alpha3": "GEO",
+      "name_en": "Georgia",
+      "name_zh_cn": "格鲁吉亚",
+      "name_zh_tw": "喬治亞",
+      "abbreviations": [
+        "格鲁吉亚",
+        "喬治亞"
+      ]
+    },
+    {
+      "alpha2": "GG",
+      "alpha3": "GGY",
+      "name_en": "Guernsey",
+      "name_zh_cn": "根西岛",
+      "name_zh_tw": "根西島",
+      "abbreviations": [
+        "根西岛",
+        "根西島"
+      ]
+    },
+    {
+      "alpha2": "CU",
+      "alpha3": "CUB",
+      "name_en": "Cuba",
+      "name_zh_cn": "古巴",
+      "name_zh_tw": "古巴",
+      "abbreviations": [
+        "古巴"
+      ]
+    },
+    {
+      "alpha2": "GP",
+      "alpha3": "GLP",
+      "name_en": "Guadeloupe",
+      "name_zh_cn": "瓜德罗普",
+      "name_zh_tw": "瓜德羅普",
+      "abbreviations": [
+        "瓜德罗普",
+        "瓜德羅普"
+      ]
+    },
+    {
+      "alpha2": "GU",
+      "alpha3": "GUM",
+      "name_en": "Guam",
+      "name_zh_cn": "关岛",
+      "name_zh_tw": "關島",
+      "abbreviations": [
+        "关岛",
+        "關島"
+      ]
+    },
+    {
+      "alpha2": "GY",
+      "alpha3": "GUY",
+      "name_en": "Guyana",
+      "name_zh_cn": "圭亚那",
+      "name_zh_tw": "蓋亞那",
+      "abbreviations": [
+        "圭亚那",
+        "蓋亞那"
+      ]
+    },
+    {
+      "alpha2": "KZ",
+      "alpha3": "KAZ",
+      "name_en": "Kazakhstan",
+      "name_zh_cn": "哈萨克斯坦",
+      "name_zh_tw": "哈薩克",
+      "abbreviations": [
+        "哈萨克斯坦",
+        "哈薩克",
+        "哈薩克斯坦"
+      ]
+    },
+    {
+      "alpha2": "HT",
+      "alpha3": "HTI",
+      "name_en": "Haiti",
+      "name_zh_cn": "海地",
+      "name_zh_tw": "海地",
+      "abbreviations": [
+        "海地"
+      ]
+    },
+    {
+      "alpha2": "NL",
+      "alpha3": "NLD",
+      "name_en": "Netherlands",
+      "name_zh_cn": "荷兰",
+      "name_zh_tw": "荷蘭",
+      "abbreviations": [
+        "荷兰",
+        "荷蘭"
+      ]
+    },
+    {
+      "alpha2": "HM",
+      "alpha3": "HMD",
+      "name_en": "Heard Island and McDonald Islands",
+      "name_zh_cn": "赫德岛和麦克唐纳群岛",
+      "name_zh_tw": "赫德島和麥克唐納群島",
+      "abbreviations": [
+        "赫德岛和麦克唐纳群岛",
+        "赫德島和麥克唐納群島"
+      ]
+    },
+    {
+      "alpha2": "ME",
+      "alpha3": "MNE",
+      "name_en": "Montenegro",
+      "name_zh_cn": "黑山",
+      "name_zh_tw": "蒙特內哥羅",
+      "abbreviations": [
+        "黑山",
+        "蒙特內哥羅"
+      ]
+    },
+    {
+      "alpha2": "HN",
+      "alpha3": "HND",
+      "name_en": "Honduras",
+      "name_zh_cn": "洪都拉斯",
+      "name_zh_tw": "宏都拉斯",
+      "abbreviations": [
+        "洪都拉斯",
+        "宏都拉斯"
+      ]
+    },
+    {
+      "alpha2": "KI",
+      "alpha3": "KIR",
+      "name_en": "Kiribati",
+      "name_zh_cn": "基里巴斯",
+      "name_zh_tw": "吉里巴斯",
+      "abbreviations": [
+        "基里巴斯",
+        "吉里巴斯"
+      ]
+    },
+    {
+      "alpha2": "DJ",
+      "alpha3": "DJI",
+      "name_en": "Djibouti",
+      "name_zh_cn": "吉布提",
+      "name_zh_tw": "吉布地",
+      "abbreviations": [
+        "吉布提",
+        "吉布地"
+      ]
+    },
+    {
+      "alpha2": "KG",
+      "alpha3": "KGZ",
+      "name_en": "Kyrgyzstan",
+      "name_zh_cn": "吉尔吉斯斯坦",
+      "name_zh_tw": "吉爾吉斯",
+      "abbreviations": [
+        "吉尔吉斯斯坦",
+        "吉爾吉斯",
+        "吉爾吉斯斯坦"
+      ]
+    },
+    {
+      "alpha2": "GN",
+      "alpha3": "GIN",
+      "name_en": "Guinea",
+      "name_zh_cn": "几内亚",
+      "name_zh_tw": "幾內亞",
+      "abbreviations": [
+        "几内亚",
+        "幾內亞"
+      ]
+    },
+    {
+      "alpha2": "GW",
+      "alpha3": "GNB",
+      "name_en": "Guinea-Bissau",
+      "name_zh_cn": "几内亚比绍",
+      "name_zh_tw": "幾內亞比索",
+      "abbreviations": [
+        "几内亚比绍",
+        "幾內亞比索"
+      ]
+    },
+    {
+      "alpha2": "CA",
+      "alpha3": "CAN",
+      "name_en": "Canada",
+      "name_zh_cn": "加拿大",
+      "name_zh_tw": "加拿大",
+      "abbreviations": [
+        "加拿大"
+      ]
+    },
+    {
+      "alpha2": "GH",
+      "alpha3": "GHA",
+      "name_en": "Ghana",
+      "name_zh_cn": "加纳",
+      "name_zh_tw": "迦納",
+      "abbreviations": [
+        "加纳",
+        "迦納"
+      ]
+    },
+    {
+      "alpha2": "GA",
+      "alpha3": "GAB",
+      "name_en": "Gabon",
+      "name_zh_cn": "加蓬",
+      "name_zh_tw": "加彭",
+      "abbreviations": [
+        "加蓬",
+        "加彭"
+      ]
+    },
+    {
+      "alpha2": "KH",
+      "alpha3": "KHM",
+      "name_en": "Cambodia",
+      "name_zh_cn": "柬埔寨",
+      "name_zh_tw": "柬埔寨",
+      "abbreviations": [
+        "柬埔寨",
+        "高棉"
+      ]
+    },
+    {
+      "alpha2": "CZ",
+      "alpha3": "CZE",
+      "name_en": "Czech Republic",
+      "name_zh_cn": "捷克共和国",
+      "name_zh_tw": "捷克共和國",
+      "abbreviations": [
+        "捷克",
+        "捷克",
+        "捷克共和国",
+        "捷克共和國"
+      ]
+    },
+    {
+      "alpha2": "ZW",
+      "alpha3": "ZWE",
+      "name_en": "Zimbabwe",
+      "name_zh_cn": "津巴布韦",
+      "name_zh_tw": "辛巴威",
+      "abbreviations": [
+        "津巴布韦",
+        "辛巴威"
+      ]
+    },
+    {
+      "alpha2": "CM",
+      "alpha3": "CMR",
+      "name_en": "Cameroon",
+      "name_zh_cn": "喀麦隆",
+      "name_zh_tw": "喀麥隆",
+      "abbreviations": [
+        "喀麦隆",
+        "喀麥隆"
+      ]
+    },
+    {
+      "alpha2": "QA",
+      "alpha3": "QAT",
+      "name_en": "Qatar",
+      "name_zh_cn": "卡塔尔",
+      "name_zh_tw": "卡達",
+      "abbreviations": [
+        "卡塔尔",
+        "卡達"
+      ]
+    },
+    {
+      "alpha2": "KY",
+      "alpha3": "CYM",
+      "name_en": "Cayman Islands",
+      "name_zh_cn": "开曼群岛",
+      "name_zh_tw": "開曼群島",
+      "abbreviations": [
+        "开曼群岛",
+        "開曼群島"
+      ]
+    },
+    {
+      "alpha2": "CC",
+      "alpha3": "CCK",
+      "name_en": "Cocos (Keeling) Islands",
+      "name_zh_cn": "科科斯（基林）群岛",
+      "name_zh_tw": "科科斯（基林）群島",
+      "abbreviations": [
+        "科科斯群岛",
+        "科科斯群島",
+        "科科斯（基林）群岛",
+        "科科斯（基林）群島"
+      ]
+    },
+    {
+      "alpha2": "KM",
+      "alpha3": "COM",
+      "name_en": "Comoros",
+      "name_zh_cn": "科摩罗",
+      "name_zh_tw": "葛摩",
+      "abbreviations": [
+        "科摩罗",
+        "葛摩"
+      ]
+    },
+    {
+      "alpha2": "CI",
+      "alpha3": "CIV",
+      "name_en": "Côte d'Ivoire",
+      "name_zh_cn": "科特迪瓦",
+      "name_zh_tw": "象牙海岸",
+      "abbreviations": [
+        "科特迪瓦",
+        "象牙海岸"
+      ]
+    },
+    {
+      "alpha2": "KW",
+      "alpha3": "KWT",
+      "name_en": "Kuwait",
+      "name_zh_cn": "科威特",
+      "name_zh_tw": "科威特",
+      "abbreviations": [
+        "科威特"
+      ]
+    },
+    {
+      "alpha2": "HR",
+      "alpha3": "HRV",
+      "name_en": "Croatia",
+      "name_zh_cn": "克罗地亚",
+      "name_zh_tw": "克羅埃西亞",
+      "abbreviations": [
+        "克罗地亚",
+        "克羅埃西亞"
+      ]
+    },
+    {
+      "alpha2": "KE",
+      "alpha3": "KEN",
+      "name_en": "Kenya",
+      "name_zh_cn": "肯尼亚",
+      "name_zh_tw": "肯亞",
+      "abbreviations": [
+        "肯尼亚",
+        "肯亞"
+      ]
+    },
+    {
+      "alpha2": "CK",
+      "alpha3": "COK",
+      "name_en": "Cook Islands",
+      "name_zh_cn": "库克群岛",
+      "name_zh_tw": "庫克群島",
+      "abbreviations": [
+        "库克群岛",
+        "庫克群島"
+      ]
+    },
+    {
+      "alpha2": "LV",
+      "alpha3": "LVA",
+      "name_en": "Latvia",
+      "name_zh_cn": "拉脱维亚",
+      "name_zh_tw": "拉脫維亞",
+      "abbreviations": [
+        "拉脱维亚",
+        "拉脫維亞"
+      ]
+    },
+    {
+      "alpha2": "LS",
+      "alpha3": "LSO",
+      "name_en": "Lesotho",
+      "name_zh_cn": "莱索托",
+      "name_zh_tw": "賴索托",
+      "abbreviations": [
+        "莱索托",
+        "賴索托"
+      ]
+    },
+    {
+      "alpha2": "LA",
+      "alpha3": "LAO",
+      "name_en": "Lao People's Democratic Republic",
+      "name_zh_cn": "老挝人民民主共和国",
+      "name_zh_tw": "寮人民民主共和國",
+      "abbreviations": [
+        "老挝",
+        "寮國",
+        "老挝人民民主共和国",
+        "寮人民民主共和國"
+      ]
+    },
+    {
+      "alpha2": "LB",
+      "alpha3": "LBN",
+      "name_en": "Lebanon",
+      "name_zh_cn": "黎巴嫩",
+      "name_zh_tw": "黎巴嫩",
+      "abbreviations": [
+        "黎巴嫩"
+      ]
+    },
+    {
+      "alpha2": "LT",
+      "alpha3": "LTU",
+      "name_en": "Lithuania",
+      "name_zh_cn": "立陶宛",
+      "name_zh_tw": "立陶宛",
+      "abbreviations": [
+        "立陶宛"
+      ]
+    },
+    {
+      "alpha2": "LR",
+      "alpha3": "LBR",
+      "name_en": "Liberia",
+      "name_zh_cn": "利比里亚",
+      "name_zh_tw": "賴比瑞亞",
+      "abbreviations": [
+        "利比里亚",
+        "賴比瑞亞"
+      ]
+    },
+    {
+      "alpha2": "LY",
+      "alpha3": "LBY",
+      "name_en": "Libya",
+      "name_zh_cn": "利比亚",
+      "name_zh_tw": "利比亞",
+      "abbreviations": [
+        "利比亚",
+        "利比亞"
+      ]
+    },
+    {
+      "alpha2": "LI",
+      "alpha3": "LIE",
+      "name_en": "Liechtenstein",
+      "name_zh_cn": "列支敦士登",
+      "name_zh_tw": "列支敦士登",
+      "abbreviations": [
+        "列支敦士登"
+      ]
+    },
+    {
+      "alpha2": "RE",
+      "alpha3": "REU",
+      "name_en": "Réunion",
+      "name_zh_cn": "留尼汪",
+      "name_zh_tw": "留尼旺",
+      "abbreviations": [
+        "留尼汪",
+        "留尼旺"
+      ]
+    },
+    {
+      "alpha2": "LU",
+      "alpha3": "LUX",
+      "name_en": "Luxembourg",
+      "name_zh_cn": "卢森堡",
+      "name_zh_tw": "盧森堡",
+      "abbreviations": [
+        "卢森堡",
+        "盧森堡"
+      ]
+    },
+    {
+      "alpha2": "RW",
+      "alpha3": "RWA",
+      "name_en": "Rwanda",
+      "name_zh_cn": "卢旺达",
+      "name_zh_tw": "盧安達",
+      "abbreviations": [
+        "卢旺达",
+        "盧安達"
+      ]
+    },
+    {
+      "alpha2": "RO",
+      "alpha3": "ROU",
+      "name_en": "Romania",
+      "name_zh_cn": "罗马尼亚",
+      "name_zh_tw": "羅馬尼亞",
+      "abbreviations": [
+        "罗马尼亚",
+        "羅馬尼亞"
+      ]
+    },
+    {
+      "alpha2": "MG",
+      "alpha3": "MDG",
+      "name_en": "Madagascar",
+      "name_zh_cn": "马达加斯加",
+      "name_zh_tw": "馬達加斯加",
+      "abbreviations": [
+        "马达加斯加",
+        "馬達加斯加"
+      ]
+    },
+    {
+      "alpha2": "IM",
+      "alpha3": "IMN",
+      "name_en": "Isle of Man",
+      "name_zh_cn": "马恩岛",
+      "name_zh_tw": "馬恩島",
+      "abbreviations": [
+        "马恩岛",
+        "馬恩島"
+      ]
+    },
+    {
+      "alpha2": "MV",
+      "alpha3": "MDV",
+      "name_en": "Maldives",
+      "name_zh_cn": "马尔代夫",
+      "name_zh_tw": "馬爾地夫",
+      "abbreviations": [
+        "马尔代夫",
+        "馬爾地夫"
+      ]
+    },
+    {
+      "alpha2": "MT",
+      "alpha3": "MLT",
+      "name_en": "Malta",
+      "name_zh_cn": "马耳他",
+      "name_zh_tw": "馬爾他",
+      "abbreviations": [
+        "马耳他",
+        "馬爾他"
+      ]
+    },
+    {
+      "alpha2": "MW",
+      "alpha3": "MWI",
+      "name_en": "Malawi",
+      "name_zh_cn": "马拉维",
+      "name_zh_tw": "馬拉威",
+      "abbreviations": [
+        "马拉维",
+        "馬拉威"
+      ]
+    },
+    {
+      "alpha2": "MY",
+      "alpha3": "MYS",
+      "name_en": "Malaysia",
+      "name_zh_cn": "马来西亚",
+      "name_zh_tw": "馬來西亞",
+      "abbreviations": [
+        "马来西亚",
+        "馬來西亞"
+      ]
+    },
+    {
+      "alpha2": "ML",
+      "alpha3": "MLI",
+      "name_en": "Mali",
+      "name_zh_cn": "马里",
+      "name_zh_tw": "馬里",
+      "abbreviations": [
+        "马里",
+        "馬里"
+      ]
+    },
+    {
+      "alpha2": "MQ",
+      "alpha3": "MTQ",
+      "name_en": "Martinique",
+      "name_zh_cn": "马提尼克",
+      "name_zh_tw": "馬提尼克",
+      "abbreviations": [
+        "马提尼克",
+        "馬提尼克"
+      ]
+    },
+    {
+      "alpha2": "YT",
+      "alpha3": "MYT",
+      "name_en": "Mayotte",
+      "name_zh_cn": "马约特",
+      "name_zh_tw": "馬約特",
+      "abbreviations": [
+        "马约特",
+        "馬約特"
+      ]
+    },
+    {
+      "alpha2": "MU",
+      "alpha3": "MUS",
+      "name_en": "Mauritius",
+      "name_zh_cn": "毛里求斯",
+      "name_zh_tw": "模里西斯",
+      "abbreviations": [
+        "毛里求斯",
+        "模里西斯"
+      ]
+    },
+    {
+      "alpha2": "MR",
+      "alpha3": "MRT",
+      "name_en": "Mauritania",
+      "name_zh_cn": "毛里塔尼亚",
+      "name_zh_tw": "茅利塔尼亞",
+      "abbreviations": [
+        "毛里塔尼亚",
+        "茅利塔尼亞"
+      ]
+    },
+    {
+      "alpha2": "US",
+      "alpha3": "USA",
+      "name_en": "United States of America",
+      "name_zh_cn": "美国",
+      "name_zh_tw": "美國",
+      "abbreviations": [
+        "美国",
+        "美國",
+        "美利坚合众国",
+        "美利堅合眾國"
+      ]
+    },
+    {
+      "alpha2": "UM",
+      "alpha3": "UMI",
+      "name_en": "United States Minor Outlying Islands",
+      "name_zh_cn": "美国本土外小岛屿",
+      "name_zh_tw": "美國本土外小島嶼",
+      "abbreviations": [
+        "美国本土外小岛屿",
+        "美國本土外小島嶼"
+      ]
+    },
+    {
+      "alpha2": "VI",
+      "alpha3": "VIR",
+      "name_en": "United States Virgin Islands",
+      "name_zh_cn": "美属维尔京群岛",
+      "name_zh_tw": "美屬維爾京群島",
+      "abbreviations": [
+        "美属维尔京群岛",
+        "美屬維爾京群島"
+      ]
+    },
+    {
+      "alpha2": "MN",
+      "alpha3": "MNG",
+      "name_en": "Mongolia",
+      "name_zh_cn": "蒙古",
+      "name_zh_tw": "蒙古",
+      "abbreviations": [
+        "蒙古"
+      ]
+    },
+    {
+      "alpha2": "MS",
+      "alpha3": "MSR",
+      "name_en": "Montserrat",
+      "name_zh_cn": "蒙特塞拉特",
+      "name_zh_tw": "蒙特塞拉特",
+      "abbreviations": [
+        "蒙特塞拉特",
+        "蒙特塞拉特"
+      ]
+    },
+    {
+      "alpha2": "BD",
+      "alpha3": "BGD",
+      "name_en": "Bangladesh",
+      "name_zh_cn": "孟加拉国",
+      "name_zh_tw": "孟加拉",
+      "abbreviations": [
+        "孟加拉国",
+        "孟加拉",
+        "孟加拉人民共和国",
+        "孟加拉人民共和國"
+      ]
+    },
+    {
+      "alpha2": "PE",
+      "alpha3": "PER",
+      "name_en": "Peru",
+      "name_zh_cn": "秘鲁",
+      "name_zh_tw": "秘魯",
+      "abbreviations": [
+        "秘鲁",
+        "秘魯"
+      ]
+    },
+    {
+      "alpha2": "FM",
+      "alpha3": "FSM",
+      "name_en": "Federated States of Micronesia",
+      "name_zh_cn": "密克罗尼西亚联邦",
+      "name_zh_tw": "密克羅尼西亞聯邦",
+      "abbreviations": [
+        "密克罗尼西亚",
+        "密克羅尼西亞",
+        "密克罗尼西亚联邦",
+        "密克羅尼西亞聯邦"
+      ]
+    },
+    {
+      "alpha2": "MM",
+      "alpha3": "MMR",
+      "name_en": "Myanmar",
+      "name_zh_cn": "缅甸",
+      "name_zh_tw": "緬甸",
+      "abbreviations": [
+        "缅甸",
+        "緬甸"
+      ]
+    },
+    {
+      "alpha2": "MD",
+      "alpha3": "MDA",
+      "name_en": "Republic of Moldova",
+      "name_zh_cn": "摩尔多瓦共和国",
+      "name_zh_tw": "摩爾多瓦共和國",
+      "abbreviations": [
+        "摩尔多瓦",
+        "摩爾多瓦",
+        "摩尔多瓦共和国",
+        "摩爾多瓦共和國"
+      ]
+    },
+    {
+      "alpha2": "MA",
+      "alpha3": "MAR",
+      "name_en": "Morocco",
+      "name_zh_cn": "摩洛哥",
+      "name_zh_tw": "摩洛哥",
+      "abbreviations": [
+        "摩洛哥"
+      ]
+    },
+    {
+      "alpha2": "MC",
+      "alpha3": "MCO",
+      "name_en": "Monaco",
+      "name_zh_cn": "摩纳哥",
+      "name_zh_tw": "摩納哥",
+      "abbreviations": [
+        "摩纳哥",
+        "摩納哥"
+      ]
+    },
+    {
+      "alpha2": "MZ",
+      "alpha3": "MOZ",
+      "name_en": "Mozambique",
+      "name_zh_cn": "莫桑比克",
+      "name_zh_tw": "莫三比克",
+      "abbreviations": [
+        "莫桑比克",
+        "莫三比克"
+      ]
+    },
+    {
+      "alpha2": "MX",
+      "alpha3": "MEX",
+      "name_en": "Mexico",
+      "name_zh_cn": "墨西哥",
+      "name_zh_tw": "墨西哥",
+      "abbreviations": [
+        "墨西哥"
+      ]
+    },
+    {
+      "alpha2": "NA",
+      "alpha3": "NAM",
+      "name_en": "Namibia",
+      "name_zh_cn": "纳米比亚",
+      "name_zh_tw": "納米比亞",
+      "abbreviations": [
+        "纳米比亚",
+        "納米比亞"
+      ]
+    },
+    {
+      "alpha2": "NV",
+      "alpha3": "NAV",
+      "name_en": "Navassa Island",
+      "name_zh_cn": "纳瓦萨岛",
+      "name_zh_tw": "納瓦薩島",
+      "abbreviations": [
+        "纳瓦萨岛",
+        "納瓦薩島"
+      ]
+    },
+    {
+      "alpha2": "ZA",
+      "alpha3": "ZAF",
+      "name_en": "South Africa",
+      "name_zh_cn": "南非",
+      "name_zh_tw": "南非",
+      "abbreviations": [
+        "南非"
+      ]
+    },
+    {
+      "alpha2": "AQ",
+      "alpha3": "ATA",
+      "name_en": "Antarctica",
+      "name_zh_cn": "南极洲",
+      "name_zh_tw": "南極洲",
+      "abbreviations": [
+        "南极洲",
+        "南極洲"
+      ]
+    },
+    {
+      "alpha2": "GS",
+      "alpha3": "SGS",
+      "name_en": "South Georgia and the South Sandwich Islands",
+      "name_zh_cn": "南乔治亚和南桑威奇群岛",
+      "name_zh_tw": "南喬治亞與南桑威奇群島",
+      "abbreviations": [
+        "南乔治亚群岛等",
+        "南喬治亞群島等",
+        "南乔治亚和南桑威奇群岛",
+        "南喬治亞與南桑威奇群島"
+      ]
+    },
+    {
+      "alpha2": "SS",
+      "alpha3": "SSD",
+      "name_en": "South Sudan",
+      "name_zh_cn": "南苏丹",
+      "name_zh_tw": "南蘇丹",
+      "abbreviations": [
+        "南苏丹",
+        "南蘇丹"
+      ]
+    },
+    {
+      "alpha2": "NR",
+      "alpha3": "NRU",
+      "name_en": "Nauru",
+      "name_zh_cn": "瑙鲁",
+      "name_zh_tw": "諾魯",
+      "abbreviations": [
+        "瑙鲁",
+        "諾魯"
+      ]
+    },
+    {
+      "alpha2": "NI",
+      "alpha3": "NIC",
+      "name_en": "Nicaragua",
+      "name_zh_cn": "尼加拉瓜",
+      "name_zh_tw": "尼加拉瓜",
+      "abbreviations": [
+        "尼加拉瓜"
+      ]
+    },
+    {
+      "alpha2": "NP",
+      "alpha3": "NPL",
+      "name_en": "Nepal",
+      "name_zh_cn": "尼泊尔",
+      "name_zh_tw": "尼泊爾",
+      "abbreviations": [
+        "尼泊尔",
+        "尼泊爾"
+      ]
+    },
+    {
+      "alpha2": "NE",
+      "alpha3": "NER",
+      "name_en": "Niger",
+      "name_zh_cn": "尼日尔",
+      "name_zh_tw": "尼日",
+      "abbreviations": [
+        "尼日尔",
+        "尼日"
+      ]
+    },
+    {
+      "alpha2": "NG",
+      "alpha3": "NGA",
+      "name_en": "Nigeria",
+      "name_zh_cn": "尼日利亚",
+      "name_zh_tw": "奈及利亞",
+      "abbreviations": [
+        "尼日利亚",
+        "奈及利亞"
+      ]
+    },
+    {
+      "alpha2": "NU",
+      "alpha3": "NIU",
+      "name_en": "Niue",
+      "name_zh_cn": "纽埃",
+      "name_zh_tw": "紐埃",
+      "abbreviations": [
+        "纽埃",
+        "紐埃"
+      ]
+    },
+    {
+      "alpha2": "NO",
+      "alpha3": "NOR",
+      "name_en": "Norway",
+      "name_zh_cn": "挪威",
+      "name_zh_tw": "挪威",
+      "abbreviations": [
+        "挪威"
+      ]
+    },
+    {
+      "alpha2": "NF",
+      "alpha3": "NFK",
+      "name_en": "Norfolk Island",
+      "name_zh_cn": "诺福克岛",
+      "name_zh_tw": "諾福克島",
+      "abbreviations": [
+        "诺福克岛",
+        "諾福克島"
+      ]
+    },
+    {
+      "alpha2": "PW",
+      "alpha3": "PLW",
+      "name_en": "Palau",
+      "name_zh_cn": "帕劳",
+      "name_zh_tw": "帛琉",
+      "abbreviations": [
+        "帕劳",
+        "帛琉"
+      ]
+    },
+    {
+      "alpha2": "PN",
+      "alpha3": "PCN",
+      "name_en": "Pitcairn Islands",
+      "name_zh_cn": "皮特凯恩群岛",
+      "name_zh_tw": "皮特肯群島",
+      "abbreviations": [
+        "皮特凯恩群岛",
+        "皮特肯群島"
+      ]
+    },
+    {
+      "alpha2": "PT",
+      "alpha3": "PRT",
+      "name_en": "Portugal",
+      "name_zh_cn": "葡萄牙",
+      "name_zh_tw": "葡萄牙",
+      "abbreviations": [
+        "葡萄牙"
+      ]
+    },
+    {
+      "alpha2": "JP",
+      "alpha3": "JPN",
+      "name_en": "Japan",
+      "name_zh_cn": "日本",
+      "name_zh_tw": "日本",
+      "abbreviations": [
+        "日本"
+      ]
+    },
+    {
+      "alpha2": "SE",
+      "alpha3": "SWE",
+      "name_en": "Sweden",
+      "name_zh_cn": "瑞典",
+      "name_zh_tw": "瑞典",
+      "abbreviations": [
+        "瑞典"
+      ]
+    },
+    {
+      "alpha2": "CH",
+      "alpha3": "CHE",
+      "name_en": "Switzerland",
+      "name_zh_cn": "瑞士",
+      "name_zh_tw": "瑞士",
+      "abbreviations": [
+        "瑞士"
+      ]
+    },
+    {
+      "alpha2": "SV",
+      "alpha3": "SLV",
+      "name_en": "El Salvador",
+      "name_zh_cn": "萨尔瓦多",
+      "name_zh_tw": "薩爾瓦多",
+      "abbreviations": [
+        "萨尔瓦多",
+        "薩爾瓦多"
+      ]
+    },
+    {
+      "alpha2": "WS",
+      "alpha3": "WSM",
+      "name_en": "Samoa",
+      "name_zh_cn": "萨摩亚",
+      "name_zh_tw": "薩摩亞",
+      "abbreviations": [
+        "萨摩亚",
+        "薩摩亞"
+      ]
+    },
+    {
+      "alpha2": "RS",
+      "alpha3": "SRB",
+      "name_en": "Serbia",
+      "name_zh_cn": "塞尔维亚",
+      "name_zh_tw": "塞爾維亞",
+      "abbreviations": [
+        "塞尔维亚",
+        "塞爾維亞"
+      ]
+    },
+    {
+      "alpha2": "SL",
+      "alpha3": "SLE",
+      "name_en": "Sierra Leone",
+      "name_zh_cn": "塞拉利昂",
+      "name_zh_tw": "獅子山",
+      "abbreviations": [
+        "塞拉利昂",
+        "獅子山"
+      ]
+    },
+    {
+      "alpha2": "SN",
+      "alpha3": "SEN",
+      "name_en": "Senegal",
+      "name_zh_cn": "塞内加尔",
+      "name_zh_tw": "塞內加爾",
+      "abbreviations": [
+        "塞内加尔",
+        "塞內加爾"
+      ]
+    },
+    {
+      "alpha2": "CY",
+      "alpha3": "CYP",
+      "name_en": "Cyprus",
+      "name_zh_cn": "塞浦路斯",
+      "name_zh_tw": "賽普勒斯",
+      "abbreviations": [
+        "塞浦路斯",
+        "賽普勒斯"
+      ]
+    },
+    {
+      "alpha2": "SC",
+      "alpha3": "SYC",
+      "name_en": "Seychelles",
+      "name_zh_cn": "塞舌尔",
+      "name_zh_tw": "塞席爾",
+      "abbreviations": [
+        "塞舌尔",
+        "塞席爾"
+      ]
     },
     {
       "alpha2": "SA",
@@ -223,7 +1929,328 @@
       "name_en": "Saudi Arabia",
       "name_zh_cn": "沙特阿拉伯",
       "name_zh_tw": "沙烏地阿拉伯",
-      "abbreviations": ["沙特", "沙特阿拉伯"]
+      "abbreviations": [
+        "沙特",
+        "沙烏地",
+        "沙特阿拉伯",
+        "沙烏地阿拉伯"
+      ]
+    },
+    {
+      "alpha2": "BL",
+      "alpha3": "BLM",
+      "name_en": "Saint Barthélemy",
+      "name_zh_cn": "圣巴泰勒米",
+      "name_zh_tw": "聖巴泰勒米",
+      "abbreviations": [
+        "圣巴泰勒米",
+        "聖巴泰勒米"
+      ]
+    },
+    {
+      "alpha2": "CX",
+      "alpha3": "CXR",
+      "name_en": "Christmas Island",
+      "name_zh_cn": "圣诞岛",
+      "name_zh_tw": "聖誕島",
+      "abbreviations": [
+        "圣诞岛",
+        "聖誕島"
+      ]
+    },
+    {
+      "alpha2": "ST",
+      "alpha3": "STP",
+      "name_en": "São Tomé and Príncipe",
+      "name_zh_cn": "圣多美和普林西比",
+      "name_zh_tw": "聖多美及普林西比",
+      "abbreviations": [
+        "圣多美和普林西比",
+        "聖多美及普林西比"
+      ]
+    },
+    {
+      "alpha2": "SH",
+      "alpha3": "SHN",
+      "name_en": "Saint Helena, Ascension and Tristan da Cunha",
+      "name_zh_cn": "圣赫勒拿、阿森松和特里斯坦达库尼亚",
+      "name_zh_tw": "聖赫勒拿、阿森松與特里斯坦達庫尼亞",
+      "abbreviations": [
+        "圣赫勒拿等三岛",
+        "聖赫勒拿等三島",
+        "圣赫勒拿、阿森松和特里斯坦达库尼亚",
+        "聖赫勒拿、阿森松與特里斯坦達庫尼亞"
+      ]
+    },
+    {
+      "alpha2": "KN",
+      "alpha3": "KNA",
+      "name_en": "Saint Kitts and Nevis",
+      "name_zh_cn": "圣基茨和尼维斯",
+      "name_zh_tw": "聖克里斯多福及尼維斯",
+      "abbreviations": [
+        "圣基茨和尼维斯",
+        "聖克里斯多福及尼維斯"
+      ]
+    },
+    {
+      "alpha2": "LC",
+      "alpha3": "LCA",
+      "name_en": "Saint Lucia",
+      "name_zh_cn": "圣卢西亚",
+      "name_zh_tw": "聖露西亞",
+      "abbreviations": [
+        "圣卢西亚",
+        "聖露西亞"
+      ]
+    },
+    {
+      "alpha2": "MF",
+      "alpha3": "MAF",
+      "name_en": "Saint Martin (French part)",
+      "name_zh_cn": "圣马丁（法属）",
+      "name_zh_tw": "聖馬丁（法屬）",
+      "abbreviations": [
+        "法属圣马丁",
+        "法屬聖馬丁",
+        "圣马丁（法属）",
+        "聖馬丁（法屬）"
+      ]
+    },
+    {
+      "alpha2": "SX",
+      "alpha3": "SXM",
+      "name_en": "Sint Maarten (Dutch part)",
+      "name_zh_cn": "圣马丁（荷属）",
+      "name_zh_tw": "聖馬丁（荷屬）",
+      "abbreviations": [
+        "荷属圣马丁",
+        "荷屬聖馬丁",
+        "圣马丁（荷属）",
+        "聖馬丁（荷屬）"
+      ]
+    },
+    {
+      "alpha2": "SM",
+      "alpha3": "SMR",
+      "name_en": "San Marino",
+      "name_zh_cn": "圣马力诺",
+      "name_zh_tw": "聖馬利諾",
+      "abbreviations": [
+        "圣马力诺",
+        "聖馬利諾"
+      ]
+    },
+    {
+      "alpha2": "PM",
+      "alpha3": "SPM",
+      "name_en": "Saint Pierre and Miquelon",
+      "name_zh_cn": "圣皮埃尔和密克隆",
+      "name_zh_tw": "聖皮埃爾及密克隆",
+      "abbreviations": [
+        "圣皮埃尔和密克隆",
+        "聖皮埃爾及密克隆"
+      ]
+    },
+    {
+      "alpha2": "VC",
+      "alpha3": "VCT",
+      "name_en": "Saint Vincent and the Grenadines",
+      "name_zh_cn": "圣文森特和格林纳丁斯",
+      "name_zh_tw": "聖文森及格瑞那丁",
+      "abbreviations": [
+        "圣文森特和格林纳丁斯",
+        "聖文森及格瑞那丁"
+      ]
+    },
+    {
+      "alpha2": "LK",
+      "alpha3": "LKA",
+      "name_en": "Sri Lanka",
+      "name_zh_cn": "斯里兰卡",
+      "name_zh_tw": "斯里蘭卡",
+      "abbreviations": [
+        "斯里兰卡",
+        "斯里蘭卡"
+      ]
+    },
+    {
+      "alpha2": "SK",
+      "alpha3": "SVK",
+      "name_en": "Slovakia",
+      "name_zh_cn": "斯洛伐克",
+      "name_zh_tw": "斯洛伐克",
+      "abbreviations": [
+        "斯洛伐克"
+      ]
+    },
+    {
+      "alpha2": "SI",
+      "alpha3": "SVN",
+      "name_en": "Slovenia",
+      "name_zh_cn": "斯洛文尼亚",
+      "name_zh_tw": "斯洛維尼亞",
+      "abbreviations": [
+        "斯洛文尼亚",
+        "斯洛維尼亞"
+      ]
+    },
+    {
+      "alpha2": "SJ",
+      "alpha3": "SJM",
+      "name_en": "Svalbard and Jan Mayen",
+      "name_zh_cn": "斯瓦尔巴和扬马延",
+      "name_zh_tw": "斯瓦爾巴群島及揚馬延島",
+      "abbreviations": [
+        "斯瓦尔巴和扬马延",
+        "斯瓦爾巴群島及揚馬延島"
+      ]
+    },
+    {
+      "alpha2": "SZ",
+      "alpha3": "SWZ",
+      "name_en": "Eswatini",
+      "name_zh_cn": "斯威士兰",
+      "name_zh_tw": "史瓦帝尼",
+      "abbreviations": [
+        "斯威士兰",
+        "史瓦帝尼"
+      ]
+    },
+    {
+      "alpha2": "SD",
+      "alpha3": "SDN",
+      "name_en": "Sudan",
+      "name_zh_cn": "苏丹",
+      "name_zh_tw": "蘇丹",
+      "abbreviations": [
+        "苏丹",
+        "蘇丹"
+      ]
+    },
+    {
+      "alpha2": "SR",
+      "alpha3": "SUR",
+      "name_en": "Suriname",
+      "name_zh_cn": "苏里南",
+      "name_zh_tw": "蘇利南",
+      "abbreviations": [
+        "苏里南",
+        "蘇利南"
+      ]
+    },
+    {
+      "alpha2": "SB",
+      "alpha3": "SLB",
+      "name_en": "Solomon Islands",
+      "name_zh_cn": "所罗门群岛",
+      "name_zh_tw": "索羅門群島",
+      "abbreviations": [
+        "所罗门群岛",
+        "索羅門群島"
+      ]
+    },
+    {
+      "alpha2": "SO",
+      "alpha3": "SOM",
+      "name_en": "Somalia",
+      "name_zh_cn": "索马里",
+      "name_zh_tw": "索馬利亞",
+      "abbreviations": [
+        "索马里",
+        "索馬利亞"
+      ]
+    },
+    {
+      "alpha2": "TJ",
+      "alpha3": "TJK",
+      "name_en": "Tajikistan",
+      "name_zh_cn": "塔吉克斯坦",
+      "name_zh_tw": "塔吉克",
+      "abbreviations": [
+        "塔吉克斯坦",
+        "塔吉克",
+        "塔吉克斯坦"
+      ]
+    },
+    {
+      "alpha2": "TH",
+      "alpha3": "THA",
+      "name_en": "Thailand",
+      "name_zh_cn": "泰国",
+      "name_zh_tw": "泰國",
+      "abbreviations": [
+        "泰国",
+        "泰國"
+      ]
+    },
+    {
+      "alpha2": "TZ",
+      "alpha3": "TZA",
+      "name_en": "United Republic of Tanzania",
+      "name_zh_cn": "坦桑尼亚联合共和国",
+      "name_zh_tw": "坦尚尼亞聯合共和國",
+      "abbreviations": [
+        "坦桑尼亚",
+        "坦尚尼亞",
+        "坦桑尼亚联合共和国",
+        "坦尚尼亞聯合共和國"
+      ]
+    },
+    {
+      "alpha2": "TO",
+      "alpha3": "TON",
+      "name_en": "Tonga",
+      "name_zh_cn": "汤加",
+      "name_zh_tw": "東加",
+      "abbreviations": [
+        "汤加",
+        "東加"
+      ]
+    },
+    {
+      "alpha2": "TC",
+      "alpha3": "TCA",
+      "name_en": "Turks and Caicos Islands",
+      "name_zh_cn": "特克斯和凯科斯群岛",
+      "name_zh_tw": "特克斯和凱科斯群島",
+      "abbreviations": [
+        "特克斯和凯科斯群岛",
+        "特克斯和凱科斯群島"
+      ]
+    },
+    {
+      "alpha2": "TT",
+      "alpha3": "TTO",
+      "name_en": "Trinidad and Tobago",
+      "name_zh_cn": "特立尼达和多巴哥",
+      "name_zh_tw": "千里達及托巴哥",
+      "abbreviations": [
+        "特立尼达和多巴哥",
+        "千里達及托巴哥"
+      ]
+    },
+    {
+      "alpha2": "TN",
+      "alpha3": "TUN",
+      "name_en": "Tunisia",
+      "name_zh_cn": "突尼斯",
+      "name_zh_tw": "突尼西亞",
+      "abbreviations": [
+        "突尼斯",
+        "突尼西亞"
+      ]
+    },
+    {
+      "alpha2": "TV",
+      "alpha3": "TUV",
+      "name_en": "Tuvalu",
+      "name_zh_cn": "图瓦卢",
+      "name_zh_tw": "吐瓦魯",
+      "abbreviations": [
+        "图瓦卢",
+        "吐瓦魯"
+      ]
     },
     {
       "alpha2": "TR",
@@ -231,19 +2258,488 @@
       "name_en": "Turkey",
       "name_zh_cn": "土耳其",
       "name_zh_tw": "土耳其",
-      "abbreviations": ["土耳其"]
+      "abbreviations": [
+        "土耳其"
+      ]
+    },
+    {
+      "alpha2": "TM",
+      "alpha3": "TKM",
+      "name_en": "Turkmenistan",
+      "name_zh_cn": "土库曼斯坦",
+      "name_zh_tw": "土庫曼",
+      "abbreviations": [
+        "土库曼斯坦",
+        "土庫曼",
+        "土庫曼斯坦"
+      ]
+    },
+    {
+      "alpha2": "TK",
+      "alpha3": "TKL",
+      "name_en": "Tokelau",
+      "name_zh_cn": "托克劳",
+      "name_zh_tw": "托克劳",
+      "abbreviations": [
+        "托克劳"
+      ]
+    },
+    {
+      "alpha2": "WF",
+      "alpha3": "WLF",
+      "name_en": "Wallis and Futuna",
+      "name_zh_cn": "瓦利斯和富图纳",
+      "name_zh_tw": "瓦利斯及富圖納",
+      "abbreviations": [
+        "瓦利斯和富图纳",
+        "瓦利斯及富圖納"
+      ]
+    },
+    {
+      "alpha2": "VU",
+      "alpha3": "VUT",
+      "name_en": "Vanuatu",
+      "name_zh_cn": "瓦努阿图",
+      "name_zh_tw": "萬那杜",
+      "abbreviations": [
+        "瓦努阿图",
+        "萬那杜"
+      ]
+    },
+    {
+      "alpha2": "GT",
+      "alpha3": "GTM",
+      "name_en": "Guatemala",
+      "name_zh_cn": "危地马拉",
+      "name_zh_tw": "瓜地馬拉",
+      "abbreviations": [
+        "危地马拉",
+        "瓜地馬拉"
+      ]
+    },
+    {
+      "alpha2": "VE",
+      "alpha3": "VEN",
+      "name_en": "Bolivarian Republic of Venezuela",
+      "name_zh_cn": "委内瑞拉玻利瓦尔共和国",
+      "name_zh_tw": "委內瑞拉玻利瓦共和國",
+      "abbreviations": [
+        "委内瑞拉",
+        "委內瑞拉",
+        "委内瑞拉玻利瓦尔共和国",
+        "委內瑞拉玻利瓦共和國"
+      ]
+    },
+    {
+      "alpha2": "BN",
+      "alpha3": "BRN",
+      "name_en": "Brunei Darussalam",
+      "name_zh_cn": "文莱达鲁萨兰国",
+      "name_zh_tw": "汶萊達魯薩蘭國",
+      "abbreviations": [
+        "文莱",
+        "汶萊",
+        "文莱达鲁萨兰国",
+        "汶萊達魯薩蘭國"
+      ]
+    },
+    {
+      "alpha2": "UG",
+      "alpha3": "UGA",
+      "name_en": "Uganda",
+      "name_zh_cn": "乌干达",
+      "name_zh_tw": "烏干達",
+      "abbreviations": [
+        "乌干达",
+        "烏干達"
+      ]
+    },
+    {
+      "alpha2": "UA",
+      "alpha3": "UKR",
+      "name_en": "Ukraine",
+      "name_zh_cn": "乌克兰",
+      "name_zh_tw": "烏克蘭",
+      "abbreviations": [
+        "乌克兰",
+        "烏克蘭"
+      ]
+    },
+    {
+      "alpha2": "UY",
+      "alpha3": "URY",
+      "name_en": "Uruguay",
+      "name_zh_cn": "乌拉圭",
+      "name_zh_tw": "烏拉圭",
+      "abbreviations": [
+        "乌拉圭",
+        "烏拉圭"
+      ]
+    },
+    {
+      "alpha2": "UZ",
+      "alpha3": "UZB",
+      "name_en": "Uzbekistan",
+      "name_zh_cn": "乌兹别克斯坦",
+      "name_zh_tw": "烏茲別克",
+      "abbreviations": [
+        "乌兹别克斯坦",
+        "烏茲別克",
+        "烏茲別克斯坦"
+      ]
+    },
+    {
+      "alpha2": "ES",
+      "alpha3": "ESP",
+      "name_en": "Spain",
+      "name_zh_cn": "西班牙",
+      "name_zh_tw": "西班牙",
+      "abbreviations": [
+        "西班牙"
+      ]
+    },
+    {
+      "alpha2": "EH",
+      "alpha3": "ESH",
+      "name_en": "Western Sahara",
+      "name_zh_cn": "西撒哈拉",
+      "name_zh_tw": "西撒哈拉",
+      "abbreviations": [
+        "西撒哈拉"
+      ]
+    },
+    {
+      "alpha2": "GR",
+      "alpha3": "GRC",
+      "name_en": "Greece",
+      "name_zh_cn": "希腊",
+      "name_zh_tw": "希臘",
+      "abbreviations": [
+        "希腊",
+        "希臘"
+      ]
+    },
+    {
+      "alpha2": "SG",
+      "alpha3": "SGP",
+      "name_en": "Singapore",
+      "name_zh_cn": "新加坡",
+      "name_zh_tw": "新加坡",
+      "abbreviations": [
+        "新加坡"
+      ]
+    },
+    {
+      "alpha2": "NC",
+      "alpha3": "NCL",
+      "name_en": "New Caledonia",
+      "name_zh_cn": "新喀里多尼亚",
+      "name_zh_tw": "新喀里多尼亞",
+      "abbreviations": [
+        "新喀里多尼亚",
+        "新喀里多尼亞"
+      ]
+    },
+    {
+      "alpha2": "NZ",
+      "alpha3": "NZL",
+      "name_en": "New Zealand",
+      "name_zh_cn": "新西兰",
+      "name_zh_tw": "紐西蘭",
+      "abbreviations": [
+        "新西兰",
+        "紐西蘭"
+      ]
+    },
+    {
+      "alpha2": "HU",
+      "alpha3": "HUN",
+      "name_en": "Hungary",
+      "name_zh_cn": "匈牙利",
+      "name_zh_tw": "匈牙利",
+      "abbreviations": [
+        "匈牙利"
+      ]
+    },
+    {
+      "alpha2": "JM",
+      "alpha3": "JAM",
+      "name_en": "Jamaica",
+      "name_zh_cn": "牙买加",
+      "name_zh_tw": "牙買加",
+      "abbreviations": [
+        "牙买加",
+        "牙買加"
+      ]
+    },
+    {
+      "alpha2": "AM",
+      "alpha3": "ARM",
+      "name_en": "Armenia",
+      "name_zh_cn": "亚美尼亚",
+      "name_zh_tw": "亞美尼亞",
+      "abbreviations": [
+        "亚美尼亚",
+        "亞美尼亞"
+      ]
+    },
+    {
+      "alpha2": "YE",
+      "alpha3": "YEM",
+      "name_en": "Yemen",
+      "name_zh_cn": "也门",
+      "name_zh_tw": "葉門",
+      "abbreviations": [
+        "也门",
+        "葉門"
+      ]
+    },
+    {
+      "alpha2": "IQ",
+      "alpha3": "IRQ",
+      "name_en": "Iraq",
+      "name_zh_cn": "伊拉克",
+      "name_zh_tw": "伊拉克",
+      "abbreviations": [
+        "伊拉克"
+      ]
     },
     {
       "alpha2": "IR",
       "alpha3": "IRN",
-      "name_en": "Iran",
-      "name_zh_cn": "伊朗",
-      "name_zh_tw": "伊朗",
-      "abbreviations": ["伊朗", "波斯"]
+      "name_en": "Islamic Republic of Iran",
+      "name_zh_cn": "伊朗伊斯兰共和国",
+      "name_zh_tw": "伊朗伊斯蘭共和國",
+      "abbreviations": [
+        "伊朗",
+        "伊朗",
+        "伊朗伊斯兰共和国",
+        "伊朗伊斯蘭共和國"
+      ]
+    },
+    {
+      "alpha2": "IL",
+      "alpha3": "ISR",
+      "name_en": "Israel",
+      "name_zh_cn": "以色列",
+      "name_zh_tw": "以色列",
+      "abbreviations": [
+        "以色列"
+      ]
+    },
+    {
+      "alpha2": "IT",
+      "alpha3": "ITA",
+      "name_en": "Italy",
+      "name_zh_cn": "意大利",
+      "name_zh_tw": "義大利",
+      "abbreviations": [
+        "意大利",
+        "義大利"
+      ]
+    },
+    {
+      "alpha2": "IN",
+      "alpha3": "IND",
+      "name_en": "India",
+      "name_zh_cn": "印度",
+      "name_zh_tw": "印度",
+      "abbreviations": [
+        "印度"
+      ]
+    },
+    {
+      "alpha2": "ID",
+      "alpha3": "IDN",
+      "name_en": "Indonesia",
+      "name_zh_cn": "印度尼西亚",
+      "name_zh_tw": "印度尼西亞",
+      "abbreviations": [
+        "印度尼西亚",
+        "印尼",
+        "印度尼西亞",
+        "印尼"
+      ]
+    },
+    {
+      "alpha2": "GB",
+      "alpha3": "GBR",
+      "name_en": "United Kingdom of Great Britain and Northern Ireland",
+      "name_zh_cn": "英国",
+      "name_zh_tw": "英國",
+      "abbreviations": [
+        "英国",
+        "英國",
+        "大不列颠及北爱尔兰联合王国",
+        "大不列顛及北愛爾蘭聯合王國"
+      ]
+    },
+    {
+      "alpha2": "VG",
+      "alpha3": "VGB",
+      "name_en": "British Virgin Islands",
+      "name_zh_cn": "英属维尔京群岛",
+      "name_zh_tw": "英屬維爾京群島",
+      "abbreviations": [
+        "英属维尔京群岛",
+        "英屬維爾京群島"
+      ]
+    },
+    {
+      "alpha2": "IO",
+      "alpha3": "IOT",
+      "name_en": "British Indian Ocean Territory",
+      "name_zh_cn": "英属印度洋领地",
+      "name_zh_tw": "英屬印度洋領地",
+      "abbreviations": [
+        "英属印度洋领地",
+        "英屬印度洋領地"
+      ]
+    },
+    {
+      "alpha2": "JO",
+      "alpha3": "JOR",
+      "name_en": "Jordan",
+      "name_zh_cn": "约旦",
+      "name_zh_tw": "約旦",
+      "abbreviations": [
+        "约旦",
+        "約旦"
+      ]
+    },
+    {
+      "alpha2": "VN",
+      "alpha3": "VNM",
+      "name_en": "Viet Nam",
+      "name_zh_cn": "越南",
+      "name_zh_tw": "越南",
+      "abbreviations": [
+        "越南"
+      ]
+    },
+    {
+      "alpha2": "ZM",
+      "alpha3": "ZMB",
+      "name_en": "Zambia",
+      "name_zh_cn": "赞比亚",
+      "name_zh_tw": "尚比亞",
+      "abbreviations": [
+        "赞比亚",
+        "尚比亞"
+      ]
+    },
+    {
+      "alpha2": "JE",
+      "alpha3": "JEY",
+      "name_en": "Jersey",
+      "name_zh_cn": "泽西岛",
+      "name_zh_tw": "澤西島",
+      "abbreviations": [
+        "泽西岛",
+        "澤西島"
+      ]
+    },
+    {
+      "alpha2": "TD",
+      "alpha3": "TCD",
+      "name_en": "Chad",
+      "name_zh_cn": "乍得",
+      "name_zh_tw": "查德",
+      "abbreviations": [
+        "乍得",
+        "查德"
+      ]
+    },
+    {
+      "alpha2": "GI",
+      "alpha3": "GIB",
+      "name_en": "Gibraltar",
+      "name_zh_cn": "直布罗陀",
+      "name_zh_tw": "直布羅陀",
+      "abbreviations": [
+        "直布罗陀",
+        "直布羅陀"
+      ]
+    },
+    {
+      "alpha2": "CL",
+      "alpha3": "CHL",
+      "name_en": "Chile",
+      "name_zh_cn": "智利",
+      "name_zh_tw": "智利",
+      "abbreviations": [
+        "智利"
+      ]
+    },
+    {
+      "alpha2": "CF",
+      "alpha3": "CAF",
+      "name_en": "Central African Republic",
+      "name_zh_cn": "中非共和国",
+      "name_zh_tw": "中非共和國",
+      "abbreviations": [
+        "中非",
+        "中非",
+        "中非共和国",
+        "中非共和國"
+      ]
+    },
+    {
+      "alpha2": "CN",
+      "alpha3": "CHN",
+      "name_en": "China",
+      "name_zh_cn": "中国",
+      "name_zh_tw": "中國",
+      "abbreviations": [
+        "中国",
+        "中国大陆",
+        "内地",
+        "大陆",
+        "中華人民共和國"
+      ]
+    },
+    {
+      "alpha2": "MO",
+      "alpha3": "MAC",
+      "name_en": "Macao",
+      "name_zh_cn": "中国澳门特别行政区",
+      "name_zh_tw": "中國澳門特別行政區",
+      "abbreviations": [
+        "澳门",
+        "澳門",
+        "中國澳門",
+        "中國澳門特別行政區"
+      ]
+    },
+    {
+      "alpha2": "TW",
+      "alpha3": "TWN",
+      "name_en": "Taiwan",
+      "name_zh_cn": "中国台湾地区",
+      "name_zh_tw": "中國台灣地區",
+      "abbreviations": [
+        "台湾",
+        "臺灣",
+        "中國台灣",
+        "中國臺灣"
+      ]
+    },
+    {
+      "alpha2": "HK",
+      "alpha3": "HKG",
+      "name_en": "Hong Kong",
+      "name_zh_cn": "中国香港特别行政区",
+      "name_zh_tw": "中國香港特別行政區",
+      "abbreviations": [
+        "香港",
+        "香港特別行政區",
+        "中國香港",
+        "中國香港特別行政區"
+      ]
     }
   ],
   "patterns": {
-    "prefix_patterns": ["@", "【", "[", "#"],
+    "prefix_patterns": ["@", "【", "[", "#", "|"],
     "suffix_patterns": ["Vip", "VIP", "节点", "Node", "Server"]
   },
   "settings": {

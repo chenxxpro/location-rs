@@ -27,6 +27,7 @@ fn test_basic_iso_code_parsing() {
     assert_eq!(parse_country_code("SA Server").unwrap(), CountryCode::SAU);
     assert_eq!(parse_country_code("TR Node").unwrap(), CountryCode::TUR);
     assert_eq!(parse_country_code("IR Vip").unwrap(), CountryCode::IRN);
+    assert_eq!(parse_country_code("PW Vip").unwrap(), CountryCode::PLW);
 }
 
 #[test]
@@ -48,9 +49,10 @@ fn test_chinese_name_parsing() {
     assert_eq!(parse_country_code("菲律宾节点").unwrap(), CountryCode::PHL);
     assert_eq!(parse_country_code("越南服务器").unwrap(), CountryCode::VNM);
     // 印度尼西亚的中文名称可能与印度混淆，暂时注释掉
-    // assert_eq!(parse_country_code("印度尼西亚服务").unwrap(), CountryCode::IDN);
+    assert_eq!(parse_country_code("印度尼西亚服务").unwrap(), CountryCode::IDN);
     // 注释掉可能有问题的测试
-    // assert_eq!(parse_country_code("印尼节点").unwrap(), CountryCode::IDN);
+    assert_eq!(parse_country_code("印尼节点").unwrap(), CountryCode::IDN);
+    assert_eq!(parse_country_code("帕劳节点 | PW").unwrap(), CountryCode::PLW);
     assert_eq!(parse_country_code("泰国服务器").unwrap(), CountryCode::THA);
     assert_eq!(parse_country_code("马来西亚服务").unwrap(), CountryCode::MYS);
     // 大马的简称可能需要更精确的边界匹配

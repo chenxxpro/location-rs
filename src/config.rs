@@ -15,6 +15,8 @@ pub struct CountryInfo {
     pub name_zh_cn: String,
     /// 繁体中文名称
     pub name_zh_tw: String,
+    /// 国家简称和别称
+    pub abbreviations: Vec<String>,
 }
 
 /// 解析器设置
@@ -78,6 +80,11 @@ impl Configuration {
             
             // 添加繁体中文名称
             mapping.insert(country.name_zh_tw.clone(), country);
+            
+            // 添加所有简称和别称
+            for abbr in &country.abbreviations {
+                mapping.insert(abbr.clone(), country);
+            }
         }
         
         mapping
