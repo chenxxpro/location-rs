@@ -1,0 +1,57 @@
+# Clippy配置文件
+
+# 禁止某些lint
+[clippy]
+
+# 允许未使用的导入（用于重新导出）
+allow-unused-imports = true
+
+# 允许未使用的变量（用于示例或占位符）
+allow-unused-variables = false
+
+# 允许未使用的返回值
+allow-unused-results = false
+
+# 以下是一些推荐的lint级别设置
+
+# 警告级别
+warnings = [
+    # 建议使用更好的API
+    "better-module-imports",
+    # 检测可以简化的if-else结构
+    "collapsible-if",
+    # 检测死代码
+    "dead-code",
+    # 检测无用的克隆操作
+    "clone_on_copy",
+    # 检测不必要的引用传递
+    "needless-borrow",
+    # 检测可能的无限循环
+    "never-loop",
+    # 检测可疑的算术操作
+    "suspicious-arithmetic_impl",
+    # 检测可简化的表达式
+    "simplify",
+    # 检测可以使用?操作符的地方
+    "try_err",
+    # 检测可能的整数溢出
+    "integer-overflow-check",
+]
+
+# 拒绝级别（会导致构建失败）
+deny = [
+    # 禁止使用unwrap
+    "unwrap_used",
+    # 禁止使用expect
+    "expect_used",
+    # 禁止不安全代码
+    "unsafe_code",
+    # 禁止可能导致崩溃的代码
+    "panic",
+]
+
+# 允许级别
+allow = [
+    # 允许特定的lint
+    "needless-lifetimes",
+]

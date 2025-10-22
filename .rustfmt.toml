@@ -1,0 +1,50 @@
+# Rust代码格式化配置文件
+
+# 最大行长度
+max_width = 100
+
+# 缩进风格 (Block, Visual)
+indent_style = "Block"
+
+# 缩进宽度
+indent_width = 4
+
+# 是否换行
+newline_style = "Unix"
+
+# 是否允许单个导入
+use_small_heuristics = "Max"
+
+# 结构体字段对齐
+struct_field_align_threshold = 0
+
+# 链式调用换行策略
+chain_width = 0
+
+# 控制空白行数量
+blank_lines_upper_bound = 2
+blank_lines_lower_bound = 0
+
+# 文档注释格式
+wrap_comments = true
+format_strings = true
+
+# 控制宏调用的格式
+tab_spaces = 4
+
+# 允许单个函数参数
+fn_args_layout = "Compressed"
+
+# 控制where子句的格式
+where_single_line = false
+
+# 控制闭包参数的格式
+closure_style = "MayBreak"
+
+# 控制导入分组
+imports_granularity = "Crate"
+imports_layout = "Vertical"
+merge_imports = true
+
+# 控制注释格式
+comment_width = 100

@@ -3,8 +3,13 @@ name = "location-rs"
 version = "0.1.0"
 edition = "2021"
 description = "A Rust library for parsing country codes from text titles"
-authors = ["Your Name <your.email@example.com>"]
-license = "MIT OR Apache-2.0"
+authors = ["AI Generated Code <location-rs@example.com>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/example/location-rs"
+documentation = "https://docs.rs/location-rs"
+keywords = ["location", "country", "iso", "parser", "geography"]
+categories = ["parsing", "internationalization", "data-structures"]
 
 # 更多字段可以在这里添加
 [package.metadata.docs.rs]
