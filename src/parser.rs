@@ -64,24 +64,30 @@ fn parse_iso_codes(
     mapping: &HashMap<String, &crate::config::CountryInfo>,
     _config: &ParserConfig,
 ) -> Result<CountryCode, ParseError> {
+    let chars: Vec<char> = text.chars().collect();
+    
     // 查找2字母代码
-    for i in 0..text.len().saturating_sub(1) {
-        let slice = &text[i..i+2];
-        if let Some(country_info) = mapping.get(slice) {
-            if is_valid_iso_code_position(text, i, 2) {
-                return CountryCode::for_alpha2(&country_info.alpha2)
-                    .map_err(|_| ParseError::not_found(text));
+    for i in 0..chars.len().saturating_sub(1) {
+        if chars[i].is_alphabetic() && chars[i+1].is_alphabetic() {
+            let slice: String = chars[i..i+2].iter().collect();
+            if let Some(country_info) = mapping.get(&slice.to_uppercase()) {
+                if is_valid_iso_code_position_chars(&chars, i, 2) {
+                    return CountryCode::for_alpha3(&country_info.alpha3)
+                        .map_err(|_| ParseError::not_found(text));
+                }
             }
         }
     }
     
     // 查找3字母代码
-    for i in 0..text.len().saturating_sub(2) {
-        let slice = &text[i..i+3];
-        if let Some(country_info) = mapping.get(slice) {
-            if is_valid_iso_code_position(text, i, 3) {
-                return CountryCode::for_alpha2(&country_info.alpha2)
-                    .map_err(|_| ParseError::not_found(text));
+    for i in 0..chars.len().saturating_sub(2) {
+        if chars[i].is_alphabetic() && chars[i+1].is_alphabetic() && chars[i+2].is_alphabetic() {
+            let slice: String = chars[i..i+3].iter().collect();
+            if let Some(country_info) = mapping.get(&slice.to_uppercase()) {
+                if is_valid_iso_code_position_chars(&chars, i, 3) {
+                    return CountryCode::for_alpha3(&country_info.alpha3)
+                        .map_err(|_| ParseError::not_found(text));
+                }
             }
         }
     }
@@ -97,16 +103,37 @@ fn parse_chinese_names(
 ) -> Result<CountryCode, ParseError> {
     // 简体中文名称匹配
     for (name, country_info) in mapping {
-        if name.len() >= 2 && text.contains(name) {
-            // 检查是否是有效的中文名称位置
-            if is_valid_chinese_name_position(text, name) {
-                return CountryCode::for_alpha2(&country_info.alpha2)
-                    .map_err(|_| ParseError::not_found(text));
-            }
+        // 检查是否是中文字符串
+        if name.chars().any(|c| c.is_alphabetic() && c as u32 > 255) && text.contains(name) {
+            return CountryCode::for_alpha3(&country_info.alpha3)
+                .map_err(|_| ParseError::not_found(text));
         }
     }
     
     Err(ParseError::not_found(text))
+}
+
+
+
+/// 检查是否是有效的ISO代码位置（使用字符索引）
+fn is_valid_iso_code_position_chars(chars: &[char], start: usize, length: usize) -> bool {
+    // 检查前面是否是边界或分隔符
+    if start > 0 {
+        let prev_char = chars[start - 1];
+        if !is_boundary_char(prev_char) {
+            return false;
+        }
+    }
+    
+    // 检查后面是否是边界或分隔符
+    if start + length < chars.len() {
+        let next_char = chars[start + length];
+        if !is_boundary_char(next_char) {
+            return false;
+        }
+    }
+    
+    true
 }
 
 /// 模式匹配解析
@@ -118,71 +145,38 @@ fn parse_pattern_matching(
     // 简单的关键词匹配（模糊匹配）
     if config.fuzzy_match {
         let mut candidates = Vec::new();
+        let text_lower = text.to_lowercase();
         
         for (name, country_info) in mapping {
-            // 检查名称是否在文本中出现
-            if text.contains(name) && name.len() >= 2 {
-                candidates.push(country_info.alpha2.clone());
+            let name_lower = name.to_lowercase();
+            
+            // 检查alpha-2代码
+            if text_lower.contains(&name_lower) && name.len() == 2 && name.chars().all(char::is_uppercase) {
+                candidates.push((country_info.alpha3.clone(), 2)); // 2字母代码优先级更高
+            }
+            // 检查alpha-3代码
+            else if text_lower.contains(&name_lower) && name.len() == 3 && name.chars().all(char::is_uppercase) {
+                candidates.push((country_info.alpha3.clone(), 1));
+            }
+            // 检查中文名称
+            else if text.contains(name) && name.chars().any(|c| c.is_alphabetic() && c as u32 > 255) {
+                candidates.push((country_info.alpha3.clone(), 3));
+            }
+            // 检查英文名称
+            else if text_lower.contains(&name_lower) && name_lower.chars().all(|c| c.is_alphabetic() || c.is_whitespace()) {
+                candidates.push((country_info.alpha3.clone(), 4));
             }
         }
         
-        match candidates.len() {
-            0 => Err(ParseError::not_found(text)),
-            1 => CountryCode::for_alpha2(&candidates[0])
-                .map_err(|_| ParseError::not_found(text)),
-            _ => Err(ParseError::ambiguous(text, candidates)),
-        }
-    } else {
-        Err(ParseError::not_found(text))
-    }
-}
-
-/// 检查是否是有效的ISO代码位置
-fn is_valid_iso_code_position(text: &str, start: usize, length: usize) -> bool {
-    // 检查前面是否是边界或分隔符
-    if start > 0 {
-        let prev_char = text.chars().nth(start - 1).unwrap();
-        if !is_boundary_char(prev_char) {
-            return false;
+        if !candidates.is_empty() {
+            // 按优先级排序
+            candidates.sort_by_key(|&(_, priority)| priority);
+            return CountryCode::for_alpha3(&candidates[0].0)
+                .map_err(|_| ParseError::not_found(text));
         }
     }
     
-    // 检查后面是否是边界或分隔符
-    if start + length < text.len() {
-        let next_char = text.chars().nth(start + length).unwrap();
-        if !is_boundary_char(next_char) {
-            return false;
-        }
-    }
-    
-    true
-}
-
-/// 检查是否是有效的中文名称位置
-fn is_valid_chinese_name_position(text: &str, name: &str) -> bool {
-    // 简单的边界检查
-    if let Some(start) = text.find(name) {
-        // 检查前面是否是边界
-        if start > 0 {
-            let prev_char = text.chars().nth(start - 1).unwrap();
-            if !is_boundary_char(prev_char) {
-                return false;
-            }
-        }
-        
-        // 检查后面是否是边界
-        let end = start + name.len();
-        if end < text.len() {
-            let next_char = text.chars().nth(end).unwrap();
-            if !is_boundary_char(next_char) {
-                return false;
-            }
-        }
-        
-        true
-    } else {
-        false
-    }
+    Err(ParseError::not_found(text))
 }
 
 /// 检查字符是否是边界字符
