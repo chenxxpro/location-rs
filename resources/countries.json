@@ -1,0 +1,104 @@
+{
+  "version": "1.0",
+  "countries": [
+    {
+      "alpha2": "CN",
+      "alpha3": "CHN",
+      "numeric": "156",
+      "name_en": "China",
+      "name_zh_cn": "中国",
+      "name_zh_tw": "中國",
+      "region": "Asia"
+    },
+    {
+      "alpha2": "US",
+      "alpha3": "USA",
+      "numeric": "840",
+      "name_en": "United States",
+      "name_zh_cn": "美国",
+      "name_zh_tw": "美國",
+      "region": "North America"
+    },
+    {
+      "alpha2": "HK",
+      "alpha3": "HKG",
+      "numeric": "344",
+      "name_en": "Hong Kong",
+      "name_zh_cn": "香港",
+      "name_zh_tw": "香港",
+      "region": "Asia"
+    },
+    {
+      "alpha2": "JP",
+      "alpha3": "JPN",
+      "numeric": "392",
+      "name_en": "Japan",
+      "name_zh_cn": "日本",
+      "name_zh_tw": "日本",
+      "region": "Asia"
+    },
+    {
+      "alpha2": "KR",
+      "alpha3": "KOR",
+      "numeric": "410",
+      "name_en": "South Korea",
+      "name_zh_cn": "韩国",
+      "name_zh_tw": "韓國",
+      "region": "Asia"
+    },
+    {
+      "alpha2": "SG",
+      "alpha3": "SGP",
+      "numeric": "702",
+      "name_en": "Singapore",
+      "name_zh_cn": "新加坡",
+      "name_zh_tw": "新加坡",
+      "region": "Asia"
+    },
+    {
+      "alpha2": "TW",
+      "alpha3": "TWN",
+      "numeric": "158",
+      "name_en": "Taiwan",
+      "name_zh_cn": "台湾",
+      "name_zh_tw": "台灣",
+      "region": "Asia"
+    },
+    {
+      "alpha2": "GB",
+      "alpha3": "GBR",
+      "numeric": "826",
+      "name_en": "United Kingdom",
+      "name_zh_cn": "英国",
+      "name_zh_tw": "英國",
+      "region": "Europe"
+    },
+    {
+      "alpha2": "DE",
+      "alpha3": "DEU",
+      "numeric": "276",
+      "name_en": "Germany",
+      "name_zh_cn": "德国",
+      "name_zh_tw": "德國",
+      "region": "Europe"
+    },
+    {
+      "alpha2": "FR",
+      "alpha3": "FRA",
+      "numeric": "250",
+      "name_en": "France",
+      "name_zh_cn": "法国",
+      "name_zh_tw": "法國",
+      "region": "Europe"
+    }
+  ],
+  "patterns": {
+    "prefix_patterns": ["@", "【", "[", "#"],
+    "suffix_patterns": ["Vip", "VIP", "节点", "Node", "Server"]
+  },
+  "settings": {
+    "case_sensitive": false,
+    "fuzzy_match": true,
+    "timeout_ms": 100
+  }
+}
