@@ -27,10 +27,10 @@ description: "任务列表模板用于功能实现"
 
 **目的**: 项目初始化和基本结构
 
-- [ ] T001 在 / 目录下创建Rust项目结构，包含Cargo.toml
-- [ ] T002 [P] 在Cargo.toml中配置依赖项：isocountry, serde, anyhow, thiserror
-- [ ] T003 [P] 在Cargo.toml中配置开发依赖项：criterion用于基准测试
-- [ ] T004 [P] 创建基本项目结构：src/, tests/, resources/, examples/
+- [x] T001 在 / 目录下创建Rust项目结构，包含Cargo.toml
+- [x] T002 [P] 在Cargo.toml中配置依赖项：isocountry, serde, anyhow, thiserror
+- [x] T003 [P] 在Cargo.toml中配置开发依赖项：criterion用于基准测试
+- [x] T004 [P] 创建基本项目结构：src/, tests/, resources/, examples/
 
 ---
 
@@ -40,11 +40,11 @@ description: "任务列表模板用于功能实现"
 
 **⚠️ 关键**: 此阶段完成后才能开始用户故事工作
 
-- [ ] T005 在resources/countries.json中创建基本国家数据结构
-- [ ] T006 [P] 在src/error.rs中定义错误类型（ParseError枚举）
-- [ ] T007 [P] 在src/config.rs中创建配置加载模块
-- [ ] T008 在src/lib.rs中创建CountryCode包装类型
-- [ ] T009 在tests/目录中设置基本测试框架
+- [x] T005 在resources/countries.json中创建基本国家数据结构
+- [x] T006 [P] 在src/error.rs中定义错误类型（ParseError枚举）
+- [x] T007 [P] 在src/config.rs中创建配置加载模块
+- [x] T008 在src/lib.rs中创建CountryCode包装类型
+- [x] T009 在tests/目录中设置基本测试框架
 
 **检查点**: 基础就绪 - 用户故事实现现在可以并行开始
 
