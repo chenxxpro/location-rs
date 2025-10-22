@@ -24,7 +24,7 @@ pub use isocountry::CountryCode;
 /// let result = parse_country_code("@HK Vip1");
 /// assert!(result.is_ok());
 /// ```
-pub fn parse_country_code(text: &str) -> Result<CountryCode, ParseError> {
+pub fn parse_country_code(text: &str) -> Result<CountryInfo, ParseError> {
     parser::parse_country_code(text)
 }
 
@@ -68,7 +68,7 @@ impl Parser {
     }
     
     /// 解析文本中的国家代码
-    pub fn parse(&self, text: &str) -> Result<CountryCode, ParseError> {
+    pub fn parse(&self, text: &str) -> Result<CountryInfo, ParseError> {
         parser::parse_country_code_with_config(text, &self.config)
     }
 }

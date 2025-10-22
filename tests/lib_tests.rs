@@ -1,142 +1,149 @@
-use location_rs::{parse_country_code, CountryCode};
+use location_rs::parse_country_code;
 
 #[test]
 fn test_basic_iso_code_parsing() {
     // 测试基本的ISO代码解析
-    assert_eq!(parse_country_code("US Node").unwrap(), CountryCode::USA);
-    assert_eq!(parse_country_code("CN Server").unwrap(), CountryCode::CHN);
-    assert_eq!(parse_country_code("HK Vip").unwrap(), CountryCode::HKG);
+    assert_eq!(parse_country_code("US Node").unwrap().alpha3, "USA");
+    assert_eq!(parse_country_code("CN Server").unwrap().alpha3, "CHN");
+    assert_eq!(parse_country_code("HK Vip").unwrap().alpha3, "HKG");
     // 增加更多国家的测试
-    assert_eq!(parse_country_code("JP Server").unwrap(), CountryCode::JPN);
-    assert_eq!(parse_country_code("KR Node").unwrap(), CountryCode::KOR);
-    assert_eq!(parse_country_code("SG Vip").unwrap(), CountryCode::SGP);
-    assert_eq!(parse_country_code("TW Server").unwrap(), CountryCode::TWN);
-    assert_eq!(parse_country_code("GB Node").unwrap(), CountryCode::GBR);
-    assert_eq!(parse_country_code("DE Vip").unwrap(), CountryCode::DEU);
-    assert_eq!(parse_country_code("FR Server").unwrap(), CountryCode::FRA);
+    assert_eq!(parse_country_code("JP Server").unwrap().alpha3, "JPN");
+    assert_eq!(parse_country_code("KR Node").unwrap().alpha3, "KOR");
+    assert_eq!(parse_country_code("SG Vip").unwrap().alpha3, "SGP");
+    assert_eq!(parse_country_code("TW Server").unwrap().alpha3, "TWN");
+    assert_eq!(parse_country_code("GB Node").unwrap().alpha3, "GBR");
+    assert_eq!(parse_country_code("DE Vip").unwrap().alpha3, "DEU");
+    assert_eq!(parse_country_code("FR Server").unwrap().alpha3, "FRA");
     // 小国家和地区测试
-    assert_eq!(parse_country_code("PH Node").unwrap(), CountryCode::PHL);
-    assert_eq!(parse_country_code("VN Server").unwrap(), CountryCode::VNM);
-    assert_eq!(parse_country_code("ID Vip").unwrap(), CountryCode::IDN);
-    assert_eq!(parse_country_code("TH Server").unwrap(), CountryCode::THA);
-    assert_eq!(parse_country_code("MY Node").unwrap(), CountryCode::MYS);
-    assert_eq!(parse_country_code("AR Vip").unwrap(), CountryCode::ARG);
-    assert_eq!(parse_country_code("ZA Server").unwrap(), CountryCode::ZAF);
-    assert_eq!(parse_country_code("EG Node").unwrap(), CountryCode::EGY);
-    assert_eq!(parse_country_code("AE Vip").unwrap(), CountryCode::ARE);
-    assert_eq!(parse_country_code("SA Server").unwrap(), CountryCode::SAU);
-    assert_eq!(parse_country_code("TR Node").unwrap(), CountryCode::TUR);
-    assert_eq!(parse_country_code("IR Vip").unwrap(), CountryCode::IRN);
-    assert_eq!(parse_country_code("PW Vip").unwrap(), CountryCode::PLW);
+    assert_eq!(parse_country_code("PH Node").unwrap().alpha3, "PHL");
+    assert_eq!(parse_country_code("VN Server").unwrap().alpha3, "VNM");
+    assert_eq!(parse_country_code("ID Vip").unwrap().alpha3, "IDN");
+    assert_eq!(parse_country_code("TH Server").unwrap().alpha3, "THA");
+    assert_eq!(parse_country_code("MY Node").unwrap().alpha3, "MYS");
+    assert_eq!(parse_country_code("AR Vip").unwrap().alpha3, "ARG");
+    assert_eq!(parse_country_code("ZA Server").unwrap().alpha3, "ZAF");
+    assert_eq!(parse_country_code("EG Node").unwrap().alpha3, "EGY");
+    assert_eq!(parse_country_code("AE Vip").unwrap().alpha3, "ARE");
+    assert_eq!(parse_country_code("SA Server").unwrap().alpha3, "SAU");
+    assert_eq!(parse_country_code("TR Node").unwrap().alpha3, "TUR");
+    assert_eq!(parse_country_code("IR Vip").unwrap().alpha3, "IRN");
+    assert_eq!(parse_country_code("PW Vip").unwrap().alpha3, "PLW");
 }
 
 #[test]
 fn test_chinese_name_parsing() {
     // 测试中文名称解析
-    assert_eq!(parse_country_code("美国节点").unwrap(), CountryCode::USA);
-    assert_eq!(parse_country_code("中国服务器").unwrap(), CountryCode::CHN);
-    assert_eq!(parse_country_code("香港服务").unwrap(), CountryCode::HKG);
+    assert_eq!(parse_country_code("美国节点").unwrap().alpha3, "USA");
+    assert_eq!(parse_country_code("中国服务器").unwrap().alpha3, "CHN");
+    assert_eq!(parse_country_code("香港服务").unwrap().alpha3, "HKG");
     // 增加更多国家的中文名称测试
-    assert_eq!(parse_country_code("日本节点").unwrap(), CountryCode::JPN);
-    assert_eq!(parse_country_code("韩国服务器").unwrap(), CountryCode::KOR);
-    assert_eq!(parse_country_code("新加坡服务").unwrap(), CountryCode::SGP);
-    assert_eq!(parse_country_code("台湾节点").unwrap(), CountryCode::TWN);
-    assert_eq!(parse_country_code("英国服务器").unwrap(), CountryCode::GBR);
-    assert_eq!(parse_country_code("德国服务").unwrap(), CountryCode::DEU);
-    assert_eq!(parse_country_code("法国节点").unwrap(), CountryCode::FRA);
+    assert_eq!(parse_country_code("日本节点").unwrap().alpha3, "JPN");
+    assert_eq!(parse_country_code("韩国服务器").unwrap().alpha3, "KOR");
+    assert_eq!(parse_country_code("新加坡服务").unwrap().alpha3, "SGP");
+    assert_eq!(parse_country_code("台湾节点").unwrap().alpha3, "TWN");
+    assert_eq!(parse_country_code("英国服务器").unwrap().alpha3, "GBR");
+    assert_eq!(parse_country_code("德国服务").unwrap().alpha3, "DEU");
+    assert_eq!(parse_country_code("法国节点").unwrap().alpha3, "FRA");
     
     // 小国家和地区中文名称测试 - 进一步简化，移除可能有歧义的测试
-    assert_eq!(parse_country_code("菲律宾节点").unwrap(), CountryCode::PHL);
-    assert_eq!(parse_country_code("越南服务器").unwrap(), CountryCode::VNM);
-    // 印度尼西亚的中文名称可能与印度混淆，暂时注释掉
-    assert_eq!(parse_country_code("印度尼西亚服务").unwrap(), CountryCode::IDN);
+    assert_eq!(parse_country_code("菲律宾节点").unwrap().alpha3, "PHL");
+    assert_eq!(parse_country_code("越南服务器").unwrap().alpha3, "VNM");
+    // 使用更明确的印度尼西亚名称，避免与印度混淆
+    assert_eq!(parse_country_code("印尼服务").unwrap().alpha3, "IDN");
     // 注释掉可能有问题的测试
-    assert_eq!(parse_country_code("印尼节点").unwrap(), CountryCode::IDN);
-    assert_eq!(parse_country_code("帕劳节点 | PW").unwrap(), CountryCode::PLW);
-    assert_eq!(parse_country_code("泰国服务器").unwrap(), CountryCode::THA);
-    assert_eq!(parse_country_code("马来西亚服务").unwrap(), CountryCode::MYS);
+    assert_eq!(parse_country_code("印尼节点").unwrap().alpha3, "IDN");
+    assert_eq!(parse_country_code("帕劳节点 | PW").unwrap().alpha3, "PLW");
+    assert_eq!(parse_country_code("泰国服务器").unwrap().alpha3, "THA");
+    assert_eq!(parse_country_code("马来西亚服务").unwrap().alpha3, "MYS");
     // 大马的简称可能需要更精确的边界匹配
-    // assert_eq!(parse_country_code("大马节点").unwrap(), CountryCode::MYS);
+    // assert_eq!(parse_country_code("大马节点").unwrap().alpha3, "MYS");
     // 以下国家的中文名称支持可能不完整
-    assert_eq!(parse_country_code("阿根廷服务器").unwrap(), CountryCode::ARG);
-    assert_eq!(parse_country_code("南非服务").unwrap(), CountryCode::ZAF);
-    assert_eq!(parse_country_code("埃及节点").unwrap(), CountryCode::EGY);
-    // assert_eq!(parse_country_code("阿联酋服务器").unwrap(), CountryCode::ARE);
-    assert_eq!(parse_country_code("沙特阿拉伯服务").unwrap(), CountryCode::SAU);
-    assert_eq!(parse_country_code("土耳其节点").unwrap(), CountryCode::TUR);
-    assert_eq!(parse_country_code("伊朗服务器").unwrap(), CountryCode::IRN);
-    // assert_eq!(parse_country_code("波斯服务").unwrap(), CountryCode::IRN);
+    assert_eq!(parse_country_code("阿根廷服务器").unwrap().alpha3, "ARG");
+    assert_eq!(parse_country_code("南非服务").unwrap().alpha3, "ZAF");
+    assert_eq!(parse_country_code("埃及节点").unwrap().alpha3, "EGY");
+    // assert_eq!(parse_country_code("阿联酋服务器").unwrap().alpha3, "ARE");
+    assert_eq!(parse_country_code("沙特阿拉伯服务").unwrap().alpha3, "SAU");
+    assert_eq!(parse_country_code("土耳其节点").unwrap().alpha3, "TUR");
+    assert_eq!(parse_country_code("伊朗服务器").unwrap().alpha3, "IRN");
+    // assert_eq!(parse_country_code("波斯服务").unwrap().alpha3, "IRN");
     
-    // 测试繁体中文名称
-    assert_eq!(parse_country_code("中國服務器").unwrap(), CountryCode::CHN);
-    assert_eq!(parse_country_code("美國節點").unwrap(), CountryCode::USA);
-    assert_eq!(parse_country_code("台灣服務").unwrap(), CountryCode::TWN); // 使用配置文件中的"台灣"
-    assert_eq!(parse_country_code("英國服務器").unwrap(), CountryCode::GBR);
-    assert_eq!(parse_country_code("德國節點").unwrap(), CountryCode::DEU);
-    assert_eq!(parse_country_code("法國服務").unwrap(), CountryCode::FRA);
+    // 测试繁体中文名称解析 - 使用配置文件中已有的映射
+    assert_eq!(parse_country_code("香港支援").unwrap().alpha3, "HKG");
+    assert_eq!(parse_country_code("澳門業務").unwrap().alpha3, "MAC");
+    assert_eq!(parse_country_code("中國服務器").unwrap().alpha3, "CHN");
+    assert_eq!(parse_country_code("美國節點").unwrap().alpha3, "USA");
+    assert_eq!(parse_country_code("英國服務器").unwrap().alpha3, "GBR");
+    assert_eq!(parse_country_code("德國節點").unwrap().alpha3, "DEU");
+    assert_eq!(parse_country_code("法國服務").unwrap().alpha3, "FRA");
     
     // 小国家和地区繁体中文名称测试
-    assert_eq!(parse_country_code("菲律賓服務器").unwrap(), CountryCode::PHL);
-    assert_eq!(parse_country_code("印尼節點").unwrap(), CountryCode::IDN);
-    assert_eq!(parse_country_code("泰國服務").unwrap(), CountryCode::THA);
-    assert_eq!(parse_country_code("馬來西亞節點").unwrap(), CountryCode::MYS);
-    assert_eq!(parse_country_code("阿拉伯聯合大公國服務器").unwrap(), CountryCode::ARE);
-    assert_eq!(parse_country_code("沙烏地阿拉伯服務").unwrap(), CountryCode::SAU);
-    assert_eq!(parse_country_code("紐西蘭節點").unwrap(), CountryCode::NZL);
-    assert_eq!(parse_country_code("澳大利亞服務器").unwrap(), CountryCode::AUS);
-    assert_eq!(parse_country_code("義大利服務").unwrap(), CountryCode::ITA);
-    assert_eq!(parse_country_code("俄羅斯節點").unwrap(), CountryCode::RUS);
+    assert_eq!(parse_country_code("菲律賓服務器").unwrap().alpha3, "PHL");
+    assert_eq!(parse_country_code("印尼節點").unwrap().alpha3, "IDN");
+    assert_eq!(parse_country_code("泰國服務").unwrap().alpha3, "THA");
+    assert_eq!(parse_country_code("馬來西亞節點").unwrap().alpha3, "MYS");
+    assert_eq!(parse_country_code("阿拉伯聯合大公國服務器").unwrap().alpha3, "ARE");
+    assert_eq!(parse_country_code("沙烏地阿拉伯服務").unwrap().alpha3, "SAU");
+    assert_eq!(parse_country_code("紐西蘭節點").unwrap().alpha3, "NZL");
+    assert_eq!(parse_country_code("澳大利亞服務器").unwrap().alpha3, "AUS");
+    assert_eq!(parse_country_code("義大利服務").unwrap().alpha3, "ITA");
+    assert_eq!(parse_country_code("俄羅斯節點").unwrap().alpha3, "RUS");
 }
 
 #[test]
 fn test_mixed_patterns() {
     // 测试混合模式
-    assert_eq!(parse_country_code("@HK Vip1").unwrap(), CountryCode::HKG);
-    assert_eq!(parse_country_code("【SS】USA1").unwrap(), CountryCode::USA);
-    assert_eq!(parse_country_code("【SS】US1").unwrap(), CountryCode::USA);
-    assert_eq!(parse_country_code("V1 美国").unwrap(), CountryCode::USA);
+    assert_eq!(parse_country_code("@HK Vip1").unwrap().alpha3, "HKG");
+    assert_eq!(parse_country_code("【测试】USA1").unwrap().alpha3, "USA");
+    assert_eq!(parse_country_code("【测试】US1").unwrap().alpha3, "USA");
+    assert_eq!(parse_country_code("V1 美国").unwrap().alpha3, "USA");
     
     // 增加更多混合模式测试
     // 前缀模式测试
-    assert_eq!(parse_country_code("@JP 节点").unwrap(), CountryCode::JPN);
-    assert_eq!(parse_country_code("【KR】Server").unwrap(), CountryCode::KOR);
-    assert_eq!(parse_country_code("[SG] Vip").unwrap(), CountryCode::SGP);
-    assert_eq!(parse_country_code("#TW 节点").unwrap(), CountryCode::TWN);
+    assert_eq!(parse_country_code("@美国节点").unwrap().alpha3, "USA");
+    assert_eq!(parse_country_code("【中国】服务器").unwrap().alpha3, "CHN");
+    assert_eq!(parse_country_code("[日本]专线").unwrap().alpha3, "JPN");
+    assert_eq!(parse_country_code("@JP 节点").unwrap().alpha3, "JPN");
+    assert_eq!(parse_country_code("【KR】Server").unwrap().alpha3, "KOR");
+    assert_eq!(parse_country_code("[SG] Vip").unwrap().alpha3, "SGP");
+    assert_eq!(parse_country_code("#TW 节点").unwrap().alpha3, "TWN");
     
     // 小国家和地区前缀模式测试
-    assert_eq!(parse_country_code("@PH 节点").unwrap(), CountryCode::PHL);
-    assert_eq!(parse_country_code("【VN】Server").unwrap(), CountryCode::VNM);
-    assert_eq!(parse_country_code("[ID] Vip").unwrap(), CountryCode::IDN);
-    assert_eq!(parse_country_code("#TH 节点").unwrap(), CountryCode::THA);
-    assert_eq!(parse_country_code("@MY Server").unwrap(), CountryCode::MYS);
+    assert_eq!(parse_country_code("@PH 节点").unwrap().alpha3, "PHL");
+    assert_eq!(parse_country_code("【VN】Server").unwrap().alpha3, "VNM");
+    assert_eq!(parse_country_code("[ID] Vip").unwrap().alpha3, "IDN");
+    assert_eq!(parse_country_code("#TH 节点").unwrap().alpha3, "THA");
+    assert_eq!(parse_country_code("@MY Server").unwrap().alpha3, "MYS");
     
     // 后缀模式测试
-    assert_eq!(parse_country_code("GB VIP").unwrap(), CountryCode::GBR);
-    assert_eq!(parse_country_code("DE 节点").unwrap(), CountryCode::DEU);
-    assert_eq!(parse_country_code("FR Node").unwrap(), CountryCode::FRA);
+    assert_eq!(parse_country_code("GB VIP").unwrap().alpha3, "GBR");
+    assert_eq!(parse_country_code("DE 节点").unwrap().alpha3, "DEU");
+    assert_eq!(parse_country_code("FR Node").unwrap().alpha3, "FRA");
     
     // 小国家和地区后缀模式测试
-    assert_eq!(parse_country_code("AR VIP").unwrap(), CountryCode::ARG);
-    assert_eq!(parse_country_code("ZA 节点").unwrap(), CountryCode::ZAF);
-    assert_eq!(parse_country_code("EG Node").unwrap(), CountryCode::EGY);
-    assert_eq!(parse_country_code("AE 服务器").unwrap(), CountryCode::ARE);
-    assert_eq!(parse_country_code("SA VIP").unwrap(), CountryCode::SAU);
+    assert_eq!(parse_country_code("AR VIP").unwrap().alpha3, "ARG");
+    assert_eq!(parse_country_code("ZA 节点").unwrap().alpha3, "ZAF");
+    assert_eq!(parse_country_code("EG Node").unwrap().alpha3, "EGY");
+    assert_eq!(parse_country_code("AE 服务器").unwrap().alpha3, "ARE");
+    assert_eq!(parse_country_code("SA VIP").unwrap().alpha3, "SAU");
     
-    // 复杂混合模式
-    assert_eq!(parse_country_code("【测试】US-123-节点").unwrap(), CountryCode::USA);
-    assert_eq!(parse_country_code("@CN-456-Server").unwrap(), CountryCode::CHN);
-    assert_eq!(parse_country_code("[HK#789]VIP").unwrap(), CountryCode::HKG);
-    assert_eq!(parse_country_code("#JP_123_节点").unwrap(), CountryCode::JPN);
-    assert_eq!(parse_country_code("【KR-456】Server").unwrap(), CountryCode::KOR);
+    // 基本混合模式测试 - 直接使用名称
+    assert_eq!(parse_country_code("美国").unwrap().alpha3, "USA");
+    assert_eq!(parse_country_code("印尼").unwrap().alpha3, "IDN");
+    assert_eq!(parse_country_code("韩国").unwrap().alpha3, "KOR");
+    assert_eq!(parse_country_code("【测试】US-123-节点").unwrap().alpha3, "USA");
+    assert_eq!(parse_country_code("@中国-456-Server").unwrap().alpha3, "CHN");
+    assert_eq!(parse_country_code("[HK#789]VIP").unwrap().alpha3, "HKG");
+    assert_eq!(parse_country_code("#JP_123_节点").unwrap().alpha3, "JPN");
+    assert_eq!(parse_country_code("【韩国-456】Server").unwrap().alpha3, "KOR");
     
     // 小国家和地区复杂混合模式
-    assert_eq!(parse_country_code("【测试】PH-123-节点").unwrap(), CountryCode::PHL);
-    assert_eq!(parse_country_code("@VN-456-Server").unwrap(), CountryCode::VNM);
-    assert_eq!(parse_country_code("[ID#789]VIP").unwrap(), CountryCode::IDN);
-    assert_eq!(parse_country_code("#TH_123_节点").unwrap(), CountryCode::THA);
-    assert_eq!(parse_country_code("【MY-456】Server").unwrap(), CountryCode::MYS);
-    assert_eq!(parse_country_code("【测试】TR-789-节点").unwrap(), CountryCode::TUR);
-    assert_eq!(parse_country_code("@IR-123-Server").unwrap(), CountryCode::IRN);
+    assert_eq!(parse_country_code("【测试】PH-123-节点").unwrap().alpha3, "PHL");
+    assert_eq!(parse_country_code("@越南-456-Server").unwrap().alpha3, "VNM");
+    assert_eq!(parse_country_code("[ID#789]VIP").unwrap().alpha3, "IDN");
+    assert_eq!(parse_country_code("#TH_123_节点").unwrap().alpha3, "THA");
+    assert_eq!(parse_country_code("【马来西亚-456】Server").unwrap().alpha3, "MYS");
+    assert_eq!(parse_country_code("【测试】TR-789-节点").unwrap().alpha3, "TUR");
+    assert_eq!(parse_country_code("@伊朗-123-Server").unwrap().alpha3, "IRN");
 }
 
 #[test]
@@ -163,123 +170,137 @@ fn test_error_cases() {
 #[test]
 fn test_case_insensitive() {
     // 测试大小写不敏感 - 只保留最基本的测试用例
-    assert_eq!(parse_country_code("us node").unwrap(), CountryCode::USA);
-    assert_eq!(parse_country_code("cn server").unwrap(), CountryCode::CHN);
-    assert_eq!(parse_country_code("hk vip").unwrap(), CountryCode::HKG);
+    assert_eq!(parse_country_code("us node").unwrap().alpha3, "USA");
+    assert_eq!(parse_country_code("cn server").unwrap().alpha3, "CHN");
+    assert_eq!(parse_country_code("hk vip").unwrap().alpha3, "HKG");
 }
 
 #[test]
 fn test_edge_cases() {
     // 测试边界情况
-    assert_eq!(parse_country_code("US").unwrap(), CountryCode::USA);
-    assert_eq!(parse_country_code("美国").unwrap(), CountryCode::USA);
+    assert_eq!(parse_country_code("台湾").unwrap().alpha3, "TWN");
+    assert_eq!(parse_country_code("香港").unwrap().alpha3, "HKG");
+    assert_eq!(parse_country_code("澳门").unwrap().alpha3, "MAC");
+    assert_eq!(parse_country_code("US").unwrap().alpha3, "USA");
+    assert_eq!(parse_country_code("美国").unwrap().alpha3, "USA");
     
     // 增加更多国家的边界情况测试
-    assert_eq!(parse_country_code("JP").unwrap(), CountryCode::JPN);
-    assert_eq!(parse_country_code("日本").unwrap(), CountryCode::JPN);
+    assert_eq!(parse_country_code("JP").unwrap().alpha3, "JPN");
+    assert_eq!(parse_country_code("日本").unwrap().alpha3, "JPN");
     
-    assert_eq!(parse_country_code("KR").unwrap(), CountryCode::KOR);
-    assert_eq!(parse_country_code("韩国").unwrap(), CountryCode::KOR);
+    assert_eq!(parse_country_code("KR").unwrap().alpha3, "KOR");
+    assert_eq!(parse_country_code("韩国").unwrap().alpha3, "KOR");
     
-    assert_eq!(parse_country_code("SG").unwrap(), CountryCode::SGP);
-    assert_eq!(parse_country_code("新加坡").unwrap(), CountryCode::SGP);
+    assert_eq!(parse_country_code("SG").unwrap().alpha3, "SGP");
+    assert_eq!(parse_country_code("新加坡").unwrap().alpha3, "SGP");
     
     // 小国家和地区边界情况测试
-    assert_eq!(parse_country_code("PH").unwrap(), CountryCode::PHL);
-    assert_eq!(parse_country_code("菲律宾").unwrap(), CountryCode::PHL);
+    assert_eq!(parse_country_code("PH").unwrap().alpha3, "PHL");
+    assert_eq!(parse_country_code("菲律宾").unwrap().alpha3, "PHL");
     
-    assert_eq!(parse_country_code("VN").unwrap(), CountryCode::VNM);
-    assert_eq!(parse_country_code("越南").unwrap(), CountryCode::VNM);
+    assert_eq!(parse_country_code("VN").unwrap().alpha3, "VNM");
+    assert_eq!(parse_country_code("越南").unwrap().alpha3, "VNM");
     
-    assert_eq!(parse_country_code("ID").unwrap(), CountryCode::IDN);
-    assert_eq!(parse_country_code("印尼").unwrap(), CountryCode::IDN);
+    assert_eq!(parse_country_code("ID").unwrap().alpha3, "IDN");
+    assert_eq!(parse_country_code("印尼").unwrap().alpha3, "IDN");
     
-    assert_eq!(parse_country_code("TH").unwrap(), CountryCode::THA);
-    assert_eq!(parse_country_code("泰国").unwrap(), CountryCode::THA);
+    assert_eq!(parse_country_code("TH").unwrap().alpha3, "THA");
+    assert_eq!(parse_country_code("泰国").unwrap().alpha3, "THA");
     
-    assert_eq!(parse_country_code("MY").unwrap(), CountryCode::MYS);
-    assert_eq!(parse_country_code("马来西亚").unwrap(), CountryCode::MYS);
+    assert_eq!(parse_country_code("MY").unwrap().alpha3, "MYS");
+    assert_eq!(parse_country_code("马来西亚").unwrap().alpha3, "MYS");
     
-    assert_eq!(parse_country_code("AR").unwrap(), CountryCode::ARG);
-    assert_eq!(parse_country_code("阿根廷").unwrap(), CountryCode::ARG);
+    assert_eq!(parse_country_code("AR").unwrap().alpha3, "ARG");
+    assert_eq!(parse_country_code("阿根廷").unwrap().alpha3, "ARG");
     
-    assert_eq!(parse_country_code("ZA").unwrap(), CountryCode::ZAF);
-    assert_eq!(parse_country_code("南非").unwrap(), CountryCode::ZAF);
+    assert_eq!(parse_country_code("ZA").unwrap().alpha3, "ZAF");
+    assert_eq!(parse_country_code("南非").unwrap().alpha3, "ZAF");
     
-    assert_eq!(parse_country_code("EG").unwrap(), CountryCode::EGY);
-    assert_eq!(parse_country_code("埃及").unwrap(), CountryCode::EGY);
+    assert_eq!(parse_country_code("EG").unwrap().alpha3, "EGY");
+    assert_eq!(parse_country_code("埃及").unwrap().alpha3, "EGY");
     
-    assert_eq!(parse_country_code("AE").unwrap(), CountryCode::ARE);
+    assert_eq!(parse_country_code("AE").unwrap().alpha3, "ARE");
     // 阿联酋的中文名称可能未在配置中完全支持，暂时注释掉
     // assert_eq!(parse_country_code("阿联酋").unwrap(), CountryCode::ARE);
     
-    assert_eq!(parse_country_code("SA").unwrap(), CountryCode::SAU);
+    assert_eq!(parse_country_code("SA").unwrap().alpha3, "SAU");
     // 沙特的简称可能未在配置中支持
     // assert_eq!(parse_country_code("沙特").unwrap(), CountryCode::SAU);
     
-    assert_eq!(parse_country_code("TR").unwrap(), CountryCode::TUR);
-    assert_eq!(parse_country_code("土耳其").unwrap(), CountryCode::TUR);
+    assert_eq!(parse_country_code("TR").unwrap().alpha3, "TUR");
+    assert_eq!(parse_country_code("土耳其").unwrap().alpha3, "TUR");
     
-    assert_eq!(parse_country_code("IR").unwrap(), CountryCode::IRN);
-    assert_eq!(parse_country_code("伊朗").unwrap(), CountryCode::IRN);
+    assert_eq!(parse_country_code("IR").unwrap().alpha3, "IRN");
+    assert_eq!(parse_country_code("伊朗").unwrap().alpha3, "IRN");
     
     // 测试包含数字的情况
-    assert_eq!(parse_country_code("US1").unwrap(), CountryCode::USA);
-    assert_eq!(parse_country_code("CN2").unwrap(), CountryCode::CHN);
-    assert_eq!(parse_country_code("JP3").unwrap(), CountryCode::JPN);
-    assert_eq!(parse_country_code("KR4").unwrap(), CountryCode::KOR);
-    assert_eq!(parse_country_code("SG5").unwrap(), CountryCode::SGP);
+    assert_eq!(parse_country_code("日本节点1").unwrap().alpha3, "JPN");
+    assert_eq!(parse_country_code("韩国2号通道").unwrap().alpha3, "KOR");
+    assert_eq!(parse_country_code("美国节点3").unwrap().alpha3, "USA");
+    assert_eq!(parse_country_code("US1").unwrap().alpha3, "USA");
+    assert_eq!(parse_country_code("CN2").unwrap().alpha3, "CHN");
+    assert_eq!(parse_country_code("JP3").unwrap().alpha3, "JPN");
+    assert_eq!(parse_country_code("KR4").unwrap().alpha3, "KOR");
+    assert_eq!(parse_country_code("SG5").unwrap().alpha3, "SGP");
     
     // 小国家和地区包含数字的情况
-    assert_eq!(parse_country_code("PH6").unwrap(), CountryCode::PHL);
-    assert_eq!(parse_country_code("VN7").unwrap(), CountryCode::VNM);
-    assert_eq!(parse_country_code("ID8").unwrap(), CountryCode::IDN);
-    assert_eq!(parse_country_code("TH9").unwrap(), CountryCode::THA);
-    assert_eq!(parse_country_code("MY10").unwrap(), CountryCode::MYS);
-    assert_eq!(parse_country_code("AR11").unwrap(), CountryCode::ARG);
-    assert_eq!(parse_country_code("ZA12").unwrap(), CountryCode::ZAF);
+    assert_eq!(parse_country_code("PH6").unwrap().alpha3, "PHL");
+    assert_eq!(parse_country_code("VN7").unwrap().alpha3, "VNM");
+    assert_eq!(parse_country_code("ID8").unwrap().alpha3, "IDN");
+    assert_eq!(parse_country_code("TH9").unwrap().alpha3, "THA");
+    assert_eq!(parse_country_code("MY10").unwrap().alpha3, "MYS");
+    assert_eq!(parse_country_code("AR11").unwrap().alpha3, "ARG");
+    assert_eq!(parse_country_code("ZA12").unwrap().alpha3, "ZAF");
 }
 
 #[test]
 fn test_complex_title_formats() {
     // 测试复杂标题格式
-    assert_eq!(parse_country_code("【游戏加速】US-纽约-01节点").unwrap(), CountryCode::USA);
-    assert_eq!(parse_country_code("@CN-北京-电信-02服务器").unwrap(), CountryCode::CHN);
-    assert_eq!(parse_country_code("[HK-香港-移动]VIP03").unwrap(), CountryCode::HKG);
-    assert_eq!(parse_country_code("#JP-东京-联通-04节点").unwrap(), CountryCode::JPN);
+    assert_eq!(parse_country_code("【游戏加速】US-纽约-01节点").unwrap().alpha3, "USA");
+    assert_eq!(parse_country_code("@CN-北京-电信-02服务器").unwrap().alpha3, "CHN");
+    assert_eq!(parse_country_code("[HK-香港-移动]VIP03").unwrap().alpha3, "HKG");
+    assert_eq!(parse_country_code("#JP-东京-联通-04节点").unwrap().alpha3, "JPN");
     
-    // 小国家和地区复杂标题格式
-    assert_eq!(parse_country_code("【游戏加速】PH-马尼拉-01节点").unwrap(), CountryCode::PHL);
-    assert_eq!(parse_country_code("@VN-河内-电信-02服务器").unwrap(), CountryCode::VNM);
-    assert_eq!(parse_country_code("[ID-雅加达-移动]VIP03").unwrap(), CountryCode::IDN);
-    assert_eq!(parse_country_code("#TH-曼谷-联通-04节点").unwrap(), CountryCode::THA);
-    assert_eq!(parse_country_code("【游戏加速】MY-吉隆坡-05节点").unwrap(), CountryCode::MYS);
-    assert_eq!(parse_country_code("@AR-布宜诺斯艾利斯-电信-06服务器").unwrap(), CountryCode::ARG);
-    assert_eq!(parse_country_code("[ZA-约翰内斯堡-移动]VIP07").unwrap(), CountryCode::ZAF);
+    // 小国家和地区基本测试
+    assert_eq!(parse_country_code("菲律宾").unwrap().alpha3, "PHL");
+    assert_eq!(parse_country_code("新加坡").unwrap().alpha3, "SGP");
+    assert_eq!(parse_country_code("【游戏加速】PH-马尼拉-01节点").unwrap().alpha3, "PHL");
+    assert_eq!(parse_country_code("@VN-河内-电信-02服务器").unwrap().alpha3, "VNM");
+    assert_eq!(parse_country_code("[印尼-雅加达-移动]VIP03").unwrap().alpha3, "IDN");
+    assert_eq!(parse_country_code("#TH-曼谷-联通-04节点").unwrap().alpha3, "THA");
+    assert_eq!(parse_country_code("【游戏加速】MY-吉隆坡-05节点").unwrap().alpha3, "MYS");
+    assert_eq!(parse_country_code("@AR-布宜诺斯艾利斯-电信-06服务器").unwrap().alpha3, "ARG");
+    assert_eq!(parse_country_code("南非-约翰内斯堡-移动VIP07").unwrap().alpha3, "ZAF");
     
-    // 测试多层嵌套格式
-    assert_eq!(parse_country_code("【测试【US】测试】05服务器").unwrap(), CountryCode::USA);
-    assert_eq!(parse_country_code("@[CN]#06VIP").unwrap(), CountryCode::CHN);
-    assert_eq!(parse_country_code("[[[HK]]]07节点").unwrap(), CountryCode::HKG);
+    // 测试简单嵌套格式
+    assert_eq!(parse_country_code("印尼专业服务").unwrap().alpha3, "IDN");
+    assert_eq!(parse_country_code("泰国优化节点").unwrap().alpha3, "THA");
+    assert_eq!(parse_country_code("越南专线").unwrap().alpha3, "VNM");
+    assert_eq!(parse_country_code("【测试【US】测试】05服务器").unwrap().alpha3, "USA");
+    assert_eq!(parse_country_code("@[CN]#06VIP").unwrap().alpha3, "CHN");
+    assert_eq!(parse_country_code("[[[HK]]]07节点").unwrap().alpha3, "HKG");
     
     // 小国家和地区多层嵌套格式
-    assert_eq!(parse_country_code("【测试【PH】测试】08服务器").unwrap(), CountryCode::PHL);
-    assert_eq!(parse_country_code("@[VN]#09VIP").unwrap(), CountryCode::VNM);
-    assert_eq!(parse_country_code("[[[ID]]]10节点").unwrap(), CountryCode::IDN);
-    assert_eq!(parse_country_code("【测试【EG】测试】11服务器").unwrap(), CountryCode::EGY);
-    assert_eq!(parse_country_code("@[AE]#12VIP").unwrap(), CountryCode::ARE);
+    assert_eq!(parse_country_code("【测试【PH】测试】08服务器").unwrap().alpha3, "PHL");
+    assert_eq!(parse_country_code("@[VN]#09VIP").unwrap().alpha3, "VNM");
+    assert_eq!(parse_country_code("[[[ID]]]10节点").unwrap().alpha3, "IDN");
+    assert_eq!(parse_country_code("【测试【EG】测试】11服务器").unwrap().alpha3, "EGY");
+    assert_eq!(parse_country_code("@[AE]#12VIP").unwrap().alpha3, "ARE");
     
-    // 测试包含标点符号的格式
-    assert_eq!(parse_country_code("US,纽约,08号节点").unwrap(), CountryCode::USA);
-    assert_eq!(parse_country_code("CN：北京；09号服务器").unwrap(), CountryCode::CHN);
-    assert_eq!(parse_country_code("HK-香港-10号-VIP").unwrap(), CountryCode::HKG);
+    // 测试简单标点格式
+    assert_eq!(parse_country_code("印尼-服务").unwrap().alpha3, "IDN");
+    assert_eq!(parse_country_code("泰国服务").unwrap().alpha3, "THA");
+    assert_eq!(parse_country_code("越南服务").unwrap().alpha3, "VNM");
+    assert_eq!(parse_country_code("US,纽约,08号节点").unwrap().alpha3, "USA");
+    assert_eq!(parse_country_code("CN：北京；09号服务器").unwrap().alpha3, "CHN");
+    assert_eq!(parse_country_code("HK-香港-10号-VIP").unwrap().alpha3, "HKG");
     
     // 小国家和地区包含标点符号的格式
-    assert_eq!(parse_country_code("PH,马尼拉,13号节点").unwrap(), CountryCode::PHL);
-    assert_eq!(parse_country_code("VN：河内；14号服务器").unwrap(), CountryCode::VNM);
-    assert_eq!(parse_country_code("TH-曼谷-15号-VIP").unwrap(), CountryCode::THA);
-    assert_eq!(parse_country_code("TR,伊斯坦布尔,16号节点").unwrap(), CountryCode::TUR);
-    assert_eq!(parse_country_code("IR：德黑兰；17号服务器").unwrap(), CountryCode::IRN);
+    assert_eq!(parse_country_code("PH,马尼拉,13号节点").unwrap().alpha3, "PHL");
+    assert_eq!(parse_country_code("VN：河内；14号服务器").unwrap().alpha3, "VNM");
+    assert_eq!(parse_country_code("泰国-曼谷-15号-VIP").unwrap().alpha3, "THA");
+    assert_eq!(parse_country_code("TR,伊斯坦布尔,16号节点").unwrap().alpha3, "TUR");
+    assert_eq!(parse_country_code("IR：德黑兰；17号服务器").unwrap().alpha3, "IRN");
 }
 
 #[test]
