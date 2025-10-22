@@ -1,120 +1,166 @@
 # Data Model: Country Code Parser Library
 
-**Feature**: Country Code Parser Library  
-**Created**: 2025-10-22  
-**Purpose**: Define core entities and their relationships
+## Overview
 
-## Core Entities
+本文档描述了国家代码解析器库的数据模型，包括核心实体、它们之间的关系以及数据流。
+
+## 核心实体
 
 ### CountryCode
-表示国家或地区的ISO 3166-1标准代码。
 
-**Attributes**:
-- `alpha2`: String - 2字母代码 (如 "US", "CN", "HK")
-- `alpha3`: String - 3字母代码 (如 "USA", "CHN", "HKG")
-- `numeric`: String - 数字代码 (如 "840", "156", "344")
+**用途**: 使用ISO 3166-1 alpha-2代码表示国家或地区。
 
-**Validation Rules**:
-- alpha2: 必须为2个大写字母，符合ISO 3166-1标准
-- alpha3: 必须为3个大写字母，符合ISO 3166-1标准
-- numeric: 必须为3位数字，符合ISO 3166-1标准
+**说明**:
+- 直接使用`isocountry` crate中的`CountryCode`类型
+- 表示标准的ISO 3166-1 alpha-2国家代码
 
-**Source**: 从isocountry crate的CountryCode枚举派生
+**示例**:
+```rust
+// 通过isocountry crate获取
+let china_code = isocountry::country_by_alpha2("CN").unwrap();
+let usa_code = isocountry::country_by_alpha2("US").unwrap();
+```
 
 ### CountryInfo
-扩展的国家信息，包含多语言名称支持。
 
-**Attributes**:
-- `code`: CountryCode - 国家代码
-- `name_en`: String - 英文名称
-- `name_zh_cn`: String - 简体中文名称
-- `name_zh_tw`: String - 繁体中文名称
-- `region`: String - 所属地区
+**用途**: 包含国家或地区的详细信息。
 
-**Validation Rules**:
-- 所有名称字段不能为空
-- 简体中文和繁体中文名称必须正确编码
-- 地区信息必须有效
+**属性**:
+- `alpha2`: String (ISO 3166-1 alpha-2代码)
+- `alpha3`: String (ISO 3166-1 alpha-3代码)
+- `name_en`: String (英文名称)
+- `name_zh_cn`: String (简体中文名称)
+- `name_zh_tw`: String (繁体中文名称)
+- `abbreviations`: Vec<String> (常见简称和别称)
 
-### ParseResult
-解析函数的返回结果。
+**示例**:
+```rust
+let china_info = CountryInfo {
+    alpha2: "CN".to_string(),
+    alpha3: "CHN".to_string(),
+    name_en: "China".to_string(),
+    name_zh_cn: "中国".to_string(),
+    name_zh_tw: "中國".to_string(),
+    abbreviations: vec!["中国".to_string(), "中华".to_string()],
+};
+```
 
-**Variants**:
-- `Success(CountryCode)` - 成功解析到国家代码
-- `NotFound` - 未找到匹配的国家代码
-- `Ambiguous(Vec<CountryCode>)` - 匹配到多个可能的国家代码
-- `InvalidInput` - 输入文本格式无效
+### ParserConfig
 
-### Configuration
-库的配置信息，从embedded JSON文件加载。
+**用途**: 国家代码解析器的配置选项。
 
-**Attributes**:
-- `countries`: Vec<CountryInfo> - 国家信息列表
-- `patterns`: HashMap<String, Vec<String>> - 匹配模式配置
-- `settings`: ParserSettings - 解析器设置
+**属性**:
+- `case_sensitive`: bool (是否执行区分大小写的匹配)
+- `fuzzy_match`: bool (是否启用模糊匹配)
+- `timeout_ms`: u64 (超时时间，以毫秒为单位)
 
-### ParserSettings
-解析器的配置设置。
+**默认值**:
+- `case_sensitive`: false (默认不区分大小写)
+- `fuzzy_match`: true (默认启用模糊匹配)
+- `timeout_ms`: 100 (默认超时时间为100毫秒)
 
-**Attributes**:
-- `case_sensitive`: bool - 是否区分大小写 (默认: false)
-- `fuzzy_match`: bool - 是否启用模糊匹配 (默认: true)
-- `timeout_ms`: u64 - 解析超时时间 (默认: 100)
+**示例**:
+```rust
+let config = ParserConfig {
+    case_sensitive: false,
+    fuzzy_match: true,
+    timeout_ms: 100,
+};
+```
 
-## Relationships
+### Parser
 
-### CountryCode ↔ CountryInfo (1:1)
-每个CountryCode对应一个CountryInfo，包含多语言名称。
+**用途**: 解析器实例，包含配置并提供解析功能。
 
-### Configuration → CountryInfo (1:N)
-配置包含多个国家信息记录。
+**属性**:
+- `config`: ParserConfig (解析器配置)
 
-### ParseResult ← CountryCode (N:1)
-解析结果可能包含国家代码引用。
+**方法**:
+- `new()`: 使用默认配置创建解析器
+- `with_config(config)`: 使用自定义配置创建解析器
+- `parse(text)`: 解析文本中的国家代码
 
-## Data Flow
+**示例**:
+```rust
+// 使用默认配置
+let parser = Parser::new();
+let result = parser.parse("@HK Vip1");
 
-### 配置加载流程
-1. 编译时嵌入`resources/countries.json`
-2. 运行时解析JSON为Configuration结构
-3. 构建内存中的查找表
+// 使用自定义配置
+let custom_config = ParserConfig {
+    case_sensitive: true,
+    fuzzy_match: false,
+    timeout_ms: 50,
+};
+let custom_parser = Parser::with_config(custom_config);
+```
 
-### 解析流程
-1. 输入文本预处理（清理、标准化）
-2. 多阶段匹配：
-   - 阶段1: ISO代码直接匹配
-   - 阶段2: 关键词匹配（中文名称）
-   - 阶段3: 模式匹配
-3. 结果处理和错误处理
+### ParseError
 
-## JSON Configuration Structure
+**用途**: 表示解析过程中可能发生的错误。
+
+**变体**:
+- `NotFound`: 输入文本中未找到国家代码
+- `Ambiguous`: 找到多个可能的国家代码
+- `InvalidInput`: 输入文本无效（为空、过长等）
+- `Timeout`: 解析时间超过指定的超时时间
+- `ConfigError`: 配置加载或解析错误
+
+**错误处理方法**:
+- `not_found(text)`: 创建未找到错误
+- `ambiguous(text, candidates)`: 创建模糊匹配错误
+- `invalid_input(text)`: 创建无效输入错误
+- `timeout(timeout_ms)`: 创建超时错误
+- `config_error(message)`: 创建配置错误
+
+## 数据关系
+
+```
+ParserConfig ────► Parser ────► Result<CountryInfo, ParseError>
+     ▲                               │
+     │                               │
+     └───────── Configuration ───────┘
+                      │
+                      ▼
+              HashMap<String, CountryInfo>
+```
+
+## 配置加载流程
+
+1. 库从嵌入的JSON文件(`resources/countries.json`)加载配置
+2. 配置被解析为`Configuration`对象
+3. 国家信息被提取并存储在`HashMap`结构中以实现高效查找
+
+## 解析流程
+
+1. 输入文本验证（非空、不过长）
+2. 文本预处理（如果`case_sensitive`为false则进行大小写标准化）
+3. 按顺序尝试多种解析策略：
+   - ISO代码匹配（alpha-2, alpha-3）
+   - 中文名称匹配（简体、繁体）
+   - 模式匹配（如果启用了模糊匹配）
+4. 如果找到匹配项，返回`CountryInfo`
+5. 如果未找到匹配项或发生错误，返回`ParseError`
+
+## JSON配置结构
 
 ```json
 {
-  "version": "1.0",
+  "version": "1.1",
   "countries": [
     {
       "alpha2": "CN",
-      "alpha3": "CHN", 
-      "numeric": "156",
+      "alpha3": "CHN",
       "name_en": "China",
       "name_zh_cn": "中国",
       "name_zh_tw": "中國",
-      "region": "Asia"
+      "abbreviations": ["中国", "中华"]
     },
-    {
-      "alpha2": "US",
-      "alpha3": "USA",
-      "numeric": "840", 
-      "name_en": "United States",
-      "name_zh_cn": "美国",
-      "name_zh_tw": "美國",
-      "region": "North America"
-    }
+    // 更多国家...
   ],
   "patterns": {
-    "prefix_patterns": ["@", "【", "["],
-    "suffix_patterns": ["Vip", "VIP", "节点"]
+    "prefix_patterns": ["@", "【", "[", "#"],
+    "suffix_patterns": ["]", "】", " "]
   },
   "settings": {
     "case_sensitive": false,
@@ -124,34 +170,34 @@
 }
 ```
 
-## Error Types
+## 错误处理
 
-### ParseError
-解析过程中可能出现的错误类型。
+库使用`thiserror` crate进行错误处理，为不同的错误场景提供详细的错误消息和类型。
 
-**Variants**:
-- `ConfigLoadError` - 配置文件加载失败
-- `PatternMatchError` - 模式匹配错误
-- `TimeoutError` - 解析超时
-- `UnsupportedEncoding` - 不支持的编码格式
+## 数据验证
 
-## State Management
+- 输入文本不能为空或仅包含空白字符
+- 输入文本不能超过1024个字符
+- ISO代码会根据已知模式和边界条件进行验证
+- 边界字符检查确保不会将普通文本误识别为国家代码
 
-### 解析器状态
-解析器是无状态的，所有配置在初始化时加载。
+## 性能考虑
 
-### 缓存策略
-- 国家代码查找表：初始化时构建，只读访问
-- 模式匹配器：预编译正则表达式
-- 无运行时缓存，保持简单性
+- 国家信息在初始化时只加载一次
+- 使用高效的哈希映射查找进行国家代码匹配
+- 多种解析策略按效率顺序尝试
+- 超时机制防止长时间运行的解析操作
 
-## Data Validation
+## 线程安全性
 
-### 输入验证
-- 文本长度限制：最大1024字符
-- 编码验证：必须为有效UTF-8
-- 内容清理：去除多余空白字符
+- 解析器设计为线程安全，可以在并发环境中使用
+- 配置数据一旦加载就不可变
+- 解析操作不会修改共享状态
 
-### 输出验证
-- CountryCode必须为有效ISO代码
-- 错误信息必须明确且可操作
+## 多阶段解析策略
+
+1. **ISO代码解析**：首先尝试直接匹配ISO 3166-1 alpha-2和alpha-3代码
+2. **中文名称解析**：然后尝试匹配简体中文和繁体中文国家名称
+3. **模式匹配解析**：最后使用模糊匹配策略尝试匹配各种格式的国家标识
+
+这种多阶段策略确保了高效解析和广泛的格式支持。
