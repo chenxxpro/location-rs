@@ -6,7 +6,7 @@
 
 ---
 
-**[English Version](README.md.en)**
+**[English Version](README_EN.md)**
 
 ## 功能特性
 
@@ -138,4 +138,4 @@ cargo bench
 
 ---
 
-**[English Version](README.md.en)**
+**[English Version](README_EN.md)**
