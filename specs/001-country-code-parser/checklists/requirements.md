@@ -1,7 +1,7 @@
 # Specification Quality Checklist: Country Code Parser Library
 
 **Purpose**: Validate specification completeness and quality before proceeding to planning
-**Created**: 2025-10-22
+**Created**: 2023-10-22
 **Feature**: [spec.md](../spec.md)
 
 ## Content Quality
