@@ -23,7 +23,7 @@
 
 ```toml
 [dependencies]
-location-rs = "0.1.1"
+location-rs = "0.1.2"
 ```
 
 ## 使用示例
