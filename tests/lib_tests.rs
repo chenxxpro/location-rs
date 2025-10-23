@@ -48,7 +48,6 @@ fn test_chinese_name_parsing() {
     // 小国家和地区中文名称测试 - 进一步简化，移除可能有歧义的测试
     assert_eq!(parse_country_code("菲律宾节点").unwrap().alpha3, "PHL");
     assert_eq!(parse_country_code("越南服务器").unwrap().alpha3, "VNM");
-    // 使用更明确的印度尼西亚名称，避免与印度混淆
     assert_eq!(parse_country_code("印尼服务").unwrap().alpha3, "IDN");
     // 注释掉可能有问题的测试
     assert_eq!(parse_country_code("印尼节点").unwrap().alpha3, "IDN");
@@ -61,11 +60,10 @@ fn test_chinese_name_parsing() {
     assert_eq!(parse_country_code("阿根廷服务器").unwrap().alpha3, "ARG");
     assert_eq!(parse_country_code("南非服务").unwrap().alpha3, "ZAF");
     assert_eq!(parse_country_code("埃及节点").unwrap().alpha3, "EGY");
-    // assert_eq!(parse_country_code("阿联酋服务器").unwrap().alpha3, "ARE");
+    assert_eq!(parse_country_code("阿联酋服务器").unwrap().alpha3, "ARE");
     assert_eq!(parse_country_code("沙特阿拉伯服务").unwrap().alpha3, "SAU");
     assert_eq!(parse_country_code("土耳其节点").unwrap().alpha3, "TUR");
     assert_eq!(parse_country_code("伊朗服务器").unwrap().alpha3, "IRN");
-    // assert_eq!(parse_country_code("波斯服务").unwrap().alpha3, "IRN");
     
     // 测试繁体中文名称解析 - 使用配置文件中已有的映射
     assert_eq!(parse_country_code("香港支援").unwrap().alpha3, "HKG");
@@ -220,12 +218,10 @@ fn test_edge_cases() {
     assert_eq!(parse_country_code("埃及").unwrap().alpha3, "EGY");
     
     assert_eq!(parse_country_code("AE").unwrap().alpha3, "ARE");
-    // 阿联酋的中文名称可能未在配置中完全支持，暂时注释掉
-    // assert_eq!(parse_country_code("阿联酋").unwrap(), CountryCode::ARE);
+    assert_eq!(parse_country_code("阿联酋").unwrap().alpha3, "ARE");
     
     assert_eq!(parse_country_code("SA").unwrap().alpha3, "SAU");
-    // 沙特的简称可能未在配置中支持
-    // assert_eq!(parse_country_code("沙特").unwrap(), CountryCode::SAU);
+    assert_eq!(parse_country_code("沙特").unwrap().alpha3, "SAU");
     
     assert_eq!(parse_country_code("TR").unwrap().alpha3, "TUR");
     assert_eq!(parse_country_code("土耳其").unwrap().alpha3, "TUR");
