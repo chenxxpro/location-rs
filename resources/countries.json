@@ -2737,14 +2737,5 @@
         "中國香港特別行政區"
       ]
     }
-  ],
-  "patterns": {
-    "prefix_patterns": ["@", "【", "[", "#", "|"],
-    "suffix_patterns": ["Vip", "VIP", "节点", "Node", "Server"]
-  },
-  "settings": {
-    "case_sensitive": false,
-    "fuzzy_match": true,
-    "timeout_ms": 100
-  }
+  ]
 }

@@ -26,6 +26,8 @@ pub struct ParserSettings {
     pub case_sensitive: bool,
     /// 是否启用模糊匹配
     pub fuzzy_match: bool,
+    /// 超时时间（毫秒）
+    pub timeout_ms: u64,
 }
 
 /// 模式配置
@@ -37,13 +39,20 @@ pub struct PatternConfig {
     pub suffix_patterns: Vec<String>,
 }
 
-/// 完整配置
+/// 国家配置
 #[derive(Debug, Deserialize, Clone)]
-pub struct Configuration {
+pub struct CountriesConfig {
     /// 配置版本
     pub version: String,
     /// 国家信息列表
     pub countries: Vec<CountryInfo>,
+}
+
+/// 完整配置
+#[derive(Debug, Clone)]
+pub struct Configuration {
+    /// 国家配置
+    pub countries_config: CountriesConfig,
     /// 模式配置
     pub patterns: PatternConfig,
     /// 解析器设置
@@ -51,19 +60,35 @@ pub struct Configuration {
 }
 
 impl Configuration {
-    /// 从嵌入的JSON字符串加载配置
+    /// 从多个嵌入的JSON文件加载配置
     pub fn load() -> Result<Self, ParseError> {
-        let config_str = include_str!("../resources/countries.json");
+        // 加载国家配置
+        let countries_str = include_str!("../resources/countries.json");
+        let countries_config: CountriesConfig = serde_json::from_str(countries_str)
+            .map_err(|e| ParseError::config_error(&format!("国家配置解析失败: {}", e)))?;
         
-        serde_json::from_str(config_str)
-            .map_err(|e| ParseError::config_error(&format!("配置解析失败: {}", e)))
+        // 加载模式配置
+        let patterns_str = include_str!("../resources/patterns.json");
+        let patterns: PatternConfig = serde_json::from_str(patterns_str)
+            .map_err(|e| ParseError::config_error(&format!("模式配置解析失败: {}", e)))?;
+        
+        // 加载解析器设置
+        let settings_str = include_str!("../resources/settings.json");
+        let settings: ParserSettings = serde_json::from_str(settings_str)
+            .map_err(|e| ParseError::config_error(&format!("设置配置解析失败: {}", e)))?;
+        
+        Ok(Configuration {
+            countries_config,
+            patterns,
+            settings,
+        })
     }
     
     /// 创建国家代码到国家信息的映射
     pub fn create_country_mapping(&self) -> HashMap<String, &CountryInfo> {
         let mut mapping = HashMap::new();
         
-        for country in &self.countries {
+        for country in &self.countries_config.countries {
             // 添加alpha-2代码
             mapping.insert(country.alpha2.clone(), country);
             
@@ -100,6 +125,11 @@ impl Configuration {
     
     /// 获取所有国家信息
     pub fn get_countries(&self) -> &[CountryInfo] {
-        &self.countries
+        &self.countries_config.countries
+    }
+    
+    /// 获取配置版本
+    pub fn get_version(&self) -> &str {
+        &self.countries_config.version
     }
 }
