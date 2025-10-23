@@ -1,4 +1,4 @@
-use location_rs::{parse_country_code, CountryInfo, ParseError};
+use location_rs::parse_country_code;
 
 #[test]
 fn test_basic_iso_code_parsing() {
@@ -103,47 +103,47 @@ fn test_mixed_patterns() {
 #[test]
 fn test_case_insensitive() {
     // 测试大小写不敏感 - 只保留最基本的测试用例
-    assert_eq!(parse_country_code("us node").unwrap(), CountryCode::US);
-    assert_eq!(parse_country_code("cn server").unwrap(), CountryCode::CN);
-    assert_eq!(parse_country_code("hk vip").unwrap(), CountryCode::HK);
+    assert_eq!(parse_country_code("us node").unwrap().alpha2, "US");
+    assert_eq!(parse_country_code("cn server").unwrap().alpha2, "CN");
+    assert_eq!(parse_country_code("hk vip").unwrap().alpha2, "HK");
     
     // 测试英文名称大小写不敏感 - 只保留最基本的测试用例
-    assert_eq!(parse_country_code("United States").unwrap(), CountryCode::US);
-    assert_eq!(parse_country_code("china").unwrap(), CountryCode::CN);
-    assert_eq!(parse_country_code("HONG KONG").unwrap(), CountryCode::HK);
+    assert_eq!(parse_country_code("United States").unwrap().alpha2, "US");
+    assert_eq!(parse_country_code("china").unwrap().alpha2, "CN");
+    assert_eq!(parse_country_code("HONG KONG").unwrap().alpha2, "HK");
 }
 
 #[test]
 fn test_edge_cases() {
     // 测试边界情况
-    assert_eq!(parse_country_code("US").unwrap(), CountryCode::US);
-    assert_eq!(parse_country_code("美国").unwrap(), CountryCode::US);
-    assert_eq!(parse_country_code("United States").unwrap(), CountryCode::US);
+    assert_eq!(parse_country_code("US").unwrap().alpha2, "US");
+    assert_eq!(parse_country_code("美国").unwrap().alpha2, "US");
+    assert_eq!(parse_country_code("United States").unwrap().alpha2, "US");
     
     // 增加更多国家的边界情况测试
-    assert_eq!(parse_country_code("JP").unwrap(), CountryCode::JP);
-    assert_eq!(parse_country_code("日本").unwrap(), CountryCode::JP);
-    assert_eq!(parse_country_code("Japan").unwrap(), CountryCode::JP);
+    assert_eq!(parse_country_code("JP").unwrap().alpha2, "JP");
+    assert_eq!(parse_country_code("日本").unwrap().alpha2, "JP");
+    assert_eq!(parse_country_code("Japan").unwrap().alpha2, "JP");
     
-    assert_eq!(parse_country_code("KR").unwrap(), CountryCode::KR);
-    assert_eq!(parse_country_code("韩国").unwrap(), CountryCode::KR);
-    assert_eq!(parse_country_code("South Korea").unwrap(), CountryCode::KR);
+    assert_eq!(parse_country_code("KR").unwrap().alpha2, "KR");
+    assert_eq!(parse_country_code("韩国").unwrap().alpha2, "KR");
+    assert_eq!(parse_country_code("South Korea").unwrap().alpha2, "KR");
     
-    assert_eq!(parse_country_code("SG").unwrap(), CountryCode::SG);
-    assert_eq!(parse_country_code("新加坡").unwrap(), CountryCode::SG);
-    assert_eq!(parse_country_code("Singapore").unwrap(), CountryCode::SG);
+    assert_eq!(parse_country_code("SG").unwrap().alpha2, "SG");
+    assert_eq!(parse_country_code("新加坡").unwrap().alpha2, "SG");
+    assert_eq!(parse_country_code("Singapore").unwrap().alpha2, "SG");
     
     // 测试包含数字的情况
-    assert_eq!(parse_country_code("US1").unwrap(), CountryCode::US);
-    assert_eq!(parse_country_code("CN2").unwrap(), CountryCode::CN);
-    assert_eq!(parse_country_code("JP3").unwrap(), CountryCode::JP);
-    assert_eq!(parse_country_code("KR4").unwrap(), CountryCode::KR);
-    assert_eq!(parse_country_code("SG5").unwrap(), CountryCode::SG);
+    assert_eq!(parse_country_code("US1").unwrap().alpha2, "US");
+    assert_eq!(parse_country_code("CN2").unwrap().alpha2, "CN");
+    assert_eq!(parse_country_code("JP3").unwrap().alpha2, "JP");
+    assert_eq!(parse_country_code("KR4").unwrap().alpha2, "KR");
+    assert_eq!(parse_country_code("SG5").unwrap().alpha2, "SG");
     
     // 测试数字在中间的情况
-    assert_eq!(parse_country_code("U1S节点").unwrap(), CountryCode::US);
-    assert_eq!(parse_country_code("C2N服务器").unwrap(), CountryCode::CN);
-    assert_eq!(parse_country_code("H3KVIP").unwrap(), CountryCode::HK);
+    assert_eq!(parse_country_code("U1S节点").unwrap().alpha2, "US");
+    assert_eq!(parse_country_code("C2N服务器").unwrap().alpha2, "CN");
+    assert_eq!(parse_country_code("H3KVIP").unwrap().alpha2, "HK");
 }
 
 #[test]
@@ -172,20 +172,20 @@ fn test_error_cases() {
 #[test]
 fn test_complex_title_formats() {
     // 测试复杂标题格式
-    assert_eq!(parse_country_code("【游戏加速】US-纽约-01节点").unwrap(), CountryCode::US);
-    assert_eq!(parse_country_code("@CN-北京-电信-02服务器").unwrap(), CountryCode::CN);
-    assert_eq!(parse_country_code("[HK-香港-移动]VIP03").unwrap(), CountryCode::HK);
-    assert_eq!(parse_country_code("#JP-东京-联通-04节点").unwrap(), CountryCode::JP);
+    assert_eq!(parse_country_code("【游戏加速】US-纽约-01节点").unwrap().alpha2, "US");
+    assert_eq!(parse_country_code("@CN-北京-电信-02服务器").unwrap().alpha2, "CN");
+    assert_eq!(parse_country_code("[HK-香港-移动]VIP03").unwrap().alpha2, "HK");
+    assert_eq!(parse_country_code("#JP-东京-联通-04节点").unwrap().alpha2, "JP");
     
     // 测试多层嵌套格式
-    assert_eq!(parse_country_code("【测试【US】测试】05服务器").unwrap(), CountryCode::US);
-    assert_eq!(parse_country_code("@[CN]#06VIP").unwrap(), CountryCode::CN);
-    assert_eq!(parse_country_code("[[[HK]]]07节点").unwrap(), CountryCode::HK);
+    assert_eq!(parse_country_code("【测试【US】测试】05服务器").unwrap().alpha2, "US");
+    assert_eq!(parse_country_code("@[CN]#06VIP").unwrap().alpha2, "CN");
+    assert_eq!(parse_country_code("[[[HK]]]07节点").unwrap().alpha2, "HK");
     
     // 测试包含标点符号的格式
-    assert_eq!(parse_country_code("US,纽约,08号节点").unwrap(), CountryCode::US);
-    assert_eq!(parse_country_code("CN：北京；09号服务器").unwrap(), CountryCode::CN);
-    assert_eq!(parse_country_code("HK-香港-10号-VIP").unwrap(), CountryCode::HK);
+    assert_eq!(parse_country_code("US,纽约,08号节点").unwrap().alpha2, "US");
+    assert_eq!(parse_country_code("CN：北京；09号服务器").unwrap().alpha2, "CN");
+    assert_eq!(parse_country_code("HK-香港-10号-VIP").unwrap().alpha2, "HK");
 }
 
 #[test]
