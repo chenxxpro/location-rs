@@ -1,24 +1,40 @@
 # Data Model: Country Code Parser Library
 
+**Feature**: Country Code Parser Library  
+**Created**: 2023-10-22  
+**Purpose**: Define and document the data structures used in the library
+
 ## Overview
 
 本文档描述了国家代码解析器库的数据模型，包括核心实体、它们之间的关系以及数据流。
 
 ## 核心实体
 
-### CountryCode
+### 1. CountryInfo
 
-**用途**: 使用ISO 3166-1 alpha-2代码表示国家或地区。
+**Description**: Represents comprehensive information about a country, including ISO codes and multilingual names.
 
-**说明**:
-- 直接使用`isocountry` crate中的`CountryCode`类型
-- 表示标准的ISO 3166-1 alpha-2国家代码
+**Properties**:
 
-**示例**:
+| Property | Type | Description |
+|----------|------|-------------|
+| `alpha2` | `String` | ISO 3166-1 alpha-2 two-letter code (e.g., "US", "CN") |
+| `alpha3` | `String` | ISO 3166-1 alpha-3 three-letter code (e.g., "USA", "CHN") |
+| `name_en` | `String` | English name of the country (e.g., "United States", "China") |
+| `name_zh_cn` | `String` | Simplified Chinese name of the country (e.g., "美国", "中国") |
+| `name_zh_tw` | `String` | Traditional Chinese name of the country (e.g., "美國", "中國") |
+
+**Example Usage**:
+
 ```rust
-// 通过isocountry crate获取
-let china_code = isocountry::country_by_alpha2("CN").unwrap();
-let usa_code = isocountry::country_by_alpha2("US").unwrap();
+use location_rs::{parse_country_code, CountryInfo};
+
+if let Ok(country_info) = parse_country_code("CN") {
+    assert_eq!(country_info.alpha2, "CN");
+    assert_eq!(country_info.alpha3, "CHN");
+    assert_eq!(country_info.name_en, "China");
+    assert_eq!(country_info.name_zh_cn, "中国");
+}
 ```
 
 ### CountryInfo
@@ -45,73 +61,113 @@ let china_info = CountryInfo {
 };
 ```
 
-### ParserConfig
+### 2. ParserConfig
 
-**用途**: 国家代码解析器的配置选项。
+**Description**: Configuration options for the country code parser.
 
-**属性**:
-- `case_sensitive`: bool (是否执行区分大小写的匹配)
-- `fuzzy_match`: bool (是否启用模糊匹配)
-- `timeout_ms`: u64 (超时时间，以毫秒为单位)
+**Properties**:
 
-**默认值**:
-- `case_sensitive`: false (默认不区分大小写)
-- `fuzzy_match`: true (默认启用模糊匹配)
-- `timeout_ms`: 100 (默认超时时间为100毫秒)
+| Property | Type | Description |
+|----------|------|-------------|
+| `min_confidence` | `f32` | Minimum confidence threshold for name matching |
+| `max_distance` | `usize` | Maximum Levenshtein distance for fuzzy matching |
+| `enable_fuzzy_matching` | `bool` | Whether to enable fuzzy matching for names |
+| `allow_partial_matches` | `bool` | Whether to allow partial matches in text |
 
-**示例**:
+**Example Usage**:
+
 ```rust
+use location_rs::{Parser, ParserConfig};
+
 let config = ParserConfig {
-    case_sensitive: false,
-    fuzzy_match: true,
-    timeout_ms: 100,
+    min_confidence: 0.8,
+    max_distance: 2,
+    enable_fuzzy_matching: true,
+    allow_partial_matches: false,
 };
+
+let parser = Parser::new_with_config(config);
 ```
 
-### Parser
+### 3. Parser
 
-**用途**: 解析器实例，包含配置并提供解析功能。
+**Description**: Main parser struct that handles country code detection and extraction from text.
 
-**属性**:
-- `config`: ParserConfig (解析器配置)
+**Methods**:
 
-**方法**:
-- `new()`: 使用默认配置创建解析器
-- `with_config(config)`: 使用自定义配置创建解析器
-- `parse(text)`: 解析文本中的国家代码
+| Method | Description |
+|--------|-------------|
+| `new()` | Creates a new parser with default configuration |
+| `new_with_config(config)` | Creates a new parser with custom configuration |
+| `parse(text)` | Parses text to extract country information |
 
-**示例**:
+**Example Usage**:
+
 ```rust
-// 使用默认配置
-let parser = Parser::new();
-let result = parser.parse("@HK Vip1");
+use location_rs::{Parser, ParserConfig};
 
-// 使用自定义配置
-let custom_config = ParserConfig {
-    case_sensitive: true,
-    fuzzy_match: false,
-    timeout_ms: 50,
-};
-let custom_parser = Parser::with_config(custom_config);
+let parser = Parser::new();
+let result = parser.parse("来自中国的访问者");
+
+if let Ok(country_info) = result {
+    println!("Detected country: {}", country_info.name_en);
+}
 ```
 
-### ParseError
+### 4. ParseError
 
-**用途**: 表示解析过程中可能发生的错误。
+**Description**: Error type for country code parsing operations.
 
-**变体**:
-- `NotFound`: 输入文本中未找到国家代码
-- `Ambiguous`: 找到多个可能的国家代码
-- `InvalidInput`: 输入文本无效（为空、过长等）
-- `Timeout`: 解析时间超过指定的超时时间
-- `ConfigError`: 配置加载或解析错误
+**Variants**:
 
-**错误处理方法**:
-- `not_found(text)`: 创建未找到错误
-- `ambiguous(text, candidates)`: 创建模糊匹配错误
-- `invalid_input(text)`: 创建无效输入错误
-- `timeout(timeout_ms)`: 创建超时错误
-- `config_error(message)`: 创建配置错误
+| Variant | Description |
+|---------|-------------|
+| `NotFound { text }` | No country code or name was found in the input |
+| `InvalidFormat { text }` | The input format was invalid or not recognized |
+| `MultipleMatches { matches }` | Multiple possible matches were found |
+| `ConfigError { message }` | Error in parser configuration |
+| `Timeout` | Parsing operation timed out |
+
+**Example Usage**:
+
+```rust
+use location_rs::{parse_country_code, ParseError};
+
+match parse_country_code("unknown-country-code") {
+    Ok(country_info) => println!("Found: {}", country_info.name_en),
+    Err(ParseError::NotFound { text }) => println!("Not found: {}", text),
+    Err(ParseError::InvalidFormat { text }) => println!("Invalid format: {}", text),
+    Err(e) => println!("Other error: {}", e),
+}
+```
+
+### 5. 实用工具函数
+
+**Description**: 提供简单易用的顶层API函数，方便快速集成。
+
+**Functions**:
+
+| Function | Description |
+|----------|-------------|
+| `parse_country_code(text)` | 快速解析文本中的国家代码或名称，返回`Result<CountryInfo, ParseError>` |
+
+**Example Usage**:
+
+```rust
+use location_rs::parse_country_code;
+
+// 解析ISO alpha-2代码
+let china = parse_country_code("CN").unwrap();
+assert_eq!(china.name_zh_cn, "中国");
+
+// 解析国家中文名称
+let japan = parse_country_code("日本").unwrap();
+assert_eq!(japan.alpha2, "JP");
+
+// 解析混合文本中的国家信息
+let result = parse_country_code("我来自美国(USA)").unwrap();
+assert_eq!(result.alpha2, "US");
+```
 
 ## 数据关系
 

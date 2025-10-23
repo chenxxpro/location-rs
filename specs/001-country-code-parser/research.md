@@ -1,23 +1,23 @@
 # Research: Country Code Parser Library
 
 **Feature**: Country Code Parser Library  
-**Created**: 2025-10-22  
+**Created**: 2023-10-22  
 **Purpose**: Resolve technical unknowns and establish implementation approach
 
 ## Research Tasks
 
-### Task 1: isocountry Crate Capabilities
-**Research**: "isocountry crate capabilities for alpha2, alpha3 codes and language support"
+### Task 1: 国家代码数据源方案
+**Research**: "国家代码数据管理方案比较"
 
 **Findings**:
-- isocountry crate提供完整的ISO 3166-1国家代码支持
-- 支持alpha-2 (2字母代码如US、CN)、alpha-3 (3字母代码如USA、CHN)
-- 包含国家名称的多语言支持，但中文支持需要验证
-- 提供CountryCode枚举类型和转换方法
+- 自定义JSON配置文件可以提供更灵活的多语言支持
+- 嵌入式配置文件可以避免运行时依赖，提高性能
+- 可以精确控制所需的国家信息字段和多语言支持
+- 避免引入额外依赖，保持库的轻量级
 
-**Decision**: 使用isocountry作为主要国家代码数据源
-**Rationale**: 标准化、维护良好、功能完整
-**Alternatives considered**: 手动维护国家代码数据 - 维护成本高，容易出错
+**Decision**: 使用嵌入式JSON配置文件作为国家代码数据源
+**Rationale**: 更灵活的多语言支持，无额外依赖，易于维护
+**Alternatives considered**: 使用isocountry crate - 缺乏定制化多语言支持
 
 ### Task 2: Embedded JSON Configuration Pattern
 **Research**: "Rust embedded JSON configuration best practices for multi-language support"
@@ -50,19 +50,19 @@
 - 机器学习方法 - 不必要，过度工程化
 
 ### Task 4: Error Handling Pattern for Rust Libraries
-**Research**: "Rust library error handling best practices with anyhow crate"
+**Research**: "Rust library error handling best practices with thiserror crate"
 
 **Findings**:
-- anyhow crate提供便捷的错误处理机制
-- 适合库开发，错误类型可以轻松转换为anyhow::Error
-- 配合thiserror crate可以定义清晰的错误类型
-- 需要定义明确的错误变体（解析失败、配置错误等）
+- thiserror crate提供强大的错误类型定义功能
+- 适合库开发，可以定义清晰的错误类型和错误消息
+- 无需额外的anyhow依赖，减少依赖数量
+- 可以定义错误变体（解析失败、配置错误、超时等）
 
-**Decision**: 使用anyhow + thiserror组合进行错误处理
-**Rationale**: 类型安全，易于使用，符合Rust最佳实践
+**Decision**: 仅使用thiserror进行错误处理
+**Rationale**: 类型安全，功能足够，减少依赖数量
 **Alternatives considered**:
 - 标准库Result - 错误处理不够便捷
-- 自定义错误类型 - 实现复杂
+- thiserror + anyhow - 过度设计，增加不必要的依赖
 
 ### Task 5: Performance Optimization for Text Parsing
 **Research**: "Performance optimization techniques for text parsing in Rust"
@@ -83,10 +83,8 @@
 ## Technical Decisions Summary
 
 ### Core Dependencies
-- **isocountry**: 国家代码标准数据源
-- **serde**: JSON配置文件的序列化/反序列化
-- **anyhow + thiserror**: 错误处理
-- **regex**: 可选，用于复杂模式匹配
+- **serde + serde_json**: JSON配置文件的序列化/反序列化
+- **thiserror**: 错误处理和错误类型定义
 
 ### Configuration Approach
 - **Format**: JSON配置文件
