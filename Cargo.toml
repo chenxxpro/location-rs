@@ -1,6 +1,6 @@
 [package]
 name = "location-rs"
-version = "0.1.2"
+version = "0.1.3"
 edition = "2021"
 description = "A Rust library for parsing country codes from text titles with support for Chinese language"
 authors = ["ChenXX <chenxxpro@hotmail.com>"]

@@ -19,7 +19,7 @@ Add the following to your `Cargo.toml` file:
 
 ```toml
 [dependencies]
-location-rs = "0.1.2"
+location-rs = "0.1.3"
 ```
 
 ## Usage Examples
