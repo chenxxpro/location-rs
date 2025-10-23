@@ -177,6 +177,16 @@
       ]
     },
     {
+      "alpha2": "AI",
+      "alpha3": "AIA",
+      "name_en": "Anguilla",
+      "name_zh_cn": "安圭拉",
+      "name_zh_tw": "安圭拉",
+      "abbreviations": [
+        "安圭拉"
+      ]
+    },
+    {
       "alpha2": "AT",
       "alpha3": "AUT",
       "name_en": "Austria",
@@ -185,6 +195,17 @@
       "abbreviations": [
         "奥地利",
         "奧地利"
+      ]
+    },
+    {
+      "alpha2": "AS",
+      "alpha3": "ASM",
+      "name_en": "American Samoa",
+      "name_zh_cn": "美属萨摩亚",
+      "name_zh_tw": "美屬薩摩亞",
+      "abbreviations": [
+        "美属萨摩亚",
+        "美屬薩摩亞"
       ]
     },
     {
@@ -898,6 +919,17 @@
       ]
     },
     {
+      "alpha2": "CW",
+      "alpha3": "CUW",
+      "name_en": "Curaçao",
+      "name_zh_cn": "库拉索",
+      "name_zh_tw": "庫拉索",
+      "abbreviations": [
+        "库拉索",
+        "庫拉索"
+      ]
+    },
+    {
       "alpha2": "GP",
       "alpha3": "GLP",
       "name_en": "Guadeloupe",
@@ -1436,6 +1468,17 @@
       "abbreviations": [
         "马里",
         "馬里"
+      ]
+    },
+    {
+      "alpha2": "MH",
+      "alpha3": "MHL",
+      "name_en": "Marshall Islands",
+      "name_zh_cn": "马绍尔群岛",
+      "name_zh_tw": "馬紹爾群島",
+      "abbreviations": [
+        "马绍尔群岛",
+        "馬紹爾群島"
       ]
     },
     {
