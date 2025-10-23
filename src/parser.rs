@@ -1,5 +1,4 @@
 use std::collections::HashMap;
-use std::time::{Duration, Instant};
 use crate::error::ParseError;
 use crate::config::{Configuration, CountryInfo};
 use crate::ParserConfig;
@@ -14,8 +13,6 @@ pub fn parse_country_code_with_config(
     text: &str,
     config: &ParserConfig,
 ) -> Result<CountryInfo, ParseError> {
-    let start_time = Instant::now();
-    
     // 输入验证
     if text.trim().is_empty() {
         return Err(ParseError::invalid_input("输入文本为空"));
@@ -40,21 +37,13 @@ pub fn parse_country_code_with_config(
     };
     
     // 多阶段解析
-    let result = match parse_iso_codes(&processed_text, &country_mapping, config) {
+    match parse_iso_codes(&processed_text, &country_mapping, config) {
         Ok(country_info) => Ok(country_info),
         Err(_) => match parse_chinese_names(&processed_text, &country_mapping, config) {
             Ok(country_info) => Ok(country_info),
             Err(_) => parse_pattern_matching(&processed_text, &country_mapping, config),
         },
-    };
-    
-    // 检查超时
-    let elapsed = start_time.elapsed();
-    if elapsed > Duration::from_millis(config.timeout_ms) {
-        return Err(ParseError::timeout(config.timeout_ms));
     }
-    
-    result
 }
 
 /// 解析ISO代码（alpha-2和alpha-3）

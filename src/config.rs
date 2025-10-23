@@ -26,8 +26,6 @@ pub struct ParserSettings {
     pub case_sensitive: bool,
     /// 是否启用模糊匹配
     pub fuzzy_match: bool,
-    /// 解析超时时间（毫秒）
-    pub timeout_ms: u64,
 }
 
 /// 模式配置

@@ -111,10 +111,9 @@ use location_rs::{Parser, ParserConfig};
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let config = ParserConfig {
-        case_sensitive: true,
-        fuzzy_match: false,
-        timeout_ms: 50,
-    };
+    case_sensitive: true,
+    fuzzy_match: false,
+};
     
     let parser = Parser::with_config(config);
     let code = parser.parse("US Node")?;
@@ -127,7 +126,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 ### 响应时间
 - **平均解析时间**: <1ms（标准硬件）
 - **最坏情况**: <10ms（复杂文本模式）
-- **超时限制**: 可配置，默认100ms
 
 ### 内存使用
 - **初始化内存**: <1MB（包含所有国家数据）

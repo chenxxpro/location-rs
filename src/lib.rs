@@ -34,8 +34,6 @@ pub struct ParserConfig {
     pub case_sensitive: bool,
     /// 是否启用模糊匹配
     pub fuzzy_match: bool,
-    /// 解析超时时间（毫秒）
-    pub timeout_ms: u64,
 }
 
 impl Default for ParserConfig {
@@ -43,7 +41,6 @@ impl Default for ParserConfig {
         Self {
             case_sensitive: false,
             fuzzy_match: true,
-            timeout_ms: 100,
         }
     }
 }

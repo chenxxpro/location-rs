@@ -89,12 +89,10 @@ The library employs a multi-stage parsing strategy:
 2. **ISO Code Recognition**: Prioritizes finding standard alpha-2 and alpha-3 codes
 3. **Chinese Name Matching**: Attempts to match Chinese country names
 4. **Pattern Matching**: Uses fuzzy matching strategies to find possible country identifiers
-5. **Timeout Protection**: Ensures the parsing process doesn't consume excessive time
 
 ## Performance
 
 - Average parsing time < 1ms (standard input)
-- Supports configurable parsing timeout to prevent performance issues
 - Highly optimized string processing algorithms
 
 ## Error Types
@@ -102,7 +100,6 @@ The library employs a multi-stage parsing strategy:
 - `InvalidInput`: Input text is empty or too long
 - `NotFound`: No valid country code found in the text
 - `ConfigError`: Configuration loading or parsing failed
-- `Timeout`: Parsing process timed out
 
 ## Testing
 

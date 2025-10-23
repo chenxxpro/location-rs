@@ -39,7 +39,6 @@
 2. **Given** 标题文本 "12345"，**When** 调用解析函数，**Then** 返回NotFound错误
 3. **Given** 空文本，**When** 调用解析函数，**Then** 返回InvalidInput错误
 4. **Given** 超长文本（超过1024字符），**When** 调用解析函数，**Then** 返回InvalidInput错误
-5. **Given** 解析超时的情况，**When** 调用解析函数，**Then** 返回Timeout错误
 
 ---
 

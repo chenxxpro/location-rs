@@ -93,7 +93,7 @@ description: "任务列表模板用于功能实现"
 
 - [x] T022 [P] [US2] 在src/error.rs中增强错误类型，添加详细错误消息
 - [x] T023 [US2] 在src/parser.rs中实现输入验证逻辑
-- [x] T024 [US2] 为解析操作添加超时处理
+
 - [x] T025 [US2] 在src/parser.rs中实现模糊匹配检测
 - [x] T026 [US2] 增强主函数，添加全面的错误处理
 

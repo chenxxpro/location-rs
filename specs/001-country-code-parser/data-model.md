@@ -220,8 +220,7 @@ ParserConfig ────► Parser ────► Result<CountryInfo, ParseErr
   },
   "settings": {
     "case_sensitive": false,
-    "fuzzy_match": true,
-    "timeout_ms": 100
+    "fuzzy_match": true
   }
 }
 ```
@@ -242,7 +241,6 @@ ParserConfig ────► Parser ────► Result<CountryInfo, ParseErr
 - 国家信息在初始化时只加载一次
 - 使用高效的哈希映射查找进行国家代码匹配
 - 多种解析策略按效率顺序尝试
-- 超时机制防止长时间运行的解析操作
 
 ## 线程安全性
 
