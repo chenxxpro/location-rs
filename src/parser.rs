@@ -154,9 +154,8 @@ fn parse_pattern_matching(
         }
         
         if !candidates.is_empty() {
-            // 按优先级排序
-            candidates.sort_by_key(|&(_, priority)| priority);
-            return Ok(candidates[0].0.clone());
+            // 返回最后一个匹配的国家
+            return Ok(candidates.last().unwrap().0.clone());
         }
     }
     
