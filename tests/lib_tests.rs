@@ -94,6 +94,14 @@ fn test_mixed_patterns() {
     assert_eq!(parse_country_code("【测试】USA1").unwrap().alpha3, "USA");
     assert_eq!(parse_country_code("【测试】US1").unwrap().alpha3, "USA");
     assert_eq!(parse_country_code("V1 美国").unwrap().alpha3, "USA");
+    // 新增测试用例
+    assert_eq!(parse_country_code("[SS] Hong Kong -1").unwrap().alpha3, "HKG");
+    assert_eq!(parse_country_code("Hong Kong-1").unwrap().alpha3, "HKG");
+    assert_eq!(parse_country_code("Japan-1").unwrap().alpha3, "JPN");
+    assert_eq!(parse_country_code("Singapore-1").unwrap().alpha3, "SGP");
+    assert_eq!(parse_country_code("UK-1").unwrap().alpha3, "GBR");
+    assert_eq!(parse_country_code("不丹｜BT").unwrap().alpha3, "BTN");
+    assert_eq!(parse_country_code("印度｜IN").unwrap().alpha3, "IND");
     
     // 增加更多混合模式测试
     // 前缀模式测试

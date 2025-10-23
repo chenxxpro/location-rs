@@ -510,6 +510,16 @@
       ]
     },
     {
+      "alpha2": "BT",
+      "alpha3": "BTN",
+      "name_en": "Bhutan",
+      "name_zh_cn": "不丹",
+      "name_zh_tw": "不丹",
+      "abbreviations": [
+        "不丹"
+      ]
+    },
+    {
       "alpha2": "KP",
       "alpha3": "PRK",
       "name_en": "Democratic People's Republic of Korea",
@@ -2570,6 +2580,7 @@
       "abbreviations": [
         "英国",
         "英國",
+        "UK",
         "大不列颠及北爱尔兰联合王国",
         "大不列顛及北愛爾蘭聯合王國"
       ]
