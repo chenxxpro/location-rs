@@ -1,12 +1,12 @@
 # Quickstart Guide: Country Code Parser Library
 
 **Feature**: Country Code Parser Library  
-**Created**: 2025-10-22  
+**Created**: 2023-10-22  
 **Purpose**: Get started with the library in 5 minutes
 
 ## Prerequisites
 
-- Rust 1.75+ installed
+- Rust 1.70+ installed
 - Basic familiarity with Rust and Cargo
 
 ## Installation
@@ -44,11 +44,11 @@ use location_rs::{parse_country_code, ParseError};
 
 fn process_text(text: &str) -> Result<(), ParseError> {
     match parse_country_code(text) {
-        Ok(country_code) => {
-            println!("Found country: {}", country_code.name());
+        Ok(country_info) => {
+            println!("Found country: {}", country_info.name_zh_cn);
             Ok(())
         }
-        Err(ParseError::NotFound) => {
+        Err(ParseError::NotFound { text: _ }) => {
             println!("No country code found in: {}", text);
             Ok(())
         }
@@ -60,17 +60,18 @@ fn process_text(text: &str) -> Result<(), ParseError> {
 }
 ```
 
-### 3. Working with Country Codes
+### 3. Working with Country Information
 
 ```rust
-use location_rs::{parse_country_code, CountryCode};
+use location_rs::{parse_country_code, CountryInfo};
 
 fn analyze_country(text: &str) {
-    if let Ok(code) = parse_country_code(text) {
-        println!("Alpha-2 code: {}", code.alpha2());
-        println!("Alpha-3 code: {}", code.alpha3());
-        println!("English name: {}", code.name());
-        println!("Numeric code: {}", code.numeric());
+    if let Ok(country_info) = parse_country_code(text) {
+        println!("Alpha-2 code: {}", country_info.alpha2);
+        println!("Alpha-3 code: {}", country_info.alpha3);
+        println!("English name: {}", country_info.name_en);
+        println!("Chinese name (Simplified): {}", country_info.name_zh_cn);
+        println!("Chinese name (Traditional): {}", country_info.name_zh_tw);
     }
 }
 ```

@@ -28,7 +28,7 @@ description: "任务列表模板用于功能实现"
 **目的**: 项目初始化和基本结构
 
 - [x] T001 在 / 目录下创建Rust项目结构，包含Cargo.toml
-- [x] T002 [P] 在Cargo.toml中配置依赖项：isocountry, serde, anyhow, thiserror
+- [x] T002 [P] 在Cargo.toml中配置依赖项：serde, anyhow, thiserror
 - [x] T003 [P] 在Cargo.toml中配置开发依赖项：criterion用于基准测试
 - [x] T004 [P] 创建基本项目结构：src/, tests/, resources/, examples/
 
@@ -43,7 +43,7 @@ description: "任务列表模板用于功能实现"
 - [x] T005 在resources/countries.json中创建基本国家数据结构
 - [x] T006 [P] 在src/error.rs中定义错误类型（ParseError枚举）
 - [x] T007 [P] 在src/config.rs中创建配置加载模块
-- [x] T008 在src/lib.rs中创建CountryCode包装类型
+- [x] T008 在src/config.rs中定义CountryInfo数据结构
 - [x] T009 在tests/目录中设置基本测试框架
 
 **检查点**: 基础就绪 - 用户故事实现现在可以并行开始
@@ -60,18 +60,18 @@ description: "任务列表模板用于功能实现"
 
 > **注意: 先编写这些测试，确保在实现前测试失败**
 
-- [ ] T010 [P] [US1] 在tests/unit/parser_tests.rs中编写基本ISO代码解析的单元测试
-- [ ] T011 [P] [US1] 在tests/unit/parser_tests.rs中编写中文名称解析的单元测试
-- [ ] T012 [P] [US1] 在tests/integration/lib_tests.rs中编写完整解析流程的集成测试
+- [x] T010 [P] [US1] 在tests/unit/parser_tests.rs中编写基本ISO代码解析的单元测试
+- [x] T011 [P] [US1] 在tests/unit/parser_tests.rs中编写中文名称解析的单元测试
+- [x] T012 [P] [US1] 在tests/integration/lib_tests.rs中编写完整解析流程的集成测试
 
 ### 用户故事 1 的实现
 
-- [ ] T013 [P] [US1] 在src/parser.rs中实现基本解析器结构
-- [ ] T014 [P] [US1] 在src/parser.rs中实现ISO代码匹配逻辑
-- [ ] T015 [P] [US1] 在src/parser.rs中实现中文名称匹配逻辑
-- [ ] T016 [US1] 在src/lib.rs中将解析器与配置集成
-- [ ] T017 [US1] 为解析失败添加基本错误处理
-- [ ] T018 [US1] 在src/lib.rs中创建主要的parse_country_code函数
+- [x] T013 [P] [US1] 在src/parser.rs中实现基本解析器结构
+- [x] T014 [P] [US1] 在src/parser.rs中实现ISO代码匹配逻辑
+- [x] T015 [P] [US1] 在src/parser.rs中实现中文名称匹配逻辑
+- [x] T016 [US1] 在src/lib.rs中将解析器与配置集成
+- [x] T017 [US1] 为解析失败添加基本错误处理
+- [x] T018 [US1] 在src/lib.rs中创建主要的parse_country_code函数，返回CountryInfo对象
 
 **检查点**: 此时，用户故事1应该完全功能化并可独立测试
 
@@ -85,17 +85,17 @@ description: "任务列表模板用于功能实现"
 
 ### 用户故事 2 的测试（必需 - TDD方法） ⚠️
 
-- [ ] T019 [P] [US2] 在tests/unit/error_tests.rs中编写NotFound错误的单元测试
-- [ ] T020 [P] [US2] 在tests/unit/error_tests.rs中编写InvalidInput错误的单元测试
-- [ ] T021 [P] [US2] 在tests/integration/lib_tests.rs中编写错误场景的集成测试
+- [x] T019 [P] [US2] 在tests/unit/error_tests.rs中编写NotFound错误的单元测试
+- [x] T020 [P] [US2] 在tests/unit/error_tests.rs中编写InvalidInput错误的单元测试
+- [x] T021 [P] [US2] 在tests/integration/lib_tests.rs中编写错误场景的集成测试
 
 ### 用户故事 2 的实现
 
-- [ ] T022 [P] [US2] 在src/error.rs中增强错误类型，添加详细错误消息
-- [ ] T023 [US2] 在src/parser.rs中实现输入验证逻辑
-- [ ] T024 [US2] 为解析操作添加超时处理
-- [ ] T025 [US2] 在src/parser.rs中实现模糊匹配检测
-- [ ] T026 [US2] 增强主函数，添加全面的错误处理
+- [x] T022 [P] [US2] 在src/error.rs中增强错误类型，添加详细错误消息
+- [x] T023 [US2] 在src/parser.rs中实现输入验证逻辑
+
+- [x] T025 [US2] 在src/parser.rs中实现模糊匹配检测
+- [x] T026 [US2] 增强主函数，添加全面的错误处理
 
 **检查点**: 此时，用户故事1和2都应该能独立工作
 
@@ -109,17 +109,17 @@ description: "任务列表模板用于功能实现"
 
 ### 用户故事 3 的测试（必需 - TDD方法） ⚠️
 
-- [ ] T027 [P] [US3] 在tests/unit/parser_tests.rs中编写alpha-3代码解析的单元测试
-- [ ] T028 [P] [US3] 在tests/unit/parser_tests.rs中编写模糊匹配的单元测试
-- [ ] T029 [P] [US3] 在benches/parser_bench.rs中编写性能基准测试
+- [x] T027 [P] [US3] 在tests/unit/parser_tests.rs中编写alpha-3代码解析的单元测试
+- [x] T028 [P] [US3] 在tests/unit/parser_tests.rs中编写模糊匹配的单元测试
+- [x] T029 [P] [US3] 在benches/parser_bench.rs中编写性能基准测试
 
 ### 用户故事 3 的实现
 
-- [ ] T030 [P] [US3] 在src/parser.rs中实现alpha-3代码支持
-- [ ] T031 [P] [US3] 在src/parser.rs中添加模糊匹配能力
-- [ ] T032 [US3] 在src/parser.rs中通过缓存优化解析性能
-- [ ] T033 [US3] 在src/config.rs中添加匹配行为的配置选项
-- [ ] T034 [US3] 在resources/countries.json中增强国家数据，添加额外格式
+- [x] T030 [P] [US3] 在src/parser.rs中实现alpha-3代码支持
+- [x] T031 [P] [US3] 在src/parser.rs中添加模糊匹配能力
+- [x] T032 [US3] 在src/parser.rs中通过缓存优化解析性能
+- [x] T033 [US3] 在src/config.rs中添加匹配行为的配置选项
+- [x] T034 [US3] 在resources/countries.json中增强国家数据，添加额外格式
 
 **检查点**: 所有用户故事现在都应该能独立功能化
 
@@ -129,13 +129,13 @@ description: "任务列表模板用于功能实现"
 
 **目的**: 影响多个用户故事的改进
 
-- [ ] T035 [P] 在README.md和src/lib.rs中更新文档
-- [ ] T036 [P] 在所有模块中进行代码清理和重构
-- [ ] T037 [P] 在所有故事中进行性能优化
-- [ ] T038 [P] 在tests/unit/中为边界情况添加额外单元测试
-- [ ] T039 [P] 安全加固和输入清理
-- [ ] T040 [P] 在examples/basic_usage.rs中创建使用示例
-- [ ] T041 运行quickstart.md验证并在需要时更新
+- [x] T035 [P] 在README.md和src/lib.rs中更新文档，移除对isocountry的引用
+- [x] T036 [P] 在所有模块中进行代码清理和重构，移除isocountry依赖
+- [x] T037 [P] 在所有故事中进行性能优化
+- [x] T038 [P] 在tests/unit/中为边界情况添加额外单元测试
+- [x] T039 [P] 安全加固和输入清理
+- [x] T040 [P] 在examples/basic_usage.rs中创建使用示例
+- [x] T041 运行quickstart.md验证并在需要时更新
 
 ---
 

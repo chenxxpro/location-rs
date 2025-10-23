@@ -19,7 +19,7 @@ Add the following to your `Cargo.toml` file:
 
 ```toml
 [dependencies]
-location-rs = "0.1.0"
+location-rs = "0.1.2"
 ```
 
 ## Usage Examples
@@ -89,12 +89,10 @@ The library employs a multi-stage parsing strategy:
 2. **ISO Code Recognition**: Prioritizes finding standard alpha-2 and alpha-3 codes
 3. **Chinese Name Matching**: Attempts to match Chinese country names
 4. **Pattern Matching**: Uses fuzzy matching strategies to find possible country identifiers
-5. **Timeout Protection**: Ensures the parsing process doesn't consume excessive time
 
 ## Performance
 
 - Average parsing time < 1ms (standard input)
-- Supports configurable parsing timeout to prevent performance issues
 - Highly optimized string processing algorithms
 
 ## Error Types
@@ -102,7 +100,6 @@ The library employs a multi-stage parsing strategy:
 - `InvalidInput`: Input text is empty or too long
 - `NotFound`: No valid country code found in the text
 - `ConfigError`: Configuration loading or parsing failed
-- `Timeout`: Parsing process timed out
 
 ## Testing
 
@@ -128,7 +125,6 @@ Contributions are welcome via Issues and Pull Requests! Please ensure your code 
 
 - **Language**: Rust 2021
 - **Main Dependencies**:
-  - `isocountry`: ISO country code standard implementation
   - `serde`/`serde_json`: Configuration parsing
   - `thiserror`: Error handling
   - `criterion` (dev dependency): Performance benchmarking

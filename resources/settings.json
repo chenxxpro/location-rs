@@ -1,0 +1,5 @@
+{
+  "case_sensitive": false,
+  "fuzzy_match": true,
+  "timeout_ms": 100
+}

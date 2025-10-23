@@ -1,0 +1,4 @@
+{
+  "prefix_patterns": ["@", "【", "[", "#", "|"],
+  "suffix_patterns": ["Vip", "VIP", "节点", "Node", "Server"]
+}

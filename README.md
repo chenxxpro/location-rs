@@ -6,7 +6,7 @@
 
 ---
 
-**[English Version](README.md.en)**
+**[English Version](README_EN.md)**
 
 ## 功能特性
 
@@ -23,7 +23,7 @@
 
 ```toml
 [dependencies]
-location-rs = "0.1.0"
+location-rs = "0.1.2"
 ```
 
 ## 使用示例
@@ -55,7 +55,6 @@ use location_rs::{Parser, ParserConfig};
 let config = ParserConfig {
     case_sensitive: true,  // 区分大小写
     fuzzy_match: true,     // 启用模糊匹配
-    timeout_ms: 50,        // 设置50毫秒超时
 };
 
 // 使用自定义配置创建解析器
@@ -93,12 +92,10 @@ if let Err(error) = result {
 2. **ISO 代码识别**：优先查找标准的 alpha-2 和 alpha-3 代码
 3. **中文名称匹配**：尝试匹配中文国家名称
 4. **模式匹配**：使用模糊匹配策略寻找可能的国家标识
-5. **超时保护**：确保解析过程不会占用过多时间
 
 ## 性能
 
 - 平均解析时间 < 1ms（标准输入）
-- 支持配置解析超时时间，防止性能问题
 - 高度优化的字符串处理算法
 
 ## 错误类型
@@ -106,7 +103,6 @@ if let Err(error) = result {
 - `InvalidInput`：输入文本为空或过长
 - `NotFound`：在文本中未找到有效的国家代码
 - `ConfigError`：配置加载或解析失败
-- `Timeout`：解析过程超时
 
 ## 测试
 
@@ -132,11 +128,10 @@ cargo bench
 
 - **语言**：Rust 2021
 - **主要依赖**：
-  - `isocountry`：ISO 国家代码标准实现
   - `serde`/`serde_json`：配置解析
   - `thiserror`：错误处理
   - `criterion`（开发依赖）：性能基准测试
 
 ---
 
-**[English Version](README.md.en)**
+**[English Version](README_EN.md)**

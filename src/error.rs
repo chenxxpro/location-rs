@@ -22,12 +22,6 @@ pub enum ParseError {
         text: String,
     },
     
-    /// 解析超时
-    #[error("解析超时: 超过 {timeout_ms}ms 限制")]
-    Timeout {
-        timeout_ms: u64,
-    },
-    
     /// 配置错误
     #[error("配置错误: {message}")]
     ConfigError {
@@ -56,11 +50,6 @@ impl ParseError {
         ParseError::InvalidInput {
             text: text.to_string(),
         }
-    }
-    
-    /// 创建超时错误
-    pub fn timeout(timeout_ms: u64) -> Self {
-        ParseError::Timeout { timeout_ms }
     }
     
     /// 创建配置错误

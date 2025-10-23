@@ -11,8 +11,7 @@ pub mod parser;
 pub use error::ParseError;
 pub use config::{Configuration, CountryInfo, ParserSettings};
 
-// 重新导出isocountry的CountryCode
-pub use isocountry::CountryCode;
+
 
 /// 主要的解析函数
 /// 
@@ -24,7 +23,7 @@ pub use isocountry::CountryCode;
 /// let result = parse_country_code("@HK Vip1");
 /// assert!(result.is_ok());
 /// ```
-pub fn parse_country_code(text: &str) -> Result<CountryCode, ParseError> {
+pub fn parse_country_code(text: &str) -> Result<CountryInfo, ParseError> {
     parser::parse_country_code(text)
 }
 
@@ -35,8 +34,6 @@ pub struct ParserConfig {
     pub case_sensitive: bool,
     /// 是否启用模糊匹配
     pub fuzzy_match: bool,
-    /// 解析超时时间（毫秒）
-    pub timeout_ms: u64,
 }
 
 impl Default for ParserConfig {
@@ -44,7 +41,6 @@ impl Default for ParserConfig {
         Self {
             case_sensitive: false,
             fuzzy_match: true,
-            timeout_ms: 100,
         }
     }
 }
@@ -68,7 +64,7 @@ impl Parser {
     }
     
     /// 解析文本中的国家代码
-    pub fn parse(&self, text: &str) -> Result<CountryCode, ParseError> {
+    pub fn parse(&self, text: &str) -> Result<CountryInfo, ParseError> {
         parser::parse_country_code_with_config(text, &self.config)
     }
 }
