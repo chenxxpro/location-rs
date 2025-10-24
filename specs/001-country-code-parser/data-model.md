@@ -68,11 +68,9 @@ let china_info = CountryInfo {
 **Properties**:
 
 | Property | Type | Description |
-|----------|------|-------------|
-| `min_confidence` | `f32` | Minimum confidence threshold for name matching |
-| `max_distance` | `usize` | Maximum Levenshtein distance for fuzzy matching |
-| `enable_fuzzy_matching` | `bool` | Whether to enable fuzzy matching for names |
-| `allow_partial_matches` | `bool` | Whether to allow partial matches in text |
+|----------|------|-------------
+| `case_sensitive` | `bool` | Whether to perform case-sensitive matching |
+| `fuzzy_match` | `bool` | Whether to enable fuzzy matching |
 
 **Example Usage**:
 
@@ -80,14 +78,58 @@ let china_info = CountryInfo {
 use location_rs::{Parser, ParserConfig};
 
 let config = ParserConfig {
-    min_confidence: 0.8,
-    max_distance: 2,
-    enable_fuzzy_matching: true,
-    allow_partial_matches: false,
+    case_sensitive: false,
+    fuzzy_match: true,
 };
 
-let parser = Parser::new_with_config(config);
+let parser = Parser::with_config(config);
 ```
+
+### 2.1 ParserSettings
+
+**Description**: Global parser settings loaded from configuration file.
+
+**Properties**:
+
+| Property | Type | Description |
+|----------|------|-------------
+| `case_sensitive` | `bool` | Whether to perform case-sensitive matching |
+| `fuzzy_match` | `bool` | Whether to enable fuzzy matching |
+| `timeout_ms` | `u64` | Timeout period in milliseconds |
+
+### 2.2 PatternConfig
+
+**Description**: Pattern configuration for country code detection.
+
+**Properties**:
+
+| Property | Type | Description |
+|----------|------|-------------
+| `prefix_patterns` | `Vec<String>` | List of prefix patterns to recognize |
+| `suffix_patterns` | `Vec<String>` | List of suffix patterns to recognize |
+
+### 2.3 CountriesConfig
+
+**Description**: Configuration containing country information data.
+
+**Properties**:
+
+| Property | Type | Description |
+|----------|------|-------------
+| `version` | `String` | Configuration version |
+| `countries` | `Vec<CountryInfo>` | List of country information |
+
+### 2.4 Configuration
+
+**Description**: Complete configuration structure integrating all configuration types.
+
+**Properties**:
+
+| Property | Type | Description |
+|----------|------|-------------
+| `countries_config` | `CountriesConfig` | Country information configuration |
+| `patterns` | `PatternConfig` | Pattern configuration |
+| `settings` | `ParserSettings` | Parser settings |
 
 ### 3. Parser
 
@@ -96,9 +138,9 @@ let parser = Parser::new_with_config(config);
 **Methods**:
 
 | Method | Description |
-|--------|-------------|
+|--------|-------------
 | `new()` | Creates a new parser with default configuration |
-| `new_with_config(config)` | Creates a new parser with custom configuration |
+| `with_config(config)` | Creates a new parser with custom configuration |
 | `parse(text)` | Parses text to extract country information |
 
 **Example Usage**:
@@ -183,9 +225,13 @@ ParserConfig ────► Parser ────► Result<CountryInfo, ParseErr
 
 ## 配置加载流程
 
-1. 库从嵌入的JSON文件(`resources/countries.json`)加载配置
-2. 配置被解析为`Configuration`对象
-3. 国家信息被提取并存储在`HashMap`结构中以实现高效查找
+1. 库从多个嵌入的JSON文件加载配置：
+   - `resources/countries.json`: 国家信息数据
+   - `resources/patterns.json`: 前缀和后缀模式配置
+   - `resources/settings.json`: 解析器设置
+2. 配置被分别解析为`CountriesConfig`、`PatternConfig`和`ParserSettings`对象
+3. 这些对象被组合到`Configuration`对象中
+4. 国家信息被提取并存储在`HashMap`结构中以实现高效查找
 
 ## 解析流程
 
@@ -200,6 +246,7 @@ ParserConfig ────► Parser ────► Result<CountryInfo, ParseErr
 
 ## JSON配置结构
 
+### countries.json
 ```json
 {
   "version": "1.1",
@@ -213,15 +260,24 @@ ParserConfig ────► Parser ────► Result<CountryInfo, ParseErr
       "abbreviations": ["中国", "中华"]
     },
     // 更多国家...
-  ],
-  "patterns": {
-    "prefix_patterns": ["@", "【", "[", "#"],
-    "suffix_patterns": ["]", "】", " "]
-  },
-  "settings": {
-    "case_sensitive": false,
-    "fuzzy_match": true
-  }
+  ]
+}
+```
+
+### patterns.json
+```json
+{
+  "prefix_patterns": ["@", "【", "[", "#", "|"],
+  "suffix_patterns": ["Vip", "VIP", "节点", "Node", "Server"]
+}
+```
+
+### settings.json
+```json
+{
+  "case_sensitive": false,
+  "fuzzy_match": true,
+  "timeout_ms": 100
 }
 ```
 

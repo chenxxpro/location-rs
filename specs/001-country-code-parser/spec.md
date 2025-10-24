@@ -85,11 +85,16 @@
 - **FR-011**: 库必须遵循Rust的最佳实践，提供清晰的API文档和错误处理
 - **FR-012**: 库必须实现多阶段解析策略（ISO代码、中文名称、模式匹配）
 - **FR-013**: 库必须实现配置化的解析选项（区分大小写、模糊匹配、超时设置）
+- **FR-014**: 库必须从多个独立的配置文件加载数据（countries.json、patterns.json、settings.json）
 
 ### Key Entities
 
 - **CountryInfo**: 包含国家完整信息的数据结构，包括alpha2、alpha3、英文名称、中文名称等
-- **ParserConfig**: 解析器配置，包含区分大小写、模糊匹配、超时设置等选项
+- **ParserConfig**: 解析器配置，包含区分大小写、模糊匹配选项
+- **ParserSettings**: 全局解析器设置，包含区分大小写、模糊匹配、超时设置等选项
+- **PatternConfig**: 模式配置，包含前缀模式和后缀模式
+- **CountriesConfig**: 国家配置，包含配置版本和国家信息列表
+- **Configuration**: 完整配置，整合了国家配置、模式配置和解析器设置
 - **TitleText**: 需要解析的输入文本，可能包含各种格式的国家信息
 - **ParseError**: 解析错误类型，包含多种错误情况（NotFound、InvalidInput、Timeout等）
 
